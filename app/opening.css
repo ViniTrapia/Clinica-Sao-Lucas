@@ -95,7 +95,7 @@ header.site-header{height:104px;background:#f4f6fb;border-bottom:1px solid rgba(
   .hero-story .clinic-feature{width:100%;height:clamp(286px,80vw,352px);margin:0;border-radius:0;box-shadow:none}
   .hero-story .clinic-feature-facade>img{object-position:50% 46%}
   .hero-story .clinic-feature-image::before{background:linear-gradient(180deg,rgba(9,22,66,.08),transparent 58%,rgba(9,22,66,.08))}
-  .hero-story .hero-copy{width:100%;margin:-28px 0 0;padding:50px 24px 44px;border-radius:0;background:linear-gradient(180deg,rgba(242,244,249,0),#f2f4f9 28px,#f2f4f9 100%);box-shadow:none}
+  .hero-story .hero-copy{width:100%;margin:0;padding:42px 24px 44px;border-radius:0;background:#f2f4f9;box-shadow:none}
   .hero-story .hero-copy::before{width:38px;margin-bottom:18px}
   .hero-story .hero-copy h1{font-size:clamp(38px,10.8vw,46px);line-height:1.015;letter-spacing:-.064em}
   .hero-story .hero-copy p{max-width:31ch;margin:18px 0 22px;font-size:14px;line-height:1.58}
@@ -106,6 +106,6 @@ header.site-header{height:104px;background:#f4f6fb;border-bottom:1px solid rgba(
 @media(max-width:360px){
   .site-header .brand-clean strong{font-size:20px}
   .hero-story .clinic-feature{height:278px}
-  .hero-story .hero-copy{padding:48px 20px 40px}
+  .hero-story .hero-copy{padding:40px 20px}
   .hero-story .hero-copy h1{font-size:37px}
 }

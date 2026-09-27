@@ -23,7 +23,6 @@
 .hero-campaign-copy a{display:flex;align-items:center;justify-content:space-between;width:210px;margin-top:25px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.42);font-size:12px;opacity:0;pointer-events:auto;transform:translate3d(0,10px,0);transition:opacity .45s ease .22s,transform .58s cubic-bezier(.22,.74,.18,1) .22s}
 .hero-campaign-copy a .ui-icon{width:17px;height:17px;color:#f3a253}
 .hero-campaign.is-active .hero-campaign-copy>span,.hero-campaign.is-active .hero-campaign-copy h2,.hero-campaign.is-active .hero-campaign-copy p,.hero-campaign.is-active .hero-campaign-copy a{opacity:1;transform:none}
-.hero-campaign-name{position:absolute;z-index:2;top:18%;right:18px;color:rgba(255,255,255,.82);font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;writing-mode:vertical-rl}
 .hero-campaign-nav{position:absolute;z-index:4;right:7%;bottom:calc(76px + 4%);display:flex;gap:8px;pointer-events:auto}
 .hero-campaign-nav button{width:38px;padding:7px 0;border:0;border-bottom:1px solid rgba(255,255,255,.32);background:transparent;color:#aebbe0;font-size:9px;cursor:pointer;transition:width .3s cubic-bezier(.22,.74,.18,1),border-color .25s ease,color .25s ease}
 .hero-campaign-nav button.is-active{width:62px;border-color:#f3a253;color:#fff}
@@ -32,7 +31,6 @@
   .hero-campaign-portrait-cutout .hero-campaign-visual>picture{right:2%;bottom:calc(76px + var(--hero-photo-inset) + 2%);width:33%;height:71%}
   .hero-campaign-copy{right:35%;left:43%}
   .hero-campaign-copy h2{font-size:clamp(38px,5.7vw,46px)}
-  .hero-campaign-name{top:16%;right:12px}
   .hero-campaign-nav{right:6%}
 }
 
@@ -45,11 +43,10 @@
   .hero-campaign-copy h2{font-size:clamp(34px,10vw,43px)}
   .hero-campaign-copy p{max-width:25ch;margin-top:11px;font-size:12px}
   .hero-campaign-copy a{width:170px;margin-top:14px;padding:8px 0;font-size:11px}
-  .hero-campaign-name{top:20px;right:17px;font-size:7px}
   .hero-campaign-nav{right:18px;bottom:19px}
   .hero-campaign-nav button{width:27px}
   .hero-campaign-nav button.is-active{width:42px}
-  .hero-campaign-portrait-cutout .hero-campaign-visual>picture{right:-2%;bottom:0;width:68%;height:88%}
+  .hero-campaign-portrait-cutout .hero-campaign-visual>picture{right:-3%;bottom:-12%;width:72%;height:104%}
   .hero-campaign-portrait-cutout .hero-campaign-visual::before{right:-18%;top:8%;width:90%}
   .hero-campaign-portrait-cutout .hero-campaign-visual::after{right:-2%;top:21%;width:57%}
   .hero-campaign-portrait-cutout .hero-campaign-shade{background:linear-gradient(180deg,transparent 15%,rgba(5,15,52,.035) 100%)}

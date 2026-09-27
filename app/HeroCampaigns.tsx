@@ -80,7 +80,6 @@ export function HeroCampaigns(){
             <img src={assetUrl(campaign.image)} alt={campaign.imageAlt} style={{objectPosition:campaign.imagePosition??'62% center'}} width="900" height="1350" loading={index===0?'eager':'lazy'} fetchPriority={index===0?'high':'low'} decoding="async"/>
           </picture>
           <div className="hero-campaign-shade" aria-hidden="true"/>
-          <strong className="hero-campaign-name">{campaign.professionalName}</strong>
         </div>
         <div className="hero-campaign-copy">
           <span>{campaign.eyebrow}</span>
