@@ -49,9 +49,9 @@ export function WeeklySchedule({ professionals, schedule = weeklySchedule }: { p
   }));
   return <section className="services section weekly-section" id="atendimentos" aria-labelledby="weekly-title">
     <div className="weekly-intro"><div className="section-label"><span>02 / ATENDIMENTOS</span></div>
-    <div className="section-heading"><h2 id="weekly-title">Sua saúde.<br/><em ref={meetingPhrase} className="weekly-meeting-phrase">Nosso ponto de encontro.</em></h2></div></div>
+    <div className="section-heading"><h2 id="weekly-title">Clínica São Lucas:<br/><em ref={meetingPhrase} className="weekly-meeting-phrase">onde a sua saúde encontra o melhor cuidado.</em></h2></div></div>
     <div className="weekly-schedule-body">
-    <div className="weekly-caption"><div><span className="eyebrow">AGENDA SEMANAL</span>{days.length > 0 && <h3>{days[0].label} <span>—</span> {days[6].label}<small>{schedule.weekStart.slice(0, 4)}</small></h3>}</div><p>{schedule.status === 'reference' ? 'Semana de referência · a confirmar' : 'Programação da semana'}</p></div>
+    <div className="weekly-caption"><span className="eyebrow">AGENDA SEMANAL</span>{days.length > 0 && <h3>{days[0].label} <span>—</span> {days[6].label}<small>{schedule.weekStart.slice(0, 4)}</small></h3>}</div>
     <div className="weekly-days">{days.map(day => {
       const isExpanded = Boolean(expandedDays[day.iso]);
       const visiblePeople = isExpanded ? day.people : day.people.slice(0, 2);
@@ -60,7 +60,7 @@ export function WeeklySchedule({ professionals, schedule = weeklySchedule }: { p
       const nextPerson = day.people[2];
       const peopleId = `people-${day.iso}`;
       return <article className={'weekly-day' + (!day.people.length ? ' weekly-empty' : '') + (isExpanded ? ' weekly-open' : '')} key={day.iso} aria-labelledby={'day-' + day.iso}>
-        <div className="weekly-date"><h3 id={'day-' + day.iso}>{day.weekday}</h3><time dateTime={day.iso}>{day.label}</time></div>
+          <div className="weekly-date"><time dateTime={day.iso}>{day.label}</time><h3 id={'day-' + day.iso}>{day.weekday.charAt(0).toUpperCase() + day.weekday.slice(1)}</h3></div>
         {day.people.length > 0 ? <div className={'weekly-content' + (isExpanded ? ' weekly-content-open' : '')}><ul className="weekly-people" id={peopleId}>{visiblePeople.map((person, index) => <li className={index >= 2 ? 'weekly-extra' : undefined} key={person.id}><figure className="weekly-person"><div className="weekly-photo"><img src={assetUrl(person.photo ?? `/profissionais/${person.id}.webp`)} alt={person.name} width="150" height="130" loading="lazy" decoding="async"/></div><figcaption><h4>{person.name}{person.note && <> ({person.note})</>}</h4>{person.area && <p>{person.area}</p>}</figcaption></figure></li>)}</ul>{canExpand && <div className={'weekly-more' + (isExpanded ? ' weekly-more-open' : '')}>{!isExpanded && nextPerson && <div className="weekly-preview" aria-hidden="true"><img src={assetUrl(nextPerson.photo ?? `/profissionais/${nextPerson.id}.webp`)} alt="" width="118" height="110" loading="lazy" decoding="async"/><span>+{remainingCount}</span></div>}<div className="weekly-more-copy">{!isExpanded && <p>Profissionais disponíveis</p>}<button className="weekly-toggle" type="button" aria-expanded={isExpanded} aria-controls={peopleId} onClick={() => toggleDay(day.iso)}>{isExpanded ? 'Ver menos' : 'Ver todos'} <Icon name={isExpanded ? 'arrow-up' : 'arrow-up-right'}/></button></div></div>}</div> : <p className="weekly-pending">Programação a confirmar.<span>Consulte a equipe para informações sobre este dia.</span></p>}
       </article>;
     })}</div>
