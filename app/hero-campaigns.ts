@@ -24,7 +24,7 @@ export const heroCampaigns: HeroCampaign[] = [
   {
     id: 'marcelo-amaral-dia-28',
     professionalName: 'Dr. Marcelo Amaral',
-    eyebrow: 'Dia 28 · Atendimento especial',
+    eyebrow: '28/09 · Atendimento especial',
     headline: 'Dr. Marcelo Amaral',
     schedule: 'Ortopedista e Traumatologista.',
     image: '/campaigns/marcelo-amaral-cutout.webp',

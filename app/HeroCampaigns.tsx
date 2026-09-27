@@ -73,7 +73,7 @@ export function HeroCampaigns(){
 
   return <div ref={campaignsRef} className={`hero-campaigns${entered?' is-entered':''}`} aria-label="Destaques da Clínica São Lucas" onMouseEnter={()=>setPaused(true)} onMouseLeave={()=>setPaused(false)} onFocusCapture={()=>setPaused(true)} onBlurCapture={()=>setPaused(false)}>
     <div className="hero-campaign-track" aria-live="polite">
-      {heroCampaigns.map((campaign,index)=><article className={`hero-campaign hero-campaign-${campaign.visual??'photo'}${index===active?' is-active':''}`} aria-hidden={index!==active} key={campaign.id}>
+      {heroCampaigns.map((campaign,index)=>{const [dateLabel,...contextParts]=campaign.eyebrow.split('·');const contextLabel=contextParts.join('·').trim();return <article className={`hero-campaign hero-campaign-${campaign.visual??'photo'}${index===active?' is-active':''}`} aria-hidden={index!==active} key={campaign.id}>
         <div className="hero-campaign-visual">
           <picture>
             {campaign.mobileImage&&<source media="(max-width: 700px)" srcSet={assetUrl(campaign.mobileImage)}/>}
@@ -82,12 +82,12 @@ export function HeroCampaigns(){
           <div className="hero-campaign-shade" aria-hidden="true"/>
         </div>
         <div className="hero-campaign-copy">
-          <span>{campaign.eyebrow}</span>
+          <span className="hero-campaign-date"><strong>{dateLabel.trim()}</strong>{contextLabel&&<small>{contextLabel}</small>}</span>
           <h2>{campaign.headline}</h2>
           <p>{campaign.schedule}</p>
           {campaign.href&&<a href={campaign.href} target="_blank" rel="noopener noreferrer" tabIndex={index===active?0:-1}>{campaign.linkLabel??'Saiba mais'} <Icon name="arrow-up-right"/></a>}
         </div>
-      </article>)}
+      </article>})}
     </div>
     {heroCampaigns.length>1&&<div className="hero-campaign-nav" aria-label="Selecionar destaque">
       {heroCampaigns.map((campaign,index)=><button type="button" className={index===active?'is-active':''} aria-label={`Ver propaganda de ${campaign.professionalName}`} aria-current={index===active?'true':undefined} onClick={()=>setActive(index)} key={campaign.id}><span>{String(index+1).padStart(2,'0')}</span></button>)}

@@ -14,7 +14,7 @@ header.site-header{height:104px;background:#f4f6fb;border-bottom:1px solid rgba(
 .site-header .nav-contact:hover{transform:translateY(-2px);background:#203878;border-color:#203878;color:#fff;box-shadow:0 16px 32px rgba(17,35,91,.2)}
 .site-header .nav-contact:hover span{transform:rotate(45deg);background:#ffad5d}
 
-.hero-story{--hero-photo-left:0%;--hero-photo-right:0%;--hero-photo-inset:0px;--hero-photo-radius:0px;--hero-copy-opacity:0;--hero-copy-x:-46px;--hero-meta-opacity:.42;height:175dvh;padding:0!important;overflow:clip!important;background:#f1f3f8;color:var(--navy);position:relative;isolation:isolate}
+.hero-story{--hero-photo-left:0%;--hero-photo-right:0%;--hero-photo-inset:0px;--hero-photo-radius:0px;--hero-copy-opacity:0;--hero-copy-x:-46px;--hero-meta-opacity:.42;--hero-scroll-cue-opacity:1;height:175dvh;padding:0!important;overflow:clip!important;background:#f1f3f8;color:var(--navy);position:relative;isolation:isolate}
 .hero-stage{position:sticky;top:0;height:100dvh;min-height:640px;overflow:hidden;background:#f1f3f8}
 .hero-story .hero-top{position:absolute;z-index:5;top:34px;left:5.5%;right:5.5%;display:flex;align-items:center;justify-content:space-between;opacity:var(--hero-meta-opacity)}
 .hero-story .hero-top .eyebrow{display:inline-flex;align-items:center;min-height:36px;padding:7px 13px 7px 15px;border-left:2px solid var(--orange);background:rgba(247,248,251,.88);box-shadow:0 8px 28px rgba(10,24,73,.08);backdrop-filter:blur(12px);color:#23356e;font-size:10px;font-weight:700;letter-spacing:.14em}
@@ -38,6 +38,9 @@ header.site-header{height:104px;background:#f4f6fb;border-bottom:1px solid rgba(
 .hero-story .hero-bottom a{display:flex;align-items:center;gap:28px;font-weight:600;letter-spacing:.02em}
 .hero-story .hero-bottom a span{color:#b96724;font-size:18px;transition:transform .3s ease}
 .hero-story .hero-bottom a:hover span{transform:translateY(3px)}
+.hero-scroll-cue{position:absolute;z-index:8;bottom:170px;left:50%;display:flex;flex-direction:column;align-items:center;gap:9px;color:#fff;font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:var(--hero-scroll-cue-opacity);transform:translateX(-50%);transition:opacity .24s ease;pointer-events:auto}
+.hero-scroll-cue i{display:grid;place-items:center;width:36px;height:36px;border:1px solid rgba(255,255,255,.58);border-radius:50%;background:rgba(8,24,76,.3);color:#f3a253;font-style:normal;backdrop-filter:blur(8px);animation:hero-scroll-pulse 1.8s cubic-bezier(.22,.74,.18,1) infinite}
+@keyframes hero-scroll-pulse{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 
 /* Faixa de passagem entre o Hero e a apresentação da clínica. */
 .hero-story .hero-bottom{left:0;right:0;padding:0 5.5%;border-top-color:transparent;background:#132767;color:#fff}
@@ -50,7 +53,7 @@ header.site-header{height:104px;background:#f4f6fb;border-bottom:1px solid rgba(
 @media(min-width:701px) and (max-width:900px){.site-header .brand-official img{height:72px}}
 @media(max-width:700px){header.site-header{height:82px}.site-header .brand-clean svg{width:35px;height:49px}.site-header .brand-clean strong{font-size:25px}.site-header .brand-clean small{font-size:8px}.site-header nav{gap:0}.site-header nav>a:not(.nav-contact){padding:16px 0}.site-header nav>a:not(.nav-contact)::after{bottom:10px}.site-header .nav-contact{min-width:0;margin-left:0}.hero-story{height:152dvh}.hero-stage{height:100svh;min-height:640px}.hero-story .hero-top{top:20px;left:6%;right:6%}.hero-story .hero-top .eyebrow{min-height:32px;padding:6px 10px 6px 12px;font-size:8px;letter-spacing:.12em}.hero-story .hero-content{display:block}.hero-story .clinic-feature{clip-path:inset(var(--hero-photo-inset) var(--hero-photo-right) var(--hero-mobile-bottom) var(--hero-photo-left) round var(--hero-photo-radius))}.hero-story .clinic-feature-facade>img{object-position:55% center;filter:saturate(.9) contrast(1.06) brightness(.95)}.hero-story .clinic-feature-image::before{background:linear-gradient(180deg,rgba(9,22,66,.16),transparent 54%,rgba(241,243,248,.2))}.hero-story .hero-copy{top:auto;right:6%;bottom:92px;left:6%;width:auto;max-width:none;padding:0;transform:translate3d(var(--hero-copy-x),0,0)}.hero-story .hero-copy::before{width:32px;margin-bottom:16px}.hero-story .hero-copy h1{font-size:clamp(40px,11vw,52px);line-height:1.01;letter-spacing:-.067em}.hero-story .hero-copy p{max-width:350px;margin:17px 0 19px;font-size:14px;line-height:1.55}.hero-story .hero-copy .button{min-width:0;width:100%;max-width:350px;padding:16px 18px;font-size:13px}.hero-story .hero-bottom{right:6%;bottom:0;left:6%;height:64px;font-size:10px}.hero-story .hero-bottom::after{margin-left:22px}.hero-story .hero-bottom a{gap:18px}}
 @media(max-width:380px){.hero-story .hero-copy h1{font-size:39px}.hero-story .hero-copy p{font-size:13px;margin:14px 0 16px}.hero-story .hero-copy .button{padding:14px 16px}.hero-story .hero-top .eyebrow{font-size:7px}}
-@media(prefers-reduced-motion:reduce){.hero-story{height:auto}.hero-stage{position:relative;height:760px}.hero-story .clinic-feature-image{animation:none}.hero-story .clinic-feature,.hero-story .hero-copy,.hero-story .hero-top,.hero-story .hero-bottom{will-change:auto}.hero-story .clinic-feature-facade>img{transform:none;will-change:auto}}
+@media(prefers-reduced-motion:reduce){.hero-story{height:auto}.hero-stage{position:relative;height:760px}.hero-story .clinic-feature-image{animation:none}.hero-story .clinic-feature,.hero-story .hero-copy,.hero-story .hero-top,.hero-story .hero-bottom{will-change:auto}.hero-story .clinic-feature-facade>img{transform:none;will-change:auto}.hero-scroll-cue i{animation:none}}
 @media(max-width:700px) and (prefers-reduced-motion:reduce){.hero-stage{height:760px}}
 
 @media(max-width:700px){
@@ -73,6 +76,7 @@ header.site-header{height:104px;background:#f4f6fb;border-bottom:1px solid rgba(
   .hero-story .hero-copy p{max-width:360px;margin:20px 0 24px;font-size:15px;line-height:1.58;animation:hero-mobile-copy-in .76s cubic-bezier(.22,1,.36,1) .24s both}
   .hero-story .hero-copy .button{width:100%;max-width:none;min-height:56px;padding:16px 18px;font-size:13px;animation:hero-mobile-copy-in .76s cubic-bezier(.22,1,.36,1) .34s both}
   .hero-story .hero-bottom{position:relative;inset:auto;height:66px;padding:0 6%;opacity:1!important}
+  .hero-scroll-cue{top:calc(clamp(286px,80vw,352px) - 66px);bottom:auto;font-size:8px}
 }
 
 @keyframes hero-mobile-copy-in{from{opacity:0;transform:translate3d(0,22px,0)}to{opacity:1;transform:none}}
