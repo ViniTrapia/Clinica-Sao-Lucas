@@ -32,4 +32,16 @@ export const heroCampaigns: HeroCampaign[] = [
     href: 'https://api.whatsapp.com/send?phone=5587999156764',
     linkLabel: 'Agendar consulta',
   },
+  {
+    id: 'bruna-bastos-28-09',
+    professionalName: 'Dra. Bruna Bastos',
+    eyebrow: '28/09 · Segunda-feira',
+    headline: 'Dra. Bruna Bastos',
+    schedule: 'Ginecologista, obstetrícia e ultrassonografia.',
+    image: '/campaigns/bruna-bastos-cutout.webp',
+    imageAlt: 'Dra. Bruna Bastos',
+    visual: 'portrait-cutout',
+    href: 'https://api.whatsapp.com/send?phone=5587999156764',
+    linkLabel: 'Agendar consulta',
+  },
 ];

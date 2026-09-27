@@ -6,6 +6,7 @@
 body{overflow-x:clip;background:#f6f7fa}
 .section:not(.laboratory):not(.weekly-section){position:relative}
 .section-label{position:relative;align-items:center;min-height:32px;padding-bottom:17px;font-weight:600;letter-spacing:.15em}
+html{overflow-x:clip}
 .section-label::before{content:"";position:absolute;bottom:-1px;left:0;width:42px;height:2px;background:var(--orange);transform-origin:left}
 
 /* 01 — A clínica: composição calma, humana e assimétrica. */

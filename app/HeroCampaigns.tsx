@@ -16,7 +16,8 @@ export function HeroCampaigns(){
   useEffect(()=>{
     if(!heroCampaigns.length)return;
     const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
-    const entrance=window.setTimeout(()=>setEntered(true),reducedMotion.matches?0:3600);
+    const mobile=window.matchMedia('(max-width: 700px)').matches;
+    const entrance=window.setTimeout(()=>setEntered(true),reducedMotion.matches||mobile?0:900);
     return()=>window.clearTimeout(entrance);
   },[]);
 
@@ -26,20 +27,20 @@ export function HeroCampaigns(){
     if(reducedMotion.matches)return;
     const rotation=window.setInterval(()=>setActive(current=>(current+1)%heroCampaigns.length),campaignInterval);
     return()=>window.clearInterval(rotation);
-  },[paused]);
+  },[active,paused]);
 
   if(!heroCampaigns.length)return null;
 
   return <div className={`hero-campaigns${entered?' is-entered':''}`} aria-label="Destaques da Clínica São Lucas" onMouseEnter={()=>setPaused(true)} onMouseLeave={()=>setPaused(false)} onFocusCapture={()=>setPaused(true)} onBlurCapture={()=>setPaused(false)}>
     <div className="hero-campaign-track" aria-live="polite">
       {heroCampaigns.map((campaign,index)=><article className={`hero-campaign hero-campaign-${campaign.visual??'photo'}${index===active?' is-active':''}`} aria-hidden={index!==active} key={campaign.id}>
-        <img src={assetUrl(campaign.image)} alt={campaign.imageAlt} style={{objectPosition:campaign.imagePosition??'62% center'}} width="1100" height="1400"/>
+        <img src={assetUrl(campaign.image)} alt={campaign.imageAlt} style={{objectPosition:campaign.imagePosition??'62% center'}} width="1100" height="1400" loading={index===0?'eager':'lazy'} decoding="async"/>
         <div className="hero-campaign-shade" aria-hidden="true"/>
         <div className="hero-campaign-copy">
           <span>{campaign.eyebrow}</span>
           <h2>{campaign.headline}</h2>
           <p>{campaign.schedule}</p>
-          {campaign.href&&<a href={campaign.href}>{campaign.linkLabel??'Saiba mais'} <Icon name="arrow-up-right"/></a>}
+          {campaign.href&&<a href={campaign.href} target="_blank" rel="noopener noreferrer" tabIndex={index===active?0:-1}>{campaign.linkLabel??'Saiba mais'} <Icon name="arrow-up-right"/></a>}
         </div>
         <strong className="hero-campaign-name">{campaign.professionalName}</strong>
       </article>)}
