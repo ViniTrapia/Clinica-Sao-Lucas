@@ -76,7 +76,7 @@ header.site-header{height:104px;background:#f4f6fb;border-bottom:1px solid rgba(
   .hero-story .hero-copy p{max-width:360px;margin:20px 0 24px;font-size:15px;line-height:1.58;animation:hero-mobile-copy-in .76s cubic-bezier(.22,1,.36,1) .24s both}
   .hero-story .hero-copy .button{width:100%;max-width:none;min-height:56px;padding:16px 18px;font-size:13px;animation:hero-mobile-copy-in .76s cubic-bezier(.22,1,.36,1) .34s both}
   .hero-story .hero-bottom{position:relative;inset:auto;height:66px;padding:0 6%;opacity:1!important}
-  .hero-scroll-cue{top:calc(clamp(286px,80vw,352px) - 66px);bottom:auto;font-size:8px}
+  .hero-scroll-cue{display:none}
 }
 
 @keyframes hero-mobile-copy-in{from{opacity:0;transform:translate3d(0,22px,0)}to{opacity:1;transform:none}}

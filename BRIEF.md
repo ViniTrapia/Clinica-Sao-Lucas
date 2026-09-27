@@ -79,13 +79,13 @@ Apresentar os três dentistas da clínica com clareza, personalidade e dados ver
 ### Jornada
 
 1. A chamada “Precisão no cuidado. Confiança no sorriso.” estabelece a nova especialidade.
-2. A rolagem segue livre e revela os profissionais em uma sequência editorial contínua, sem prender a tela.
-3. No celular, os três perfis aparecem completos e contínuos, sem depender da animação para acessar as informações.
-4. Cada perfil termina com um caminho direto para o agendamento pelo WhatsApp.
+2. Os três profissionais aparecem juntos, lado a lado e padronizados da cintura para cima.
+3. O clique destaca um dentista e atualiza sua apresentação, especialidade e atendimentos no mesmo lugar.
+4. O painel selecionado termina com um caminho direto para o agendamento pelo WhatsApp.
 
 ### Movimento-assinatura
 
-“Equipe integrada”: cada profissional entra suavemente sobre o próprio fundo azul do site, sem moldura fotográfica nem troca forçada de cenas.
+“Equipe integrada”: os três profissionais formam uma composição única; o escolhido ganha presença enquanto sua apresentação se revela logo abaixo.
 
 ### Limites
 
