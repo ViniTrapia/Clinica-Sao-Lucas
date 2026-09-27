@@ -76,9 +76,9 @@ html{overflow-x:clip}
 .professional-photo{box-shadow:0 12px 32px rgba(25,44,98,.06)}
 .professional figcaption{border-color:#cfd6e4}
 
-/* 05 — Contato: fechamento claro e memorável. */
+/* 06 — Contato: fechamento claro e memorável. */
 .contact{padding-top:120px;padding-bottom:124px;background:#e8edf7;overflow:hidden}
-.contact::before{content:"05";position:absolute;right:3%;bottom:-.25em;font-family:'Manrope',sans-serif;font-size:clamp(190px,27vw,410px);font-weight:300;line-height:1;color:rgba(23,53,163,.045);letter-spacing:-.09em;pointer-events:none}
+.contact::before{content:"06";position:absolute;right:3%;bottom:-.25em;font-family:'Manrope',sans-serif;font-size:clamp(190px,27vw,410px);font-weight:300;line-height:1;color:rgba(23,53,163,.045);letter-spacing:-.09em;pointer-events:none}
 .contact .section-label,.contact-grid{position:relative;z-index:1}
 .contact-grid{grid-template-columns:minmax(0,1.15fr) minmax(330px,.7fr);gap:clamp(70px,12vw,190px);padding-top:82px;opacity:0;transform:translate3d(0,30px,0);transition:opacity .8s ease,transform 1s cubic-bezier(.22,1,.36,1)}
 .contact-grid.is-visible{opacity:1;transform:none}
