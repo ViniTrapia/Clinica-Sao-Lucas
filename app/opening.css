@@ -27,6 +27,7 @@ header.site-header{height:104px;background:#f4f6fb;border-bottom:1px solid rgba(
 .hero-story .hero-copy .button:hover{transform:translateY(-3px);background:#f6aa5d}
 .hero-story .clinic-feature{position:absolute;z-index:2;inset:0;margin:0;overflow:hidden;background:#132767;clip-path:inset(var(--hero-photo-inset) var(--hero-photo-right) calc(76px + var(--hero-photo-inset)) var(--hero-photo-left) round var(--hero-photo-radius));will-change:clip-path}
 .hero-story .clinic-feature-image{position:relative;width:100%;height:100%;animation:hero-image-reveal 1.15s cubic-bezier(.22,1,.36,1) both}
+.hero-story .clinic-feature-facade{position:absolute;inset:0}
 .hero-story .clinic-feature-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:52% center;filter:saturate(.88) contrast(1.08) brightness(.94);transform:scale(1.045);transform-origin:center center;will-change:transform}
 .hero-story .clinic-feature-image::before{content:'';position:absolute;z-index:1;inset:0;background:linear-gradient(100deg,rgba(9,22,66,.18),transparent 38%,rgba(9,22,66,.12));pointer-events:none}
 .hero-story .clinic-feature-image::after{content:'';position:absolute;z-index:1;inset:0;background:linear-gradient(180deg,rgba(13,29,81,.08),transparent 48%,rgba(8,19,56,.24));mix-blend-mode:multiply;pointer-events:none}

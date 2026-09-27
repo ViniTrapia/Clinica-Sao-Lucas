@@ -34,7 +34,10 @@ export function HeroCampaigns(){
   return <div className={`hero-campaigns${entered?' is-entered':''}`} aria-label="Destaques da Clínica São Lucas" onMouseEnter={()=>setPaused(true)} onMouseLeave={()=>setPaused(false)} onFocusCapture={()=>setPaused(true)} onBlurCapture={()=>setPaused(false)}>
     <div className="hero-campaign-track" aria-live="polite">
       {heroCampaigns.map((campaign,index)=><article className={`hero-campaign hero-campaign-${campaign.visual??'photo'}${index===active?' is-active':''}`} aria-hidden={index!==active} key={campaign.id}>
-        <img src={assetUrl(campaign.image)} alt={campaign.imageAlt} style={{objectPosition:campaign.imagePosition??'62% center'}} width="1100" height="1400" loading={index===0?'eager':'lazy'} decoding="async"/>
+        <picture>
+          {campaign.mobileImage&&<source media="(max-width: 700px)" srcSet={assetUrl(campaign.mobileImage)}/>}
+          <img src={assetUrl(campaign.image)} alt={campaign.imageAlt} style={{objectPosition:campaign.imagePosition??'62% center'}} width="900" height="1350" loading={index===0?'eager':'lazy'} fetchPriority={index===0?'high':'low'} decoding="async"/>
+        </picture>
         <div className="hero-campaign-shade" aria-hidden="true"/>
         <div className="hero-campaign-copy">
           <span>{campaign.eyebrow}</span>

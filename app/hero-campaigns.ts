@@ -5,6 +5,7 @@ export type HeroCampaign = {
   headline: string;
   schedule: string;
   image: string;
+  mobileImage?: string;
   imageAlt: string;
   imagePosition?: string;
   visual?: 'photo' | 'portrait-cutout';
@@ -27,6 +28,7 @@ export const heroCampaigns: HeroCampaign[] = [
     headline: 'Dr. Marcelo Amaral',
     schedule: 'Ortopedista e Traumatologista.',
     image: '/campaigns/marcelo-amaral-cutout.webp',
+    mobileImage: '/campaigns/marcelo-amaral-cutout-mobile.webp',
     imageAlt: 'Dr. Marcelo Amaral',
     visual: 'portrait-cutout',
     href: 'https://api.whatsapp.com/send?phone=5587999156764',
@@ -39,6 +41,7 @@ export const heroCampaigns: HeroCampaign[] = [
     headline: 'Dra. Bruna Bastos',
     schedule: 'Ginecologista, obstetrícia e ultrassonografia.',
     image: '/campaigns/bruna-bastos-cutout.webp',
+    mobileImage: '/campaigns/bruna-bastos-cutout-mobile.webp',
     imageAlt: 'Dra. Bruna Bastos',
     visual: 'portrait-cutout',
     href: 'https://api.whatsapp.com/send?phone=5587999156764',
