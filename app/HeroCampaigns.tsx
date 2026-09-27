@@ -37,7 +37,6 @@ export function HeroCampaigns(){
     const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
     const mobileQuery=window.matchMedia('(max-width: 700px)');
     let frame=0;
-    const smoothstep=(value:number)=>value*value*(3-2*value);
     const update=()=>{
       frame=0;
       if(reducedMotion.matches||mobileQuery.matches){
@@ -48,11 +47,12 @@ export function HeroCampaigns(){
       const box=hero.getBoundingClientRect();
       const distance=Math.max(hero.offsetHeight-window.innerHeight,1);
       const progress=Math.min(1,Math.max(0,-box.top/distance));
-      const returnProgress=smoothstep(Math.min(1,progress/.66));
-      const descentProgress=smoothstep(Math.min(1,Math.max(0,(progress-.66)/.34)));
+      const returnProgress=1-Math.pow(1-progress,3);
+      const descentRaw=Math.min(1,Math.max(0,(progress-.72)/.28));
+      const descentProgress=descentRaw*descentRaw*(3-2*descentRaw);
       const startX=-Math.min(window.innerWidth*.47,650);
       campaigns.style.setProperty('--campaign-copy-x',`${startX*(1-returnProgress)}px`);
-      campaigns.style.setProperty('--campaign-copy-y',`${36*descentProgress}px`);
+      campaigns.style.setProperty('--campaign-copy-y',`${20*descentProgress}px`);
     };
     const requestUpdate=()=>{if(!frame)frame=requestAnimationFrame(update)};
     update();
@@ -74,18 +74,20 @@ export function HeroCampaigns(){
   return <div ref={campaignsRef} className={`hero-campaigns${entered?' is-entered':''}`} aria-label="Destaques da Clínica São Lucas" onMouseEnter={()=>setPaused(true)} onMouseLeave={()=>setPaused(false)} onFocusCapture={()=>setPaused(true)} onBlurCapture={()=>setPaused(false)}>
     <div className="hero-campaign-track" aria-live="polite">
       {heroCampaigns.map((campaign,index)=><article className={`hero-campaign hero-campaign-${campaign.visual??'photo'}${index===active?' is-active':''}`} aria-hidden={index!==active} key={campaign.id}>
-        <picture>
-          {campaign.mobileImage&&<source media="(max-width: 700px)" srcSet={assetUrl(campaign.mobileImage)}/>}
-          <img src={assetUrl(campaign.image)} alt={campaign.imageAlt} style={{objectPosition:campaign.imagePosition??'62% center'}} width="900" height="1350" loading={index===0?'eager':'lazy'} fetchPriority={index===0?'high':'low'} decoding="async"/>
-        </picture>
-        <div className="hero-campaign-shade" aria-hidden="true"/>
+        <div className="hero-campaign-visual">
+          <picture>
+            {campaign.mobileImage&&<source media="(max-width: 700px)" srcSet={assetUrl(campaign.mobileImage)}/>}
+            <img src={assetUrl(campaign.image)} alt={campaign.imageAlt} style={{objectPosition:campaign.imagePosition??'62% center'}} width="900" height="1350" loading={index===0?'eager':'lazy'} fetchPriority={index===0?'high':'low'} decoding="async"/>
+          </picture>
+          <div className="hero-campaign-shade" aria-hidden="true"/>
+          <strong className="hero-campaign-name">{campaign.professionalName}</strong>
+        </div>
         <div className="hero-campaign-copy">
           <span>{campaign.eyebrow}</span>
           <h2>{campaign.headline}</h2>
           <p>{campaign.schedule}</p>
           {campaign.href&&<a href={campaign.href} target="_blank" rel="noopener noreferrer" tabIndex={index===active?0:-1}>{campaign.linkLabel??'Saiba mais'} <Icon name="arrow-up-right"/></a>}
         </div>
-        <strong className="hero-campaign-name">{campaign.professionalName}</strong>
       </article>)}
     </div>
     {heroCampaigns.length>1&&<div className="hero-campaign-nav" aria-label="Selecionar destaque">
