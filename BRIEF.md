@@ -79,17 +79,18 @@ Apresentar os três dentistas da clínica com clareza, personalidade e dados ver
 ### Jornada
 
 1. A chamada “Precisão no cuidado. Confiança no sorriso.” estabelece a nova especialidade.
-2. A rolagem revela um profissional por vez no desktop, mantendo retrato, nome, registro e serviços sincronizados.
-3. No celular, os três perfis aparecem em cartões completos e contínuos, sem depender da animação para acessar as informações.
+2. A rolagem segue livre e revela os profissionais em uma sequência editorial contínua, sem prender a tela.
+3. No celular, os três perfis aparecem completos e contínuos, sem depender da animação para acessar as informações.
 4. Cada perfil termina com um caminho direto para o agendamento pelo WhatsApp.
 
 ### Movimento-assinatura
 
-“Corredor clínico”: a cena permanece estável enquanto a rolagem troca o profissional com uma entrada curta e precisa, sem transparência entre retratos ou mistura de conteúdos.
+“Equipe integrada”: cada profissional entra suavemente sobre o próprio fundo azul do site, sem moldura fotográfica nem troca forçada de cenas.
 
 ### Limites
 
 - Preservar a aparência real dos profissionais e o enquadramento dos materiais recebidos.
+- Usar recortes transparentes, sem cortar cabeças e sem inventar partes do corpo.
 - Não inventar procedimentos nem informações profissionais.
 - Manter todo o conteúdo acessível com movimento reduzido e em telas pequenas.
 - Carregar as imagens sob demanda e usar arquivos WebP otimizados.
