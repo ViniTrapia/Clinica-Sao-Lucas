@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { assetUrl } from './asset-url';
 import { heroCampaigns } from './hero-campaigns';
 import { Icon } from './Icon';
@@ -9,6 +9,7 @@ import './hero-campaigns.css';
 const campaignInterval = 7000;
 
 export function HeroCampaigns(){
+  const campaignsRef=useRef<HTMLDivElement>(null);
   const [active,setActive]=useState(0);
   const [entered,setEntered]=useState(false);
   const [paused,setPaused]=useState(false);
@@ -29,9 +30,48 @@ export function HeroCampaigns(){
     return()=>window.clearInterval(rotation);
   },[active,paused]);
 
+  useEffect(()=>{
+    const campaigns=campaignsRef.current;
+    const hero=campaigns?.closest<HTMLElement>('.hero-story');
+    if(!campaigns||!hero)return;
+    const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+    const mobileQuery=window.matchMedia('(max-width: 700px)');
+    let frame=0;
+    const smoothstep=(value:number)=>value*value*(3-2*value);
+    const update=()=>{
+      frame=0;
+      if(reducedMotion.matches||mobileQuery.matches){
+        campaigns.style.setProperty('--campaign-copy-x','0px');
+        campaigns.style.setProperty('--campaign-copy-y','0px');
+        return;
+      }
+      const box=hero.getBoundingClientRect();
+      const distance=Math.max(hero.offsetHeight-window.innerHeight,1);
+      const progress=Math.min(1,Math.max(0,-box.top/distance));
+      const returnProgress=smoothstep(Math.min(1,progress/.66));
+      const descentProgress=smoothstep(Math.min(1,Math.max(0,(progress-.66)/.34)));
+      const startX=-Math.min(window.innerWidth*.47,650);
+      campaigns.style.setProperty('--campaign-copy-x',`${startX*(1-returnProgress)}px`);
+      campaigns.style.setProperty('--campaign-copy-y',`${36*descentProgress}px`);
+    };
+    const requestUpdate=()=>{if(!frame)frame=requestAnimationFrame(update)};
+    update();
+    window.addEventListener('scroll',requestUpdate,{passive:true});
+    window.addEventListener('resize',requestUpdate);
+    reducedMotion.addEventListener('change',requestUpdate);
+    mobileQuery.addEventListener('change',requestUpdate);
+    return()=>{
+      window.removeEventListener('scroll',requestUpdate);
+      window.removeEventListener('resize',requestUpdate);
+      reducedMotion.removeEventListener('change',requestUpdate);
+      mobileQuery.removeEventListener('change',requestUpdate);
+      if(frame)cancelAnimationFrame(frame);
+    };
+  },[]);
+
   if(!heroCampaigns.length)return null;
 
-  return <div className={`hero-campaigns${entered?' is-entered':''}`} aria-label="Destaques da Clínica São Lucas" onMouseEnter={()=>setPaused(true)} onMouseLeave={()=>setPaused(false)} onFocusCapture={()=>setPaused(true)} onBlurCapture={()=>setPaused(false)}>
+  return <div ref={campaignsRef} className={`hero-campaigns${entered?' is-entered':''}`} aria-label="Destaques da Clínica São Lucas" onMouseEnter={()=>setPaused(true)} onMouseLeave={()=>setPaused(false)} onFocusCapture={()=>setPaused(true)} onBlurCapture={()=>setPaused(false)}>
     <div className="hero-campaign-track" aria-live="polite">
       {heroCampaigns.map((campaign,index)=><article className={`hero-campaign hero-campaign-${campaign.visual??'photo'}${index===active?' is-active':''}`} aria-hidden={index!==active} key={campaign.id}>
         <picture>

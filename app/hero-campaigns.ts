@@ -17,8 +17,8 @@ export type HeroCampaign = {
  * Campanhas ativas do hero.
  *
  * Cada nova propaganda entra como um item desta lista. Para retirar uma
- * campanha pelo nome, basta remover o item correspondente. O hero mantém a
- * fachada original quando a lista está vazia.
+ * campanha pelo nome, basta remover o item correspondente. A fachada fica
+ * guardada e não é baixada enquanto existir uma campanha ativa.
  */
 export const heroCampaigns: HeroCampaign[] = [
   {
@@ -48,3 +48,9 @@ export const heroCampaigns: HeroCampaign[] = [
     linkLabel: 'Agendar consulta',
   },
 ];
+
+/**
+ * Só deve ser ativado depois de confirmar com o proprietário quando a última
+ * campanha for retirada. Mantê-lo falso evita baixar a fachada sem necessidade.
+ */
+export const clinicFacadeFallbackEnabled = false;
