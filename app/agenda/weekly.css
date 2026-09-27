@@ -24,11 +24,11 @@
 .weekly-day:hover{transform:translate3d(0,-2px,0);border-color:rgba(19,40,92,.18);box-shadow:0 18px 42px rgba(19,40,92,.07)}
 .weekly-date{position:relative;padding-left:16px}
 .weekly-date::before{content:"";position:absolute;top:3px;bottom:3px;left:0;width:2px;border-radius:2px;background:linear-gradient(180deg,var(--orange),rgba(240,155,72,.18))}
-.weekly-photo,.weekly-people>li:nth-child(3n+2) .weekly-photo,.weekly-people>li:nth-child(3n) .weekly-photo{position:relative;isolation:isolate;border:1px solid rgba(31,58,124,.1);border-radius:16px 16px 5px 5px;background:linear-gradient(145deg,#e8eef8 0%,#cfdaed 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.74);transition:border-color .4s ease,box-shadow .4s ease,transform .45s cubic-bezier(.22,1,.36,1)}
-.weekly-photo::before{content:"";position:absolute;z-index:-1;top:14%;left:50%;width:76%;aspect-ratio:1;border:1px solid rgba(31,58,124,.1);border-radius:50%;transform:translateX(-50%)}
+.weekly-photo,.weekly-people>li:nth-child(3n+2) .weekly-photo,.weekly-people>li:nth-child(3n) .weekly-photo{position:relative;isolation:isolate;border:1px solid rgba(255,255,255,.11);border-radius:16px 16px 5px 5px;background:radial-gradient(circle at 50% 34%,rgba(88,119,195,.52),transparent 58%),linear-gradient(145deg,#203d83 0%,#10245d 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.12);transition:border-color .4s ease,box-shadow .4s ease,transform .45s cubic-bezier(.22,1,.36,1)}
+.weekly-photo::before{content:"";position:absolute;z-index:-1;top:14%;left:50%;width:76%;aspect-ratio:1;border:1px solid rgba(255,255,255,.13);border-radius:50%;transform:translateX(-50%)}
 .weekly-person:hover .weekly-photo{transform:translate3d(0,-3px,0);border-color:rgba(31,58,124,.2);box-shadow:0 14px 24px rgba(19,40,92,.09),inset 0 1px 0 rgba(255,255,255,.82)}
-.weekly-photo img{position:relative;z-index:1;filter:saturate(.96) contrast(1.02)}
-.weekly-preview{background:linear-gradient(145deg,#e8eef8 0%,#cfdaed 100%)}
+.weekly-photo img{position:relative;z-index:1;filter:saturate(.98) contrast(1.03) drop-shadow(0 8px 12px rgba(4,12,42,.2))}
+.weekly-preview{background:radial-gradient(circle at 50% 34%,rgba(88,119,195,.52),transparent 58%),linear-gradient(145deg,#203d83 0%,#10245d 100%)}
 
 @media(max-width:700px){
   .weekly-caption{gap:16px;padding-top:10px}

@@ -46,7 +46,7 @@
   .hero-campaign-nav{right:18px;bottom:19px}
   .hero-campaign-nav button{width:27px}
   .hero-campaign-nav button.is-active{width:42px}
-  .hero-campaign-portrait-cutout .hero-campaign-visual>picture{right:-3%;bottom:-12%;width:72%;height:104%}
+  .hero-campaign-portrait-cutout .hero-campaign-visual>picture{right:0;bottom:0;width:70%;height:94%}
   .hero-campaign-portrait-cutout .hero-campaign-visual::before{right:-18%;top:8%;width:90%}
   .hero-campaign-portrait-cutout .hero-campaign-visual::after{right:-2%;top:21%;width:57%}
   .hero-campaign-portrait-cutout .hero-campaign-shade{background:linear-gradient(180deg,transparent 15%,rgba(5,15,52,.035) 100%)}
