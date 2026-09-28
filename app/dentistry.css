@@ -7,7 +7,8 @@
 .dentistry-heading h2 em{color:#9fb3ef}
 .dentistry-heading p{max-width:49ch;margin-top:20px;color:#c5cee4;font-size:15px;line-height:1.6}
 
-.dentistry-team{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:end;max-width:1120px;height:520px;margin:50px auto 0;border-bottom:1px solid rgba(255,255,255,.2)}
+.dentistry-team{--mouth-open:1;position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:end;max-width:1120px;height:520px;margin:50px auto 0;border-bottom:1px solid rgba(255,255,255,.2)}
+.dentistry-mouth{display:none}
 .dentistry-member{position:relative;display:grid;grid-template-rows:1fr auto;align-self:stretch;min-width:0;padding:0 5px 16px;border:0;background:transparent;color:#fff;cursor:pointer;isolation:isolate}
 .dentistry-member::before{content:"";position:absolute;right:8%;bottom:0;left:8%;height:45%;border-radius:50% 50% 0 0;background:radial-gradient(ellipse at bottom,rgba(65,95,181,.46),transparent 68%);opacity:0;transition:opacity .45s ease}
 .dentistry-member-portrait{position:relative;display:block;min-height:0;overflow:visible}
@@ -49,10 +50,16 @@
   .dentistry-heading h2{font-size:clamp(40px,11vw,52px)}
   .dentistry-heading p{font-size:14px}
   .dentistry-team{grid-template-rows:1fr 54px;align-items:stretch;height:430px;margin:36px 0 0;overflow:hidden;border:1px solid rgba(159,179,239,.22);border-radius:22px;background:radial-gradient(circle at 50% 32%,rgba(69,102,194,.34),transparent 48%),rgba(10,29,82,.72);box-shadow:0 24px 54px rgba(2,12,48,.2)}
+  .dentistry-mouth{position:absolute;z-index:8;inset:0 0 54px;display:block;overflow:hidden;border-radius:21px 21px 0 0;pointer-events:none}
+  .dentistry-mouth::before{content:"";position:absolute;inset:0;background:#2b1023;opacity:calc(1 - var(--mouth-open));transition:opacity .08s linear}
+  .dentistry-mouth svg{position:relative;display:block;width:100%;height:100%;filter:drop-shadow(0 12px 20px rgba(1,7,28,.3))}
+  .dentistry-jaw{transform-box:fill-box;transform-origin:center;will-change:transform}
+  .dentistry-jaw--top{transform:translateY(calc(var(--mouth-open) * -102%))}
+  .dentistry-jaw--bottom{transform:translateY(calc(var(--mouth-open) * 102%))}
   .dentistry-member{position:static;grid-row:2;display:block;align-self:stretch;min-height:54px;padding:0;border-top:1px solid rgba(255,255,255,.14);background:rgba(5,18,60,.52);isolation:auto}
-  .dentistry-member:nth-child(1){grid-column:1}
-  .dentistry-member:nth-child(2){grid-column:2;border-right:1px solid rgba(255,255,255,.1);border-left:1px solid rgba(255,255,255,.1)}
-  .dentistry-member:nth-child(3){grid-column:3}
+  .dentistry-member--luiz-eneas{grid-column:1}
+  .dentistry-member--isadora-carvalho{grid-column:2;border-right:1px solid rgba(255,255,255,.1);border-left:1px solid rgba(255,255,255,.1)}
+  .dentistry-member--vinicius-belfort{grid-column:3}
   .dentistry-member::before{display:none}
   .dentistry-member-portrait{position:absolute;inset:0 0 54px;display:block;overflow:hidden;visibility:hidden;opacity:0;transition:opacity .38s ease,visibility 0s linear .38s}
   .dentistry-member.is-active .dentistry-member-portrait{visibility:visible;opacity:1;transition-delay:0s}
@@ -76,4 +83,4 @@
 }
 
 @media(max-width:380px){.dentistry-team{height:410px}.dentistry-member-name{font-size:7px}.dentistry-detail-primary h3{font-size:41px}}
-@media(prefers-reduced-motion:reduce){.dentistry-member-portrait img,.dentistry-member::before,.dentistry-member-name{transition:none}.dentistry-detail{animation:none}}
+@media(prefers-reduced-motion:reduce){.dentistry-member-portrait img,.dentistry-member::before,.dentistry-member-name,.dentistry-mouth{transition:none}.dentistry-detail{animation:none}}

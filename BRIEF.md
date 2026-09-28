@@ -85,10 +85,11 @@ Apresentar os três dentistas da clínica com clareza, personalidade e dados ver
 5. A seleção usa nomes e destaque visual, sem números que sugiram hierarquia entre os profissionais.
 6. Os três dentistas também aparecem na grade geral da equipe da clínica.
 7. No celular, o quadro mostra apenas o retrato selecionado; uma barra integrada com os três nomes troca a apresentação sem sobrepor pessoas.
+8. Ao entrar no quadro no celular, duas arcadas de dentes alinhados se abrem com a rolagem e revelam o profissional, sem prender o avanço da página.
 
 ### Movimento-assinatura
 
-“Equipe integrada”: os três profissionais formam uma composição única; o escolhido ganha presença enquanto sua apresentação se revela logo abaixo.
+“Sorriso que revela o cuidado”: no celular, uma boca gráfica se abre no ritmo da rolagem e revela o profissional selecionado; em seguida, a barra mantém a troca entre os três dentistas simples e direta.
 
 ### Limites
 

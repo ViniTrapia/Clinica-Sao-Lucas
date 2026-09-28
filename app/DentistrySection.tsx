@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { assetUrl } from './asset-url';
 import { Icon } from './Icon';
 import './dentistry.css';
@@ -46,7 +46,40 @@ const dentists = [
 
 export function DentistrySection(){
   const [active,setActive]=useState(0);
+  const teamRef=useRef<HTMLDivElement>(null);
   const dentist=dentists[active];
+
+  useEffect(()=>{
+    const team=teamRef.current;
+    if(!team)return;
+    const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+    let frame=0;
+
+    const update=()=>{
+      frame=0;
+      if(reducedMotion.matches){
+        team.style.setProperty('--mouth-open','1');
+        return;
+      }
+      const rect=team.getBoundingClientRect();
+      const start=window.innerHeight*.92;
+      const end=window.innerHeight*.4;
+      const progress=Math.min(1,Math.max(0,(start-rect.top)/(start-end)));
+      team.style.setProperty('--mouth-open',progress.toFixed(3));
+    };
+    const requestUpdate=()=>{if(!frame)frame=window.requestAnimationFrame(update)};
+
+    update();
+    window.addEventListener('scroll',requestUpdate,{passive:true});
+    window.addEventListener('resize',requestUpdate);
+    reducedMotion.addEventListener('change',requestUpdate);
+    return()=>{
+      window.removeEventListener('scroll',requestUpdate);
+      window.removeEventListener('resize',requestUpdate);
+      reducedMotion.removeEventListener('change',requestUpdate);
+      if(frame)window.cancelAnimationFrame(frame);
+    };
+  },[]);
 
   return <section className="dentistry" id="odontologia" aria-labelledby="dentistry-title">
     <header className="dentistry-heading">
@@ -55,7 +88,33 @@ export function DentistrySection(){
       <p>Conheça nossos cirurgiões-dentistas. Selecione um profissional para ver sua apresentação, especialidade e atendimentos.</p>
     </header>
 
-    <div className="dentistry-team" role="tablist" aria-label="Equipe de odontologia">
+    <div className="dentistry-team" role="tablist" aria-label="Equipe de odontologia" ref={teamRef}>
+      <span className="dentistry-mouth" aria-hidden="true">
+        <svg viewBox="0 0 360 320" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="dentistry-gum-top" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stopColor="#d98286"/>
+              <stop offset="1" stopColor="#efb2ad"/>
+            </linearGradient>
+            <linearGradient id="dentistry-gum-bottom" x1="0" y1="1" x2="0" y2="0">
+              <stop offset="0" stopColor="#d98286"/>
+              <stop offset="1" stopColor="#efb2ad"/>
+            </linearGradient>
+            <linearGradient id="dentistry-tooth" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stopColor="#fff"/>
+              <stop offset="1" stopColor="#e9eef3"/>
+            </linearGradient>
+          </defs>
+          <g className="dentistry-jaw dentistry-jaw--top">
+            <path d="M0 0H360V108C304 88 247 78 180 78S56 88 0 108Z" fill="url(#dentistry-gum-top)"/>
+            {Array.from({length:9},(_,index)=><rect key={`top-${index}`} x={9+index*39} y="82" width="36" height="73" rx="8" fill="url(#dentistry-tooth)" stroke="#d8dee5" strokeWidth="1"/>)}
+          </g>
+          <g className="dentistry-jaw dentistry-jaw--bottom">
+            <path d="M0 212C56 232 113 242 180 242s124-10 180-30v108H0Z" fill="url(#dentistry-gum-bottom)"/>
+            {Array.from({length:9},(_,index)=><rect key={`bottom-${index}`} x={9+index*39} y="165" width="36" height="73" rx="8" fill="url(#dentistry-tooth)" stroke="#d8dee5" strokeWidth="1"/>)}
+          </g>
+        </svg>
+      </span>
       {dentists.map((item,index)=><button
         type="button"
         role="tab"
