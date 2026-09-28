@@ -7,11 +7,12 @@ import { Icon } from './Icon';
 import './clinic-gallery.css';
 
 const galleryImages = [
-  { src: '/clinic-gallery/reception.webp', alt: 'Ambiente de recepção da Clínica São Lucas', title: 'Recepção', description: 'Um olhar para a recepção da Clínica São Lucas.' },
-  { src: '/clinic-gallery/pediatric-space.webp', alt: 'Espaço infantil da Clínica São Lucas', title: 'Espaço infantil', description: 'Detalhes do espaço infantil da clínica.' },
-  { src: '/clinic-gallery/consulting-room.webp', alt: 'Consultório da Clínica São Lucas', title: 'Consultório', description: 'Um dos consultórios que compõem os espaços da clínica.' },
-  { src: '/clinic-gallery/corridor.webp', alt: 'Circulação interna da Clínica São Lucas', title: 'Circulação interna', description: 'O corredor que conecta os ambientes internos.' },
-  { src: '/clinic-gallery/care-room.webp', alt: 'Sala de atendimento da Clínica São Lucas', title: 'Sala de atendimento', description: 'Um dos ambientes destinados aos atendimentos.' },
+  { src: '/clinic-gallery/physiotherapy-room.webp', alt: 'Sala de fisioterapia da Clínica São Lucas', title: 'Sala de fisioterapia', description: 'Conheça o ambiente destinado aos atendimentos de fisioterapia.', position: '50% center' },
+  { src: '/clinic-gallery/endoscopy-room.webp', alt: 'Sala de endoscopia da Clínica São Lucas', title: 'Sala de endoscopia', description: 'Conheça o ambiente destinado aos exames de endoscopia.', position: '54% center' },
+  { src: '/clinic-gallery/dermatology-room.webp', alt: 'Sala de dermatologia da Clínica São Lucas', title: 'Sala de dermatologia', description: 'Conheça o consultório dedicado aos atendimentos de dermatologia.', position: '58% center' },
+  { src: '/clinic-gallery/pediatrics-room.webp', alt: 'Sala de pediatria da Clínica São Lucas', title: 'Sala de pediatria', description: 'Conheça o espaço preparado para os atendimentos de pediatria.', position: '48% center' },
+  { src: '/clinic-gallery/endocrinology-room.webp', alt: 'Sala de endocrinologia da Clínica São Lucas', title: 'Sala de endocrinologia', description: 'Conheça o consultório destinado aos atendimentos de endocrinologia.', position: '58% center' },
+  { src: '/clinic-gallery/swimming-class.webp', alt: 'Piscina utilizada nas aulas de natação da Clínica São Lucas', title: 'Aula de natação', description: 'Conheça o espaço da clínica utilizado para as aulas de natação.', position: '52% center' },
 ];
 
 export function ClinicGallery({ imageRef }: { imageRef: RefObject<HTMLImageElement | null> }) {
@@ -102,7 +103,7 @@ export function ClinicGallery({ imageRef }: { imageRef: RefObject<HTMLImageEleme
         </div>
         <div ref={galleryRef} className="clinic-panel-gallery" aria-label="Galeria dos espaços da Clínica São Lucas">
           {galleryImages.map((item, index) => <figure key={item.src} style={{ '--gallery-order': index } as CSSProperties}>
-            <img src={assetUrl(item.src)} alt={item.alt} width="1600" height="1067" loading="lazy" decoding="async"/>
+            <img src={assetUrl(item.src)} alt={item.alt} width="1600" height="900" loading="lazy" decoding="async" style={{ '--gallery-position': item.position } as CSSProperties}/>
             <figcaption><span>{String(index + 2).padStart(2, '0')} / ESPAÇOS</span><h3>{item.title}</h3><p>{item.description}</p></figcaption>
           </figure>)}
         </div>
