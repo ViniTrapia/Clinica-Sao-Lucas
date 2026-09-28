@@ -98,7 +98,7 @@ export function ClinicGallery({ imageRef }: { imageRef: RefObject<HTMLImageEleme
           </div>
         </header>
         <div className="clinic-panel-feature">
-          <video src={assetUrl('/clinic-gallery/clinic-tour.mp4')} poster={assetUrl('/clinic-gallery/consulting-room.webp')} muted autoPlay loop playsInline controls preload="metadata" aria-label="Vídeo dos espaços internos da Clínica São Lucas"/>
+          <video src={assetUrl('/clinic-gallery/clinic-tour.mp4')} poster={assetUrl('/clinic-gallery/clinic-tour-poster.webp')} muted autoPlay loop playsInline controls preload="none" aria-label="Vídeo dos espaços internos da Clínica São Lucas"/>
           <span><b>01</b> Um olhar sobre nossos espaços</span>
         </div>
         <div ref={galleryRef} className="clinic-panel-gallery" aria-label="Galeria dos espaços da Clínica São Lucas">
