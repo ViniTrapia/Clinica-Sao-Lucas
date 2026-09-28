@@ -116,3 +116,28 @@ header.site-header{height:104px;background:#f4f6fb;border-bottom:1px solid rgba(
   .hero-story .hero-copy{padding:40px 20px}
   .hero-story .hero-copy h1{font-size:37px}
 }
+
+/* O cabeçalho móvel mantém todos os destinos visíveis, sem menu oculto. */
+@media(max-width:700px){
+  header.site-header{height:auto;min-height:148px;display:grid;grid-template-columns:1fr;padding:7px 14px 11px;gap:4px}
+  .site-header .brand-official{justify-self:center}
+  .site-header .brand-official img{height:57px}
+  .site-header nav{position:static;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;padding:0;border:0;background:transparent;gap:3px 5px;font-size:10px}
+  .site-header nav>a,.site-header nav>a:not(.nav-contact){min-width:0;min-height:30px;padding:6px 3px;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.15;border:1px solid rgba(23,40,95,.1);border-radius:3px;background:#f8f9fc}
+  .site-header nav>a:not(.nav-contact)::after{display:none}
+  .site-header .nav-contact{min-width:0;min-height:30px;margin:0;padding:6px 4px!important;border-color:#17285f;background:#17285f;box-shadow:none;font-size:10px}
+  .site-header .nav-contact span{display:none}
+}
+
+/* Tablets usam uma abertura estável para impedir cortes durante a rolagem. */
+@media(min-width:701px) and (max-width:1024px){
+  .hero-story{height:auto;min-height:0;overflow:hidden!important;--hero-copy-opacity:1;--hero-copy-x:0px;--hero-meta-opacity:1}
+  .hero-story .hero-stage{position:relative;top:auto;height:auto;min-height:0;overflow:hidden}
+  .hero-story .hero-content{position:relative;inset:auto;display:flex;flex-direction:column;min-height:0}
+  .hero-story .clinic-feature{position:relative;inset:auto;order:1;width:100%;height:clamp(500px,68vw,650px);margin:0;clip-path:none!important;border-radius:0}
+  .hero-story .hero-copy{position:relative;z-index:3;inset:auto;order:2;width:100%;max-width:none;padding:64px 7% 70px;opacity:1!important;transform:none!important;background:#f2f4f9;will-change:auto}
+  .hero-story .hero-copy h1{font-size:clamp(52px,7vw,70px)}
+  .hero-story .hero-copy p{max-width:430px;font-size:16px}
+  .hero-story .hero-bottom{position:relative;inset:auto;height:70px;opacity:1!important}
+  .hero-scroll-cue{display:none}
+}
