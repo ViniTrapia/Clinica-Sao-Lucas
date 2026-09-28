@@ -49,13 +49,18 @@
   .dentistry-heading{width:auto;padding:0 8px}
   .dentistry-heading h2{font-size:clamp(40px,11vw,52px)}
   .dentistry-heading p{font-size:14px}
-  .dentistry-team{height:300px;margin-top:38px}
+  .dentistry-team{height:360px;margin:42px -16px 0}
   .dentistry-member{padding-inline:0;padding-bottom:12px}
-  .dentistry-member-portrait img{transform:scale(.9)}
-  .dentistry-member--luiz-eneas .dentistry-member-portrait img{height:89%}
-  .dentistry-member--isadora-carvalho .dentistry-member-portrait img{height:91%}
-  .dentistry-member--vinicius-belfort .dentistry-member-portrait img{height:104%;transform:translateY(19%) scale(.9)}
-  .dentistry-member--vinicius-belfort.is-active .dentistry-member-portrait img{transform:translateY(19%) scale(1)}
+  .dentistry-member-portrait{display:block;overflow:visible}
+  .dentistry-member-portrait img{position:absolute;bottom:0;left:50%;width:auto;height:clamp(240px,72vw,290px);max-width:none;transform:translateX(-50%) scale(.96)}
+  .dentistry-member:first-child .dentistry-member-portrait img{left:0;transform:scale(.96)}
+  .dentistry-member:last-child .dentistry-member-portrait img{right:0;left:auto}
+  .dentistry-member--luiz-eneas .dentistry-member-portrait img,
+  .dentistry-member--isadora-carvalho .dentistry-member-portrait img{height:clamp(240px,72vw,290px)}
+  .dentistry-member--vinicius-belfort .dentistry-member-portrait img{height:clamp(292px,88vw,350px);clip-path:inset(0 0 25% 0);transform:translateY(25%) scale(.96)}
+  .dentistry-member.is-active .dentistry-member-portrait img{transform:translateX(-50%) scale(1.08)}
+  .dentistry-member:first-child.is-active .dentistry-member-portrait img{transform:scale(1.08)}
+  .dentistry-member--vinicius-belfort.is-active .dentistry-member-portrait img{transform:translateY(25%) scale(1.08)}
   .dentistry-member-name{padding:10px 2px 0;font-size:8px;letter-spacing:0}
   .dentistry-detail{display:block;margin:0;padding:36px 8px 0}
   .dentistry-detail-primary h3{font-size:45px}
@@ -67,5 +72,5 @@
   .dentistry-detail-services>a{width:100%}
 }
 
-@media(max-width:380px){.dentistry-team{height:270px}.dentistry-member-name{font-size:7px}.dentistry-detail-primary h3{font-size:41px}}
+@media(max-width:380px){.dentistry-team{height:330px}.dentistry-member-name{font-size:7px}.dentistry-detail-primary h3{font-size:41px}}
 @media(prefers-reduced-motion:reduce){.dentistry-member-portrait img,.dentistry-member::before,.dentistry-member-name{transition:none}.dentistry-detail{animation:none}}
