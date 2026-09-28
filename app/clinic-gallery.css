@@ -25,7 +25,7 @@
 .clinic-panel-header h2 em{color:#9db3ef}
 .clinic-panel-feature{position:relative;margin:0 -5.8vw;background:#101e58;overflow:hidden}
 .clinic-panel-feature::before{content:"";position:absolute;z-index:2;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--orange),#f8c488 36%,transparent 78%);pointer-events:none}
-.clinic-panel-feature video{display:block;width:100%;height:min(76vh,820px);object-fit:cover;background:#101e58}
+.clinic-panel-feature video{display:block;width:100%;height:auto;max-height:820px;aspect-ratio:16/9;object-fit:contain;background:#101e58}
 .clinic-panel-feature::after{content:"";position:absolute;inset:auto 0 0;height:30%;background:linear-gradient(180deg,transparent,rgba(6,18,58,.64));pointer-events:none}
 .clinic-panel-feature>span{position:absolute;z-index:1;left:5.5vw;bottom:38px;display:flex;align-items:center;gap:16px;color:#fff;font-size:14px}
 .clinic-panel-feature>span b{color:var(--orange);font-size:10px;letter-spacing:.14em}
@@ -66,7 +66,7 @@
   .clinic-panel-header>span{display:block;padding:0 0 30px;font-size:9px}
   .clinic-panel-header h2{font-size:clamp(46px,14vw,62px);line-height:.98}
   .clinic-panel-feature{margin:0 -18px}
-  .clinic-panel-feature video{height:58vh;min-height:380px}
+  .clinic-panel-feature video{height:auto;min-height:0;max-height:none}
   .clinic-panel-feature>span{left:20px;bottom:22px;max-width:75%;font-size:12px}
   .clinic-panel-gallery{gap:12px;margin:0 -18px;padding:12px;background:#08143f}
   .clinic-panel-gallery figure{height:auto;clip-path:inset(3% 8px round 14px);border:1px solid rgba(255,255,255,.1);border-radius:14px;background:#10245d}
