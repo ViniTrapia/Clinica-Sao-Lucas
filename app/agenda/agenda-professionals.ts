@@ -148,5 +148,26 @@ export const agendaProfessionals: Professional[] = [
     "area": "Musicoterapeuta",
     "photo": "/profissionais/agenda/samuel-caetano.webp",
     "bio": "A música como caminho de expressão, vínculo e cuidado terapêutico."
+  },
+  {
+    "id": "luiz-eneas",
+    "name": "Dr. Luiz Enéas",
+    "area": "Cirurgião-dentista · Especialista em Implantodontia",
+    "photo": "/dentistry/luiz-eneas.webp",
+    "bio": "Especialista em Implantodontia, com atendimento voltado à reabilitação oral por meio de implantes, próteses e procedimentos estéticos."
+  },
+  {
+    "id": "isadora-carvalho",
+    "name": "Dra. Isadora Carvalho",
+    "area": "Especialista em Endodontia",
+    "photo": "/dentistry/isadora-carvalho.webp",
+    "bio": "Atendimento especializado em Endodontia, área dedicada ao diagnóstico e tratamento da parte interna dos dentes e à preservação do sorriso."
+  },
+  {
+    "id": "vinicius-belfort",
+    "name": "Dr. Vinícius Belfort",
+    "area": "Cirurgião-dentista · Clínico geral",
+    "photo": "/dentistry/vinicius-belfort.webp",
+    "bio": "Clínico geral com atendimento em prevenção e estética dental, reunindo limpeza, clareamento e restaurações em um cuidado próximo."
   }
 ];

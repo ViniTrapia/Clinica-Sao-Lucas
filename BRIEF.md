@@ -82,6 +82,8 @@ Apresentar os três dentistas da clínica com clareza, personalidade e dados ver
 2. Os três profissionais aparecem juntos, lado a lado e padronizados da cintura para cima.
 3. O clique destaca um dentista e atualiza sua apresentação, especialidade e atendimentos no mesmo lugar.
 4. O painel selecionado termina com um caminho direto para o agendamento pelo WhatsApp.
+5. A seleção usa nomes e destaque visual, sem números que sugiram hierarquia entre os profissionais.
+6. Os três dentistas também aparecem na grade geral da equipe da clínica.
 
 ### Movimento-assinatura
 

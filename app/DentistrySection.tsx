@@ -50,9 +50,9 @@ export function DentistrySection(){
 
   return <section className="dentistry" id="odontologia" aria-labelledby="dentistry-title">
     <header className="dentistry-heading">
-      <span>03 / ODONTOLOGIA</span>
-      <h2 id="dentistry-title">Precisão no cuidado.<br/><em>Confiança no sorriso.</em></h2>
-      <p>Conheça a equipe de odontologia da Clínica São Lucas. Selecione um profissional para ver sua apresentação.</p>
+      <span>ODONTOLOGIA · CLÍNICA SÃO LUCAS</span>
+      <h2 id="dentistry-title">Equipe de odontologia.<br/><em>Confiança em cada sorriso.</em></h2>
+      <p>Conheça nossos cirurgiões-dentistas. Selecione um profissional para ver sua apresentação, especialidade e atendimentos.</p>
     </header>
 
     <div className="dentistry-team" role="tablist" aria-label="Equipe de odontologia">
@@ -65,7 +65,6 @@ export function DentistrySection(){
         onClick={()=>setActive(index)}
         key={item.id}
       >
-        <span className="dentistry-member-number" aria-hidden="true">0{index+1}</span>
         <span className="dentistry-member-portrait">
           <img src={assetUrl(item.image)} alt="" width={item.width} height={item.height} loading="lazy" decoding="async"/>
         </span>
