@@ -21,11 +21,11 @@ Sofisticada, moderna, humana e fluida.
 
 ## 5. Curva de energia e pico
 
-A abertura começa com a campanha em evidência, cresce quando o texto atravessa a composição e se resolve junto ao retrato. O pico é a passagem controlada pela rolagem em que a informação encontra sua posição final e desce suavemente.
+A abertura começa com a campanha em evidência e o retrato em escala ampla. Durante a rolagem, a pessoa se acomoda no quadro final enquanto o texto atravessa a composição, encontra sua posição editorial e desce suavemente.
 
 ## 6. Movimento-assinatura
 
-“Informação que encontra o cuidado”: o retrato permanece estável à direita enquanto os dados da campanha atravessam a cena e se acomodam ao lado do profissional.
+“Informação que encontra o cuidado”: o retrato começa em primeiro plano à direita e reduz suavemente até caber no quadro editorial enquanto os dados da campanha atravessam a cena e se acomodam ao lado do profissional.
 
 ## 7. Materiais existentes
 
