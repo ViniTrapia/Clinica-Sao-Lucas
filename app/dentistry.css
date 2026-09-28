@@ -11,7 +11,7 @@
 .dentistry-member{position:relative;display:grid;grid-template-rows:1fr auto;align-self:stretch;min-width:0;padding:0 5px 16px;border:0;background:transparent;color:#fff;cursor:pointer;isolation:isolate}
 .dentistry-member::before{content:"";position:absolute;right:8%;bottom:0;left:8%;height:45%;border-radius:50% 50% 0 0;background:radial-gradient(ellipse at bottom,rgba(65,95,181,.46),transparent 68%);opacity:0;transition:opacity .45s ease}
 .dentistry-member-portrait{position:relative;display:flex;align-items:flex-end;justify-content:center;min-height:0;overflow:hidden}
-.dentistry-member-portrait img{display:block;width:100%;height:100%;object-fit:contain;object-position:center bottom;filter:saturate(.82) brightness(.72);opacity:.72;transform:scale(.87);transform-origin:center bottom;transition:transform .65s cubic-bezier(.22,1,.36,1),filter .45s ease,opacity .45s ease}
+.dentistry-member-portrait img{display:block;width:100%;height:100%;object-fit:contain;object-position:center bottom;filter:saturate(.82) brightness(.72);opacity:.72;pointer-events:none;transform:scale(.87);transform-origin:center bottom;transition:transform .65s cubic-bezier(.22,1,.36,1),filter .45s ease,opacity .45s ease}
 .dentistry-member--luiz-eneas .dentistry-member-portrait img{height:95%}
 .dentistry-member--isadora-carvalho .dentistry-member-portrait img{height:96%}
 .dentistry-member--vinicius-belfort .dentistry-member-portrait img{height:108%;transform:translateY(25%) scale(.87)}
@@ -57,7 +57,7 @@
   .dentistry-member:last-child .dentistry-member-portrait img{right:0;left:auto}
   .dentistry-member--luiz-eneas .dentistry-member-portrait img,
   .dentistry-member--isadora-carvalho .dentistry-member-portrait img{height:clamp(240px,72vw,290px)}
-  .dentistry-member--vinicius-belfort .dentistry-member-portrait img{height:clamp(292px,88vw,350px);clip-path:inset(0 0 25% 0);transform:translateY(25%) scale(.96)}
+  .dentistry-member--vinicius-belfort .dentistry-member-portrait img{height:clamp(333px,96vw,387px);clip-path:inset(0 0 25% 0);transform:translateY(25%) scale(.96)}
   .dentistry-member.is-active .dentistry-member-portrait img{transform:translateX(-50%) scale(1.08)}
   .dentistry-member:first-child.is-active .dentistry-member-portrait img{transform:scale(1.08)}
   .dentistry-member--vinicius-belfort.is-active .dentistry-member-portrait img{transform:translateY(25%) scale(1.08)}
