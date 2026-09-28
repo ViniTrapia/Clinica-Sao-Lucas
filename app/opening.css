@@ -119,13 +119,13 @@ header.site-header{height:104px;background:#f4f6fb;border-bottom:1px solid rgba(
 
 /* O cabeçalho móvel mantém todos os destinos visíveis, sem menu oculto. */
 @media(max-width:700px){
-  header.site-header{height:auto;min-height:148px;display:grid;grid-template-columns:1fr;padding:7px 14px 11px;gap:4px}
+  header.site-header{height:auto;min-height:112px;display:grid;grid-template-columns:1fr;padding:7px 10px 10px;gap:3px}
   .site-header .brand-official{justify-self:center}
   .site-header .brand-official img{height:57px}
-  .site-header nav{position:static;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;padding:0;border:0;background:transparent;gap:3px 5px;font-size:10px}
-  .site-header nav>a,.site-header nav>a:not(.nav-contact){min-width:0;min-height:30px;padding:6px 3px;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.15;border:1px solid rgba(23,40,95,.1);border-radius:3px;background:#f8f9fc}
+  .site-header nav{position:static;display:grid;grid-template-columns:repeat(6,minmax(0,auto));justify-content:stretch;width:100%;padding:0;border:0;background:transparent;gap:2px;font-size:clamp(7px,2.05vw,9px)}
+  .site-header nav>a,.site-header nav>a:not(.nav-contact){min-width:0;min-height:31px;padding:6px 2px;display:flex;align-items:center;justify-content:center;text-align:center;white-space:nowrap;line-height:1;border:1px solid rgba(23,40,95,.1);border-radius:3px;background:#f8f9fc}
   .site-header nav>a:not(.nav-contact)::after{display:none}
-  .site-header .nav-contact{min-width:0;min-height:30px;margin:0;padding:6px 4px!important;border-color:#17285f;background:#17285f;box-shadow:none;font-size:10px}
+  .site-header .nav-contact{min-width:0;min-height:31px;margin:0;padding:6px 2px!important;border-color:#17285f;background:#17285f;box-shadow:none;font-size:inherit}
   .site-header .nav-contact span{display:none}
 }
 

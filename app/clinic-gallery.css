@@ -68,13 +68,14 @@
   .clinic-panel-feature{margin:0 -18px}
   .clinic-panel-feature video{height:58vh;min-height:380px}
   .clinic-panel-feature>span{left:20px;bottom:22px;max-width:75%;font-size:12px}
-  .clinic-panel-gallery{margin:0 -18px}
-  .clinic-panel-gallery figure{height:clamp(430px,120vw,590px);clip-path:inset(5% 14px round 14px)}
-  .clinic-panel-gallery figure.is-in-view{clip-path:inset(0)}
-  .clinic-panel-gallery figure::after,.clinic-panel-gallery figure:nth-child(even)::after{background:linear-gradient(180deg,transparent 28%,rgba(4,13,44,.84) 100%)}
-  .clinic-panel-gallery figcaption,.clinic-panel-gallery figure:nth-child(even) figcaption{right:22px;bottom:35px;left:22px;width:auto;text-align:left}
-  .clinic-panel-gallery figcaption h3{margin:11px 0 9px;font-size:clamp(39px,12vw,54px)}
-  .clinic-panel-gallery figcaption p,.clinic-panel-gallery figure:nth-child(even) figcaption p{max-width:300px;margin-left:0;font-size:13px}
+  .clinic-panel-gallery{gap:12px;margin:0 -18px;padding:12px;background:#08143f}
+  .clinic-panel-gallery figure{height:auto;clip-path:inset(3% 8px round 14px);border:1px solid rgba(255,255,255,.1);border-radius:14px;background:#10245d}
+  .clinic-panel-gallery figure.is-in-view{clip-path:inset(0 round 14px)}
+  .clinic-panel-gallery figure::after,.clinic-panel-gallery figure:nth-child(even)::after{display:none}
+  .clinic-panel-gallery img{position:relative;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;object-position:center!important;filter:saturate(.94) contrast(1.03);transform:none!important;background:#0b1a4d}
+  .clinic-panel-gallery figcaption,.clinic-panel-gallery figure:nth-child(even) figcaption{position:relative;right:auto;bottom:auto;left:auto;width:auto;min-height:150px;padding:22px 20px 24px;text-align:left;background:linear-gradient(135deg,#10245d,#0b194b)}
+  .clinic-panel-gallery figcaption h3{margin:10px 0 8px;font-size:clamp(32px,9.5vw,42px)}
+  .clinic-panel-gallery figcaption p,.clinic-panel-gallery figure:nth-child(even) figcaption p{max-width:320px;margin-left:0;font-size:13px}
   .clinic-panel-footer{margin:0 -18px;padding:42px 20px}
 }
 
