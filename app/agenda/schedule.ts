@@ -1,23 +1,27 @@
-export type Professional = { id: string; name: string; area?: string; photo?: string; bio?: string };
+export type Professional = { id: string; name: string; area?: string; photo?: string; heroPhoto?: string; bio?: string };
 export type Schedule = {
   weekStart: string;
   status: 'reference' | 'confirmed';
   appointments: Record<string, (string | { professionalId: string; note?: string })[]>;
+  /** Datas (AAAA-MM-DD) sem atendimento; exibidas como "Sem atendimento" em vez de "a confirmar". */
+  closedDays?: string[];
 };
 
-// Semana enviada pelo usuário para visualização em 24/09/2026.
+// Semana enviada pelo usuário em 05/10/2026 (segunda 05/10 a sábado 10/10).
 // O futuro /admin poderá fornecer este mesmo formato, sem alterar o componente.
+// Pendentes de cadastro (médicos, ainda sem foto/dados): Robson (06/10) e Dhiego (08/10).
+// Quando chegarem, cadastrar em agenda-professionals.ts, incluir nesses dias e em heroDoctorIds.
 export const weeklySchedule: Schedule = {
-  weekStart: '2026-09-20',
+  weekStart: '2026-10-04',
   status: 'confirmed',
+  closedDays: ['2026-10-04'],
   appointments: {
-    '2026-09-20': ['joceane-ramos'],
-    '2026-09-21': ['ariane-matos', 'ilka-gominho', 'giselle-skarlet'],
-    '2026-09-23': ['alexandre-torres', 'giselle-skarlet', 'silvania-melo', 'ludmila-magalhaes'],
-    '2026-09-24': ['alexandre-torres', 'ariane-matos', 'giselle-skarlet', 'maria-paula', 'itala-freire', 'ademy-landim', 'reynaldo-martinez'],
-    '2026-09-25': ['flora-carolina', 'edilma-carvalho', 'silvania-melo', 'giselle-skarlet', 'maria-paula', 'ludmila-magalhaes', 'luiz-claudio'],
-    '2026-09-26': ['carolline-carvalho', 'ludmila-magalhaes', 'silvania-melo', 'giselle-skarlet', { professionalId: 'louise-torres', note: 'E.D.A' }, 'samuel-caetano', 'eloisa-mello'],
-    '2026-09-22': ['louise-torres', 'giselle-skarlet', 'itala-freire', 'ermita-galdina', 'maria-paula', 'layane-barros', 'karina-hirose'],
+    '2026-10-05': ['ariane-matos', 'giselle-skarlet', 'ilka-gominho', 'joceane-ramos'],
+    '2026-10-06': ['louise-torres', 'giselle-skarlet', 'itala-freire', 'ermita-galdina', 'maria-paula', 'layane-barros'],
+    '2026-10-07': ['alexandre-torres', 'giselle-skarlet', 'silvania-melo', 'ludmila-magalhaes', 'karina-hirose'],
+    '2026-10-08': ['ariane-matos', 'giselle-skarlet', 'maria-paula', 'itala-freire', 'ludmila-magalhaes', 'ademy-landim'],
+    '2026-10-09': ['flora-carolina', 'edilma-carvalho', 'silvania-melo', 'giselle-skarlet', 'maria-paula', 'ludmila-magalhaes'],
+    '2026-10-10': ['carolline-carvalho', 'ludmila-magalhaes', 'silvania-melo', 'giselle-skarlet', 'louise-torres'],
   },
 };
 
@@ -33,6 +37,7 @@ export function getWeekDays(schedule: Schedule, professionals: Professional[]) {
       iso,
       weekday: date.toLocaleDateString('pt-BR', { weekday: 'long', timeZone: 'UTC' }),
       label: date.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', timeZone: 'UTC' }),
+      closed: schedule.closedDays?.includes(iso) ?? false,
       people: [...new Set(schedule.appointments[iso] ?? [])].flatMap(entry => {
         const id = typeof entry === 'string' ? entry : entry.professionalId;
         const note = typeof entry === 'string' ? undefined : entry.note;

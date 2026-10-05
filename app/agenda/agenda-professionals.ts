@@ -21,6 +21,7 @@ export const agendaProfessionals: Professional[] = [
     "name": "Dr. Ademy Barros Landim",
     "area": "Pediatra e Neonatologista",
     "photo": "/profissionais/agenda/ademy-landim.webp",
+    "heroPhoto": "/profissionais/hero/ademy-landim.webp",
     "bio": "Cuidado dedicado à saúde de bebês, crianças e adolescentes."
   },
   {
@@ -28,6 +29,7 @@ export const agendaProfessionals: Professional[] = [
     "name": "Dr. Alexandre Torres",
     "area": "Endocrinologista e Ultrasonografia",
     "photo": "/profissionais/agenda/alexandre-torres.webp",
+    "heroPhoto": "/profissionais/hero/alexandre-torres.webp",
     "bio": "Avaliação endocrinológica integrada a uma escuta próxima e cuidadosa."
   },
   {
@@ -84,6 +86,7 @@ export const agendaProfessionals: Professional[] = [
     "name": "Dra. Ilka Gominho",
     "area": "Ginecologista e Obstetra",
     "photo": "/profissionais/agenda/ilka-gominho.webp",
+    "heroPhoto": "/profissionais/hero/ilka-gominho.webp",
     "bio": "Cuidado com a saúde da mulher em diferentes momentos da vida."
   },
   {
@@ -105,6 +108,7 @@ export const agendaProfessionals: Professional[] = [
     "name": "Dra. Louise Torres",
     "area": "Gastroenterologista e Endoscopia Digestiva Alta",
     "photo": "/profissionais/agenda/louise-torres.webp",
+    "heroPhoto": "/profissionais/hero/louise-torres.webp",
     "bio": "Cuidado digestivo com atenção clínica, escuta e orientação clara."
   },
   {

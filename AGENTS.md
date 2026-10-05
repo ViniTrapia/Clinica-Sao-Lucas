@@ -107,6 +107,10 @@ Exemplo:
 
 Mas NÃO invente uma identidade quando houver dúvida.
 
+### Médicos do dia no hero
+
+O hero exibe, além das campanhas fixas, uma página por médico que atende no dia, gerada a partir da agenda semanal. Os médicos que podem aparecer ficam em `heroDoctorIds`, em `app/agenda/hero-doctors.ts`. Quando o usuário enviar nomes de médicos para o hero, localize cada um no cadastro (`app/agenda/agenda-professionals.ts`) e adicione somente o `id` nessa lista; não crie campanhas manuais em `app/hero-campaigns.ts` para isso e não adicione textos indicando que a página existe por causa do cargo.
+
 ---
 
 ## ALTERAÇÕES ESPECÍFICAS DE UMA OCORRÊNCIA
