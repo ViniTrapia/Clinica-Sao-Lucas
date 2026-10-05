@@ -33,6 +33,7 @@ export const heroDoctorIds: string[] = [
   'louise-torres',
   'ilka-gominho',
   'ademy-landim',
+  'luiz-claudio',
 ];
 
 const bookingLink = 'https://api.whatsapp.com/send?phone=5587999156764';
