@@ -3,14 +3,18 @@ export type Schedule = {
   weekStart: string;
   status: 'reference' | 'confirmed';
   appointments: Record<string, (string | { professionalId: string; note?: string })[]>;
+  /** Datas (AAAA-MM-DD) sem atendimento; exibidas como "Sem atendimento" em vez de "a confirmar". */
+  closedDays?: string[];
 };
 
 // Semana enviada pelo usuário em 05/10/2026 (segunda 05/10 a sábado 10/10).
 // O futuro /admin poderá fornecer este mesmo formato, sem alterar o componente.
-// Pendentes de cadastro (sem foto/dados): Robson (06/10) e Diego (08/10).
+// Pendentes de cadastro (médicos, ainda sem foto/dados): Robson (06/10) e Dhiego (08/10).
+// Quando chegarem, cadastrar em agenda-professionals.ts, incluir nesses dias e em heroDoctorIds.
 export const weeklySchedule: Schedule = {
   weekStart: '2026-10-04',
   status: 'confirmed',
+  closedDays: ['2026-10-04'],
   appointments: {
     '2026-10-05': ['ariane-matos', 'giselle-skarlet', 'ilka-gominho', 'joceane-ramos'],
     '2026-10-06': ['louise-torres', 'giselle-skarlet', 'itala-freire', 'ermita-galdina', 'maria-paula', 'layane-barros'],
@@ -33,6 +37,7 @@ export function getWeekDays(schedule: Schedule, professionals: Professional[]) {
       iso,
       weekday: date.toLocaleDateString('pt-BR', { weekday: 'long', timeZone: 'UTC' }),
       label: date.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', timeZone: 'UTC' }),
+      closed: schedule.closedDays?.includes(iso) ?? false,
       people: [...new Set(schedule.appointments[iso] ?? [])].flatMap(entry => {
         const id = typeof entry === 'string' ? entry : entry.professionalId;
         const note = typeof entry === 'string' ? undefined : entry.note;
