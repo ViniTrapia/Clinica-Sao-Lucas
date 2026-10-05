@@ -10,6 +10,14 @@ Site institucional em React + Vite, com layout responsivo e animações discreta
 
 Instale com pnpm install e inicie com pnpm dev. Para gerar os arquivos de hospedagem, use pnpm build. A saída fica em dist.
 
+## Médicos do dia no hero
+
+Além das campanhas fixas (app/hero-campaigns.ts), o hero mostra automaticamente uma página para cada médico que atende no dia, conforme a agenda semanal. As páginas usam o mesmo visual das campanhas e mudam sozinhas a cada dia, no navegador.
+
+- Quais profissionais podem aparecer: lista heroDoctorIds em app/agenda/hero-doctors.ts (ids do cadastro em app/agenda/agenda-professionals.ts).
+- Em quais dias aparecem: weeklySchedule.appointments em app/agenda/schedule.ts.
+- Para incluir um médico, cadastre-o em agenda-professionals.ts (se ainda não existir) e adicione o id em heroDoctorIds. Para retirar, remova o id. As instruções completas estão no comentário do próprio arquivo.
+
 ## Fotografias
 
 Os dez retratos foram separados do fundo pelo Canva. Os rostos não foram gerados novamente. A foto de destaque da Dra. Louise usa os pixels da fotografia original e a máscara de recorte fornecida pelo Canva; o fundo, os textos e as marcas da arte original não integram a abertura. Os recortes pequenos têm resolução limitada pela agenda enviada. Substituir pelos arquivos originais será a melhor maneira de melhorar sua nitidez.
