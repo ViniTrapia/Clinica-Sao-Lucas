@@ -17,6 +17,9 @@ import { weeklySchedule, type Professional, type Schedule } from './schedule';
  *    invente nome, especialidade ou foto.
  * 2. Coloque o `id` dele em `heroDoctorIds` abaixo, exatamente como está no
  *    cadastro (ex.: 'karina-hirose').
+ *    Para o hero, prefira um recorte em alta resolução com fundo transparente
+ *    em `public/profissionais/hero/<id>.webp`, informado no campo `heroPhoto`
+ *    do cadastro; sem ele, a página usa a foto pequena da agenda (`photo`).
  * 3. A página só aparece nos dias em que esse `id` estiver em
  *    `weeklySchedule.appointments` para a data de hoje.
  *
@@ -69,7 +72,7 @@ export function getHeroDoctorCampaigns(
       eyebrow: `Dia ${dayLabel} · ${weekday.charAt(0).toUpperCase() + weekday.slice(1)}`,
       headline: person.name,
       schedule: detail ? `${detail}.` : '',
-      image: person.photo,
+      image: person.heroPhoto ?? person.photo,
       imageAlt: person.name,
       visual: 'portrait-cutout' as const,
       href: bookingLink,
