@@ -26,7 +26,9 @@ import { weeklySchedule, type Professional, type Schedule } from './schedule';
  * exibem nenhum título indicando que se trata de uma lista de médicos.
  */
 export const heroDoctorIds: string[] = [
-  // Aguardando a lista de nomes enviada pelo proprietário.
+  'alexandre-torres',
+  'louise-torres',
+  'ilka-gominho',
 ];
 
 const bookingLink = 'https://api.whatsapp.com/send?phone=5587999156764';
