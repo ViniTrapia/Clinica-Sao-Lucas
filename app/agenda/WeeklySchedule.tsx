@@ -4,11 +4,13 @@ import { useEffect, useRef, useState } from 'react';
 import { getWeekDays, weeklySchedule, type Professional, type Schedule } from './schedule';
 import { assetUrl } from '../asset-url';
 import { Icon } from '../Icon';
+import { ProfessionalPanel, type PanelDay, type PanelPerson } from './ProfessionalPanel';
 import './weekly.css';
 
 export function WeeklySchedule({ professionals, schedule = weeklySchedule }: { professionals: Professional[]; schedule?: Schedule }) {
   const days = getWeekDays(schedule, professionals);
   const [expandedDays, setExpandedDays] = useState<Record<string, boolean>>({});
+  const [selected, setSelected] = useState<{ person: PanelPerson; day: PanelDay } | null>(null);
   const meetingPhrase = useRef<HTMLElement>(null);
   useEffect(() => {
     const phrase = meetingPhrase.current;
@@ -61,10 +63,11 @@ export function WeeklySchedule({ professionals, schedule = weeklySchedule }: { p
       const peopleId = `people-${day.iso}`;
       return <article className={'weekly-day' + (!day.people.length ? ' weekly-empty' : '') + (isExpanded ? ' weekly-open' : '')} key={day.iso} aria-labelledby={'day-' + day.iso}>
           <div className="weekly-date"><time dateTime={day.iso}>{day.label}</time><h3 id={'day-' + day.iso}>{day.weekday.charAt(0).toUpperCase() + day.weekday.slice(1)}</h3></div>
-        {day.people.length > 0 ? <div className={'weekly-content' + (isExpanded ? ' weekly-content-open' : '')}><ul className="weekly-people" id={peopleId}>{visiblePeople.map((person, index) => <li className={index >= 2 ? 'weekly-extra' : undefined} key={person.id}><figure className="weekly-person"><div className="weekly-photo"><img src={assetUrl(person.photo ?? `/profissionais/${person.id}.webp`)} alt={person.name} width="150" height="130" loading="lazy" decoding="async"/></div><figcaption><h4>{person.name}{person.note && <> ({person.note})</>}</h4>{person.area && <p>{person.area}</p>}</figcaption></figure></li>)}</ul>{canExpand && <div className={'weekly-more' + (isExpanded ? ' weekly-more-open' : '')}>{!isExpanded && nextPerson && <div className="weekly-preview" aria-hidden="true"><img src={assetUrl(nextPerson.photo ?? `/profissionais/${nextPerson.id}.webp`)} alt="" width="118" height="110" loading="lazy" decoding="async"/><span>+{remainingCount}</span></div>}<div className="weekly-more-copy">{!isExpanded && <p>Profissionais disponíveis</p>}<button className="weekly-toggle" type="button" aria-expanded={isExpanded} aria-controls={peopleId} onClick={() => toggleDay(day.iso)}>{isExpanded ? 'Ver menos' : 'Ver todos'} <Icon name={isExpanded ? 'arrow-up' : 'arrow-up-right'}/></button></div></div>}</div> : day.closed ? <p className="weekly-pending">Sem atendimento neste dia.</p> : <p className="weekly-pending">Programação a confirmar.<span>Consulte a equipe para informações sobre este dia.</span></p>}
+        {day.people.length > 0 ? <div className={'weekly-content' + (isExpanded ? ' weekly-content-open' : '')}><ul className="weekly-people" id={peopleId}>{visiblePeople.map((person, index) => <li className={index >= 2 ? 'weekly-extra' : undefined} key={person.id}><figure className="weekly-person"><button type="button" className="weekly-photo weekly-photo-button" aria-haspopup="dialog" aria-label={`Ver especialidades de ${person.name}`} onClick={() => setSelected({ person, day: { weekday: day.weekday, label: day.label } })}><img src={assetUrl(person.photo ?? `/profissionais/${person.id}.webp`)} alt="" width="150" height="130" loading="lazy" decoding="async"/></button><figcaption><h4>{person.name}{person.note && <> ({person.note})</>}</h4>{person.area && <p>{person.area}</p>}</figcaption></figure></li>)}</ul>{canExpand && <div className={'weekly-more' + (isExpanded ? ' weekly-more-open' : '')}>{!isExpanded && nextPerson && <div className="weekly-preview" aria-hidden="true"><img src={assetUrl(nextPerson.photo ?? `/profissionais/${nextPerson.id}.webp`)} alt="" width="118" height="110" loading="lazy" decoding="async"/><span>+{remainingCount}</span></div>}<div className="weekly-more-copy">{!isExpanded && <p>Profissionais disponíveis</p>}<button className="weekly-toggle" type="button" aria-expanded={isExpanded} aria-controls={peopleId} onClick={() => toggleDay(day.iso)}>{isExpanded ? 'Ver menos' : 'Ver todos'} <Icon name={isExpanded ? 'arrow-up' : 'arrow-up-right'}/></button></div></div>}</div> : day.closed ? <p className="weekly-pending">Sem atendimento neste dia.</p> : <p className="weekly-pending">Programação a confirmar.<span>Consulte a equipe para informações sobre este dia.</span></p>}
       </article>;
     })}</div>
     {!days.length && <p>Agenda em atualização. Consulte a equipe para confirmar os atendimentos.</p>}
+    <ProfessionalPanel person={selected?.person ?? null} day={selected?.day ?? null} onClose={() => setSelected(null)}/>
     <div className="weekly-footer"><a className="text-link" href="#contato">Consultar a equipe <span><Icon name="arrow-up-right"/></span></a></div></div>
   </section>;
 }
