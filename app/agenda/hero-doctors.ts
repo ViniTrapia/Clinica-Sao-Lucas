@@ -1,4 +1,4 @@
-import type { HeroCampaign } from '../hero-campaigns';
+import { heroCampaigns, isCampaignActive, type HeroCampaign } from '../hero-campaigns';
 import { agendaProfessionals } from './agenda-professionals';
 import { weeklySchedule, type Professional, type Schedule } from './schedule';
 
@@ -80,4 +80,10 @@ export function getHeroDoctorCampaigns(
       linkLabel: 'Agendar consulta',
     }];
   });
+}
+
+/** Indica se o hero terá alguma página em `isoDate` (campanha fixa vigente ou médico do dia). */
+export function hasHeroCampaigns(isoDate: string) {
+  const fixed = heroCampaigns.filter(campaign => isCampaignActive(campaign, isoDate));
+  return fixed.length > 0 || getHeroDoctorCampaigns(isoDate, fixed).length > 0;
 }
