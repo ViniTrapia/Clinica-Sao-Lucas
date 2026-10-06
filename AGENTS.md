@@ -111,6 +111,8 @@ Mas NÃO invente uma identidade quando houver dúvida.
 
 O hero exibe, além das campanhas fixas, uma página por médico que atende no dia, gerada a partir da agenda semanal. Os médicos que podem aparecer ficam em `heroDoctorIds`, em `app/agenda/hero-doctors.ts`. Quando o usuário enviar nomes de médicos para o hero, localize cada um no cadastro (`app/agenda/agenda-professionals.ts`) e adicione somente o `id` nessa lista; não crie campanhas manuais em `app/hero-campaigns.ts` para isso e não adicione textos indicando que a página existe por causa do cargo.
 
+Campanhas manuais de `app/hero-campaigns.ts` que se refiram a uma data específica devem sempre informar `date` (AAAA-MM-DD, último dia de exibição). Podem ser cadastradas antecipadamente e permanecem no hero até esse dia; depois dele saem do site automaticamente. Nunca deixe no hero um médico cuja data já passou.
+
 ---
 
 ## ALTERAÇÕES ESPECÍFICAS DE UMA OCORRÊNCIA
