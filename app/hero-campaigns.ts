@@ -31,7 +31,8 @@ export const heroCampaigns: HeroCampaign[] = [];
 export const isCampaignActive = (campaign: HeroCampaign, isoDate: string) => !campaign.date || campaign.date >= isoDate;
 
 /**
- * Só deve ser ativado depois de confirmar com o proprietário quando a última
- * campanha for retirada. Mantê-lo falso evita baixar a fachada sem necessidade.
+ * Aprovado pelo proprietário: nos dias sem nenhuma página no hero (sem campanha
+ * vigente e sem médico do dia na agenda) aparece a fachada da clínica. Nos
+ * demais dias a fachada nem é baixada.
  */
-export const clinicFacadeFallbackEnabled = false;
+export const clinicFacadeFallbackEnabled = true;
