@@ -2,6 +2,11 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "clinica-sao-lucas",
   "compatibility_date": "2026-10-01",
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "clinicasaolucas.app.br", "custom_domain": true },
+    { "pattern": "www.clinicasaolucas.app.br", "custom_domain": true }
+  ],
   "assets": {
     "directory": "./dist",
     "not_found_handling": "single-page-application"
