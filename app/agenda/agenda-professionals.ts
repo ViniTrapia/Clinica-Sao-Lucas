@@ -7,6 +7,7 @@ export const agendaProfessionals: Professional[] = [
     "name": "Dr Luiz Cláudio",
     "area": "Neurologista",
     "photo": "/profissionais/agenda/luiz-claudio.webp",
+    "heroPhoto": "/profissionais/hero/luiz-claudio.webp",
     "bio": "Cuidado neurológico atento às particularidades de cada pessoa."
   },
   {
