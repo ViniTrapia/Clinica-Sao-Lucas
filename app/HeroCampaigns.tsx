@@ -19,6 +19,7 @@ export function HeroCampaigns(){
   // Campanhas com data vencida saem sozinhas; até saber a data de hoje, só as sem data aparecem.
   const fixedCampaigns=useMemo(()=>allFixedCampaigns.filter(campaign=>today?isCampaignActive(campaign,today):!campaign.date),[today]);
   const heroCampaigns=useMemo(()=>today?[...fixedCampaigns,...getHeroDoctorCampaigns(today,fixedCampaigns)]:fixedCampaigns,[today,fixedCampaigns]);
+  const hasCampaigns=heroCampaigns.length>0;
   const current=heroCampaigns.length?active%heroCampaigns.length:0;
 
   useEffect(()=>{
@@ -83,13 +84,13 @@ export function HeroCampaigns(){
       mobileQuery.removeEventListener('change',requestUpdate);
       if(frame)cancelAnimationFrame(frame);
     };
-  },[]);
+  },[hasCampaigns]);
 
   if(!heroCampaigns.length)return null;
 
   return <div ref={campaignsRef} className={`hero-campaigns${entered?' is-entered':''}`} aria-label="Destaques da Clínica São Lucas" onMouseEnter={()=>setPaused(true)} onMouseLeave={()=>setPaused(false)} onFocusCapture={()=>setPaused(true)} onBlurCapture={()=>setPaused(false)}>
     <div className="hero-campaign-track" aria-live="polite">
-      {heroCampaigns.map((campaign,index)=>{const [dateLabel,...contextParts]=campaign.eyebrow.split('·');const contextLabel=contextParts.join('·').trim();return <article className={`hero-campaign hero-campaign-${campaign.visual??'photo'}${index===current?' is-active':''}`} aria-hidden={index!==current} key={campaign.id}>
+      {heroCampaigns.map((campaign,index)=>{const [dateLabel,...contextParts]=campaign.eyebrow.split('·');const contextLabel=contextParts.join('·').trim();return <article className={`hero-campaign hero-campaign-${campaign.visual??'photo'}${campaign.mobileImage?'':' hero-campaign-flush'}${index===current?' is-active':''}`} aria-hidden={index!==current} key={campaign.id}>
         <div className="hero-campaign-visual">
           <picture>
             {campaign.mobileImage&&<source media="(max-width: 700px)" srcSet={assetUrl(campaign.mobileImage)}/>}
