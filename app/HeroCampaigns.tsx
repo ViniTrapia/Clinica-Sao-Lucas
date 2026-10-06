@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { assetUrl } from './asset-url';
-import { heroCampaigns as fixedCampaigns } from './hero-campaigns';
+import { heroCampaigns as allFixedCampaigns, isCampaignActive } from './hero-campaigns';
 import { clinicToday, getHeroDoctorCampaigns } from './agenda/hero-doctors';
 import { Icon } from './Icon';
 import './hero-campaigns.css';
@@ -16,7 +16,9 @@ export function HeroCampaigns(){
   const [paused,setPaused]=useState(false);
   const [today,setToday]=useState<string|null>(null);
   // Páginas diárias (app/agenda/hero-doctors.ts) somadas às campanhas fixas.
-  const heroCampaigns=useMemo(()=>today?[...fixedCampaigns,...getHeroDoctorCampaigns(today,fixedCampaigns)]:fixedCampaigns,[today]);
+  // Campanhas com data vencida saem sozinhas; até saber a data de hoje, só as sem data aparecem.
+  const fixedCampaigns=useMemo(()=>allFixedCampaigns.filter(campaign=>today?isCampaignActive(campaign,today):!campaign.date),[today]);
+  const heroCampaigns=useMemo(()=>today?[...fixedCampaigns,...getHeroDoctorCampaigns(today,fixedCampaigns)]:fixedCampaigns,[today,fixedCampaigns]);
   const current=heroCampaigns.length?active%heroCampaigns.length:0;
 
   useEffect(()=>{

@@ -7,6 +7,8 @@ export type HeroCampaign = {
   image: string;
   mobileImage?: string;
   imageAlt: string;
+  /** Último dia (AAAA-MM-DD, fuso de Pernambuco) em que a campanha aparece; no dia seguinte ela sai do site sozinha. */
+  date?: string;
   imagePosition?: string;
   visual?: 'photo' | 'portrait-cutout';
   href?: string;
@@ -16,38 +18,17 @@ export type HeroCampaign = {
 /**
  * Campanhas ativas do hero.
  *
- * Cada nova propaganda entra como um item desta lista. Para retirar uma
- * campanha pelo nome, basta remover o item correspondente. A fachada fica
- * guardada e não é baixada enquanto existir uma campanha ativa.
+ * Cada nova propaganda entra como um item desta lista. Toda campanha de
+ * atendimento em uma data específica deve informar `date` (AAAA-MM-DD): ela
+ * pode ser cadastrada antes e continua no hero até o fim desse dia; a partir do
+ * dia seguinte é retirada automaticamente do site, sem precisar editar nada.
+ * Depois de passada a data, o item pode ser apagado desta lista quando
+ * convier. Campanhas sem `date` ficam até serem removidas à mão.
  */
-export const heroCampaigns: HeroCampaign[] = [
-  {
-    id: 'marcelo-amaral-dia-28',
-    professionalName: 'Dr. Marcelo Amaral',
-    eyebrow: 'Dia 28/09 · Atendimento especial',
-    headline: 'Dr. Marcelo Amaral',
-    schedule: 'Ortopedista e Traumatologista.',
-    image: '/campaigns/marcelo-amaral-cutout.webp',
-    mobileImage: '/campaigns/marcelo-amaral-cutout-mobile.webp',
-    imageAlt: 'Dr. Marcelo Amaral',
-    visual: 'portrait-cutout',
-    href: 'https://api.whatsapp.com/send?phone=5587999156764',
-    linkLabel: 'Agendar consulta',
-  },
-  {
-    id: 'bruna-bastos-28-09',
-    professionalName: 'Dra. Bruna Bastos',
-    eyebrow: 'Dia 28/09 · Segunda-feira',
-    headline: 'Dra. Bruna Bastos',
-    schedule: 'Ginecologista, obstetrícia e ultrassonografia.',
-    image: '/campaigns/bruna-bastos-cutout.webp',
-    mobileImage: '/campaigns/bruna-bastos-cutout-mobile.webp',
-    imageAlt: 'Dra. Bruna Bastos',
-    visual: 'portrait-cutout',
-    href: 'https://api.whatsapp.com/send?phone=5587999156764',
-    linkLabel: 'Agendar consulta',
-  },
-];
+export const heroCampaigns: HeroCampaign[] = [];
+
+/** Indica se a campanha ainda deve aparecer em `isoDate` (hoje, no fuso da clínica). */
+export const isCampaignActive = (campaign: HeroCampaign, isoDate: string) => !campaign.date || campaign.date >= isoDate;
 
 /**
  * Só deve ser ativado depois de confirmar com o proprietário quando a última
