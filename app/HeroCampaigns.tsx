@@ -88,9 +88,10 @@ export function HeroCampaigns(){
 
   if(!heroCampaigns.length)return null;
 
-  return <div ref={campaignsRef} className={`hero-campaigns${entered?' is-entered':''}${heroCampaigns[current]?.theme==='pink'?' is-pink':''}`} aria-label="Destaques da Clínica São Lucas" onMouseEnter={()=>setPaused(true)} onMouseLeave={()=>setPaused(false)} onFocusCapture={()=>setPaused(true)} onBlurCapture={()=>setPaused(false)}>
+  return <div ref={campaignsRef} className={`hero-campaigns${entered?' is-entered':''}${heroCampaigns[current]?.theme==='pink'?' is-pink':''}${heroCampaigns[current]?.mobileArtwork?' is-mobile-artwork':''}`} aria-label="Destaques da Clínica São Lucas" onMouseEnter={()=>setPaused(true)} onMouseLeave={()=>setPaused(false)} onFocusCapture={()=>setPaused(true)} onBlurCapture={()=>setPaused(false)}>
     <div className="hero-campaign-track" aria-live="polite">
-      {heroCampaigns.map((campaign,index)=>{const [dateLabel,...contextParts]=campaign.eyebrow.split('·');const contextLabel=contextParts.join('·').trim();return <article className={`hero-campaign hero-campaign-${campaign.visual??'photo'}${campaign.theme?` hero-campaign-${campaign.theme}`:''}${campaign.mobileImage?'':' hero-campaign-flush'}${index===current?' is-active':''}`} aria-hidden={index!==current} key={campaign.id}>
+      {heroCampaigns.map((campaign,index)=>{const [dateLabel,...contextParts]=campaign.eyebrow.split('·');const contextLabel=contextParts.join('·').trim();return <article className={`hero-campaign hero-campaign-${campaign.visual??'photo'}${campaign.theme?` hero-campaign-${campaign.theme}`:''}${campaign.mobileImage?'':' hero-campaign-flush'}${campaign.mobileArtwork?' has-mobile-artwork':''}${index===current?' is-active':''}`} aria-hidden={index!==current} key={campaign.id}>
+        {campaign.mobileArtwork&&<img className="hero-campaign-mobile-art" src={assetUrl(campaign.mobileArtwork)} alt={campaign.imageAlt} width="1122" height="1402" loading={index===0?'eager':'lazy'} decoding="async"/>}
         <div className="hero-campaign-visual">
           <picture>
             {campaign.mobileImage&&<source media="(max-width: 700px)" srcSet={assetUrl(campaign.mobileImage)}/>}

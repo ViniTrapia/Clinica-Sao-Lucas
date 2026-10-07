@@ -6,6 +6,8 @@ export type HeroCampaign = {
   schedule: string;
   image: string;
   mobileImage?: string;
+  /** Arte pronta exibida inteira no celular, no lugar da composição com texto do site. */
+  mobileArtwork?: string;
   imageAlt: string;
   /** Último dia (AAAA-MM-DD, fuso de Pernambuco) em que a campanha aparece; no dia seguinte ela sai do site sozinha. */
   date?: string;
@@ -45,6 +47,7 @@ export const heroCampaigns: HeroCampaign[] = [
     image: '/campaigns/outubro-rosa-cutout.webp',
     mobileImage: '/campaigns/outubro-rosa-cutout-mobile.webp',
     imageAlt: 'Mulher sorridente de camiseta rosa, de braços cruzados.',
+    mobileArtwork: '/campaigns/outubro-rosa-arte.webp',
     date: '2026-10-31',
     visual: 'portrait-cutout',
     theme: 'pink',
