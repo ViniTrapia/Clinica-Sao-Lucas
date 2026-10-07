@@ -86,3 +86,15 @@
   .pro-panel::backdrop,.pro-panel-sheet,.pro-panel-portrait img,.pro-panel-day,.pro-panel-header,.pro-panel-group li{animation:none}
   .weekly-photo-button::after,.pro-panel-close{transition:none}
 }
+
+/* Retrato inteiro sobre fundo claro com os arcos da marca, como na arte de referência. */
+.pro-panel-portrait{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 300' fill='none' stroke='%23e2e5ec' stroke-width='12'%3E%3Cpath d='M121.7 28.9A84 84 0 0 0 64.5 186.1M116.6 48.2A64 64 0 0 0 73 168M111.4 67.5A44 44 0 0 0 81.4 149.9'/%3E%3Cpath d='M135.4 117.3A84 84 0 0 1 171.7 281.1M138.9 137A64 64 0 0 1 166.6 261.8M142.4 156.7A44 44 0 0 1 161.4 242.5'/%3E%3C/svg%3E") 18% 14%/96% auto no-repeat,#f5f6f8}
+.pro-panel-portrait::after,.pro-panel-ring{display:none}
+.pro-panel-portrait img{width:100%;height:86%;filter:saturate(1) contrast(1.02) drop-shadow(0 16px 24px rgba(16,30,88,.16))}
+.pro-panel-day{box-shadow:0 14px 30px rgba(16,30,88,.16)}
+.pro-panel-sheet{grid-template-columns:minmax(300px,.9fr) minmax(0,1.1fr)}
+@media(max-width:860px){.pro-panel-sheet{grid-template-columns:minmax(220px,.8fr) minmax(0,1.2fr)}}
+@media(max-width:700px){
+  .pro-panel-portrait{height:min(340px,44dvh);background-size:84% auto;background-position:30% 10%}
+  .pro-panel-portrait img{max-width:86%;height:88%}
+}
