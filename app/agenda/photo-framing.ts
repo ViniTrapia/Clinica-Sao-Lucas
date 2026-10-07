@@ -9,9 +9,10 @@
  * - x: centro horizontal do rosto (0 a 1 da largura da imagem);
  * - faceY: centro vertical do rosto (0 a 1 da altura da imagem), usado no zoom;
  * - aspect: largura / altura da imagem;
- * - cut: lado em que a foto original corta o corpo; esse lado fica sempre
- *   encostado na borda do cartão para o corte não aparecer.
- * O rosto fica sempre na mesma altura do cartão e a cintura na borda inferior.
+ * - cut: lado em que a foto original corta o corpo; essa borda se dissolve
+ *   suavemente para o corte não aparecer como uma linha reta.
+ * O rosto fica sempre centralizado e na mesma altura do cartão, com a cintura
+ * na borda inferior.
  * Os arquivos em public/profissionais/agenda/ já vêm recortados da cintura
  * para cima (mesmo critério usado na agenda e no painel); estes valores só
  * alinham o rosto dentro do cartão da equipe.
