@@ -20,6 +20,7 @@
 .dentistry-member.is-active .dentistry-member-name{color:#fff}
 .dentistry-team{gap:clamp(16px,2.2vw,28px);border-bottom:0}
 .dentistry-member{padding:0}
+.dentistry-member-portrait img{max-width:100%;height:auto;max-height:clamp(400px,38vw,480px)}
 .dentistry-member-name{z-index:4;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 20px;border-radius:14px;background:#f3a253;color:#081846;font-size:12px;font-weight:700;letter-spacing:.12em;text-align:left;text-transform:uppercase;transition:box-shadow .35s ease}
 .dentistry-member-name .ui-icon{flex:none;width:16px;height:16px;transition:transform .35s ease}
 .dentistry-member:hover .dentistry-member-name .ui-icon{transform:translate(2px,-2px)}
