@@ -94,7 +94,7 @@ export function HeroCampaigns(){
         <div className="hero-campaign-visual">
           <picture>
             {campaign.mobileImage&&<source media="(max-width: 700px)" srcSet={assetUrl(campaign.mobileImage)}/>}
-            <img src={assetUrl(campaign.image)} alt={campaign.imageAlt} style={{objectPosition:campaign.imagePosition??'62% center'}} width="900" height="1350" loading={index===0?'eager':'lazy'} fetchPriority={index===0?'high':'low'} decoding="async"/>
+            <img src={assetUrl(campaign.image)} alt={campaign.imageAlt} style={campaign.visual==='portrait-cutout'&&!campaign.imagePosition?undefined:{objectPosition:campaign.imagePosition??'62% center'}} width="900" height="1350" loading={index===0?'eager':'lazy'} fetchPriority={index===0?'high':'low'} decoding="async"/>
           </picture>
           <div className="hero-campaign-shade" aria-hidden="true"/>
         </div>
