@@ -74,9 +74,11 @@ export function DentistrySection(){
 
     <article className="dentistry-detail" id="dentistry-detail" role="tabpanel" aria-live="polite" key={dentist.id}>
       <div className="dentistry-detail-primary">
-        <span className="dentistry-registry">{dentist.registry}</span>
-        <h3>{dentist.name}</h3>
-        <p className="dentistry-role">{dentist.role}</p>
+        <div className="dentistry-identity">
+          <span className="dentistry-registry">{dentist.registry}</span>
+          <h3>{dentist.name}</h3>
+          <p className="dentistry-role">{dentist.role.split(' · ').map(part=><span key={part}>{part}</span>)}</p>
+        </div>
         <p className="dentistry-bio">{dentist.bio}</p>
       </div>
       <div className="dentistry-detail-services">
