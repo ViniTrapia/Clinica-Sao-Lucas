@@ -2,7 +2,7 @@
 .dentistry::before{content:"";position:absolute;top:19%;right:6%;width:min(58vw,780px);aspect-ratio:1;border:1px solid rgba(243,162,83,.16);border-radius:50%;pointer-events:none}
 .dentistry::after{content:"";position:absolute;top:25%;right:12%;width:min(46vw,610px);aspect-ratio:1;border:1px solid rgba(159,179,239,.14);border-radius:50%;pointer-events:none}
 .dentistry-heading{position:relative;z-index:3;display:block;width:min(760px,70%);height:auto;padding:0;border:0;background:transparent}
-.dentistry-heading>span,.dentistry-registry,.dentistry-detail-services>span{color:#f3a253;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.dentistry-heading>span,.dentistry-detail-services>span{color:#f3a253;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
 .dentistry-heading h2{margin-top:18px;color:#fff;font-size:clamp(43px,5.4vw,78px);font-weight:400;line-height:.98;letter-spacing:-.065em}
 .dentistry-heading h2 em{color:#9fb3ef}
 .dentistry-heading p{max-width:49ch;margin-top:20px;color:#c5cee4;font-size:15px;line-height:1.6}
@@ -19,10 +19,21 @@
 .dentistry-member-name{position:relative;z-index:4;display:block;padding-top:14px;color:#8f9cc1;font-size:11px;letter-spacing:.06em;text-align:center;transition:color .3s ease}
 .dentistry-member.is-active .dentistry-member-name{color:#fff}
 
-.dentistry-detail{position:relative;z-index:3;display:grid;grid-template-columns:minmax(0,.82fr) minmax(420px,1fr);gap:8%;max-width:1120px;margin:0 auto;padding:54px 4% 0;animation:dentistry-detail-in .45s cubic-bezier(.22,1,.36,1) both}
+.dentistry-detail{position:relative;z-index:3;display:grid;align-items:start;grid-template-columns:minmax(0,.82fr) minmax(420px,1fr);gap:8%;max-width:1120px;margin:0 auto;padding:54px 4% 0;animation:dentistry-detail-in .45s cubic-bezier(.22,1,.36,1) both}
 @keyframes dentistry-detail-in{from{opacity:0;transform:translate3d(0,18px,0)}to{opacity:1;transform:none}}
-.dentistry-detail-primary h3{max-width:12ch;margin:12px 0;color:#fff;font-size:clamp(46px,5.2vw,72px);font-weight:400;line-height:.92;letter-spacing:-.065em}
-.dentistry-role{color:#d1d9ec;font-size:15px;line-height:1.5}
+.dentistry-identity{position:relative;overflow:hidden;padding:30px 32px 30px 34px;border:1px solid rgba(159,179,239,.3);border-left:0;border-radius:0 18px 18px 0;background:radial-gradient(circle at 100% 0,rgba(243,162,83,.2),transparent 42%),linear-gradient(135deg,rgba(38,72,158,.95),rgba(14,36,96,.86));box-shadow:0 30px 70px rgba(1,10,42,.34),inset 0 1px rgba(255,255,255,.08);isolation:isolate}
+.dentistry-identity::before{content:"";position:absolute;top:0;bottom:0;left:0;width:4px;background:linear-gradient(#f3a253,#f7c08a);transform-origin:top;animation:dentistry-identity-bar .7s cubic-bezier(.22,1,.36,1) both}
+.dentistry-identity::after{content:"";position:absolute;z-index:-1;top:-62%;right:-32%;width:78%;aspect-ratio:1;border:1px solid rgba(243,162,83,.22);border-radius:50%;box-shadow:0 0 0 34px rgba(159,179,239,.035),0 0 0 35px rgba(159,179,239,.12);pointer-events:none}
+@keyframes dentistry-identity-bar{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+.dentistry-registry{display:inline-flex;align-items:center;gap:9px;padding:8px 14px 8px 12px;border:1px solid rgba(243,162,83,.55);border-radius:999px;background:rgba(243,162,83,.14);color:#f7b26b;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.dentistry-registry::before{content:"";width:7px;height:7px;border-radius:50%;background:#f3a253;box-shadow:0 0 0 4px rgba(243,162,83,.22)}
+.dentistry-detail-primary h3{max-width:12ch;margin:20px 0 0;color:#fff;font-size:clamp(50px,5.6vw,78px);font-weight:400;line-height:.92;letter-spacing:-.065em;text-shadow:0 10px 34px rgba(1,10,42,.35)}
+.dentistry-role{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.18);color:#fff;font-size:17px;font-weight:500;line-height:1.35}
+.dentistry-role span+span::before{content:"";display:inline-block;width:6px;height:6px;margin-right:12px;border-radius:50%;background:#f3a253;vertical-align:middle}
+.dentistry-identity>*{animation:dentistry-identity-in .55s cubic-bezier(.22,1,.36,1) both}
+.dentistry-identity>h3{animation-delay:.08s}
+.dentistry-identity>.dentistry-role{animation-delay:.16s}
+@keyframes dentistry-identity-in{from{opacity:0;transform:translate3d(0,12px,0)}to{opacity:1;transform:none}}
 .dentistry-bio{max-width:48ch;margin-top:20px;color:#aebbd9;font-size:13px;line-height:1.7}
 .dentistry-detail-services{position:relative;padding:25px 28px 28px;border:1px solid rgba(159,179,239,.24);border-left:3px solid #f3a253;border-radius:0 18px 18px 0;background:linear-gradient(135deg,rgba(28,56,128,.88),rgba(12,32,86,.74));box-shadow:0 24px 55px rgba(1,10,42,.2)}
 .dentistry-detail-services ul{display:grid;grid-template-columns:1fr 1fr;gap:0 20px;margin:18px 0 0;padding:0;border-top:1px solid rgba(255,255,255,.18);list-style:none}
@@ -59,8 +70,10 @@
   .dentistry-member.is-active{background:rgba(243,162,83,.14);box-shadow:inset 0 -3px #f3a253}
   .dentistry-member.is-active .dentistry-member-name{color:#fff}
   .dentistry-detail{display:block;margin:0;padding:36px 8px 0}
-  .dentistry-detail-primary h3{font-size:45px}
-  .dentistry-role{font-size:14px}
+  .dentistry-identity{padding:24px 20px 24px 24px;border-radius:0 14px 14px 0}
+  .dentistry-registry{padding:7px 12px 7px 10px;font-size:11px}
+  .dentistry-detail-primary h3{margin-top:16px;font-size:45px}
+  .dentistry-role{margin-top:18px;padding-top:14px;font-size:15px}
   .dentistry-bio{font-size:12px}
   .dentistry-detail-services{margin-top:32px;padding:22px 20px 24px;border-radius:0 14px 14px 0}
   .dentistry-detail-services ul{grid-template-columns:1fr}
@@ -69,4 +82,4 @@
 }
 
 @media(max-width:380px){.dentistry-team{height:410px}.dentistry-member-name{font-size:7px}.dentistry-detail-primary h3{font-size:41px}}
-@media(prefers-reduced-motion:reduce){.dentistry-member-portrait img,.dentistry-member::before,.dentistry-member-name{transition:none}.dentistry-detail{animation:none}}
+@media(prefers-reduced-motion:reduce){.dentistry-member-portrait img,.dentistry-member::before,.dentistry-member-name{transition:none}.dentistry-detail,.dentistry-identity::before,.dentistry-identity>*{animation:none}}
