@@ -10,8 +10,11 @@ export type HeroCampaign = {
   /** Último dia (AAAA-MM-DD, fuso de Pernambuco) em que a campanha aparece; no dia seguinte ela sai do site sozinha. */
   date?: string;
   imagePosition?: string;
-  /** `artwork`: arte pronta com os textos na própria imagem; aparece inteira, sem texto por cima (no computador, `eyebrow` e `headline` aparecem ao lado dela só no início da rolagem). */
-  visual?: 'photo' | 'portrait-cutout' | 'artwork';
+  visual?: 'photo' | 'portrait-cutout';
+  /** Paleta da página: `pink` para campanhas como o Outubro Rosa; sem valor, a azul padrão. */
+  theme?: 'pink';
+  /** Itens numerados exibidos abaixo do título (computador e tablet). */
+  points?: string[];
   href?: string;
   linkLabel?: string;
 };
@@ -30,14 +33,23 @@ export const heroCampaigns: HeroCampaign[] = [
   {
     id: 'outubro-rosa-2026',
     professionalName: 'Outubro Rosa',
-    eyebrow: 'Outubro Rosa',
-    headline: 'Mês de prevenção ao câncer de mama.',
+    eyebrow: 'Outubro Rosa · Prevenção ao câncer de mama',
+    headline: 'Fique atenta aos sinais.',
     schedule: '',
-    image: '/campaigns/outubro-rosa.webp',
-    mobileImage: '/campaigns/outubro-rosa-mobile.webp',
-    imageAlt: 'Outubro Rosa, Mês de Prevenção ao Câncer de Mama. Fique atenta aos sinais: 1. alteração na assimetria da mama; 2. desvio ou inversão do mamilo; 3. alteração na cor do mamilo; 4. secreção transparente, rosada ou avermelhada. Clínica São Lucas.',
+    points: [
+      'Alteração na assimetria da mama;',
+      'Desvio ou inversão do mamilo;',
+      'Alteração na cor do mamilo;',
+      'Secreção transparente, rosada ou avermelhada.',
+    ],
+    image: '/campaigns/outubro-rosa-cutout.webp',
+    mobileImage: '/campaigns/outubro-rosa-cutout-mobile.webp',
+    imageAlt: 'Mulher sorridente de camiseta rosa, de braços cruzados.',
     date: '2026-10-31',
-    visual: 'artwork',
+    visual: 'portrait-cutout',
+    theme: 'pink',
+    href: 'https://api.whatsapp.com/send?phone=5587999156764',
+    linkLabel: 'Agendar consulta',
   },
 ];
 
