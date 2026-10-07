@@ -1,9 +1,9 @@
 /* Enquadramento padronizado (cintura para cima) das fotos da seção Profissionais; valores por foto em app/agenda/photo-framing.ts. */
-.professional-photo{--card-h:175px;position:relative;padding:0;container-type:inline-size}
+.professional-photo{--card-h:175px;position:relative;padding:0}
 .professional-photo img.is-framed{--img-h:calc(var(--card-h) * var(--photo-scale));--img-w:calc(var(--img-h) * var(--photo-aspect));position:absolute;top:calc(var(--card-h) * .16 - var(--photo-face-top) * var(--img-h));left:calc(50% - var(--photo-x) * var(--img-w));width:var(--img-w);max-width:none;height:var(--img-h);transform-origin:calc(var(--photo-x) * 100%) calc(var(--photo-face-y) * 100%)}
-/* Lado em que a foto original corta o corpo: fica encostado na borda do cartão. */
-.professional-photo img.is-cut-right{left:max(calc(100% - var(--img-w)),calc(50% - var(--photo-x) * var(--img-w)))}
-.professional-photo img.is-cut-left{left:min(0px,calc(50% - var(--photo-x) * var(--img-w)))}
-.professional-photo img.is-cut-both{--img-h:max(calc(var(--card-h) * var(--photo-scale)),calc(100cqw / var(--photo-aspect)));left:clamp(calc(100% - var(--img-w)),calc(50% - var(--photo-x) * var(--img-w)),0px)}
+/* Todos centralizados pelo rosto. Onde a foto original corta o corpo, a borda cortada se dissolve em vez de aparecer como uma linha reta. */
+.professional-photo img.is-cut-right{-webkit-mask-image:linear-gradient(to left,transparent,#000 14%);mask-image:linear-gradient(to left,transparent,#000 14%)}
+.professional-photo img.is-cut-left{-webkit-mask-image:linear-gradient(to right,transparent,#000 14%);mask-image:linear-gradient(to right,transparent,#000 14%)}
+.professional-photo img.is-cut-both{-webkit-mask-image:linear-gradient(to right,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(to right,transparent,#000 14%,#000 86%,transparent)}
 @media(max-width:700px){.professional-photo{--card-h:160px}}
 @media(max-width:360px){.professional-photo{--card-h:145px}}
