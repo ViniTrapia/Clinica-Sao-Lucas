@@ -1,6 +1,6 @@
 /** Grupo de especialidades exibido no painel do profissional (título opcional, como na arte de divulgação). */
 export type SpecialtyGroup = { title?: string; items: string[] };
-export type Professional = { id: string; name: string; area?: string; photo?: string; heroPhoto?: string; bio?: string; summary?: string; specialties?: SpecialtyGroup[] };
+export type Professional = { id: string; name: string; area?: string; photo?: string; heroPhoto?: string; bio?: string; summary?: string; specialties?: SpecialtyGroup[]; inactive?: boolean };
 export type Schedule = {
   weekStart: string;
   status: 'reference' | 'confirmed';
