@@ -68,7 +68,7 @@ export function DentistrySection(){
         <span className="dentistry-member-portrait">
           <img src={assetUrl(item.image)} alt="" width={item.width} height={item.height} loading="lazy" decoding="async"/>
         </span>
-        <span className="dentistry-member-name">{item.shortName}</span>
+        <span className="dentistry-member-name">{item.shortName}<Icon name="arrow-up-right"/></span>
       </button>)}
     </div>
 
