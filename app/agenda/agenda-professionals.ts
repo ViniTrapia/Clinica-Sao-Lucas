@@ -1,10 +1,11 @@
 import type { Professional } from './schedule';
 
 // Cadastro recebido em 24/09/2026 e ampliado em 06/10/2026 (especialidades e novos profissionais); separado das ocorrências semanais.
+// `inactive: true` guarda o profissional no cadastro, mas o tira da área de profissionais (lista de 07/10/2026).
 export const agendaProfessionals: Professional[] = [
   {
     "id": "luiz-claudio",
-    "name": "Dr Luiz Cláudio",
+    "name": "Dr. Luiz Cláudio",
     "area": "Neurologista",
     "photo": "/profissionais/agenda/luiz-claudio.webp",
     "heroPhoto": "/profissionais/hero/luiz-claudio.webp",
@@ -12,7 +13,7 @@ export const agendaProfessionals: Professional[] = [
   },
   {
     "id": "reynaldo-martinez",
-    "name": "Dr Reynaldo Lahitte Martinez",
+    "name": "Dr. Reynaldo Lahitte Martinez",
     "area": "Atendimento em Reumatologia",
     "photo": "/profissionais/agenda/reynaldo-martinez.webp",
     "bio": "Atenção em reumatologia com escuta cuidadosa e acompanhamento individualizado.",
@@ -104,7 +105,7 @@ export const agendaProfessionals: Professional[] = [
   },
   {
     "id": "ariane-matos",
-    "name": "Dra Ariane Matos",
+    "name": "Dra. Ariane Matos",
     "area": "Fonoaudiologa",
     "photo": "/profissionais/agenda/ariane-matos.webp",
     "bio": "Comunicação e desenvolvimento acompanhados com sensibilidade em cada etapa.",
@@ -125,7 +126,7 @@ export const agendaProfessionals: Professional[] = [
   },
   {
     "id": "ermita-galdina",
-    "name": "Dra Ermita Galdina",
+    "name": "Dra. Ermita Galdina",
     "area": "Psicopedagoga e Neuropsicopedagoga",
     "photo": "/profissionais/agenda/ermita-galdina.webp",
     "bio": "Aprendizagem e desenvolvimento acolhidos com olhar amplo e individualizado.",
@@ -547,6 +548,7 @@ export const agendaProfessionals: Professional[] = [
   },
   {
     "id": "debora-cordeiro",
+    "inactive": true,
     "name": "Débora Cordeiro",
     "area": "Enfermeira e Estética Avançada",
     "photo": "/profissionais/agenda/debora-cordeiro.webp",
@@ -610,6 +612,7 @@ export const agendaProfessionals: Professional[] = [
   },
   {
     "id": "vinicius-aquino",
+    "inactive": true,
     "name": "Dr. Vinícius Aquino",
     "area": "Nutricionista",
     "photo": "/profissionais/agenda/vinicius-aquino.webp",
@@ -692,6 +695,7 @@ export const agendaProfessionals: Professional[] = [
   },
   {
     "id": "raquel-andrade",
+    "inactive": true,
     "name": "Dra. Raquel Andrade",
     "area": "Nutricionista",
     "photo": "/profissionais/agenda/raquel-andrade.webp",
@@ -718,6 +722,7 @@ export const agendaProfessionals: Professional[] = [
   },
   {
     "id": "emiliane-cruz",
+    "inactive": true,
     "name": "Emiliane Cruz",
     "area": "Especialista em Harmonização Orofacial",
     "photo": "/profissionais/agenda/emiliane-cruz.webp",
@@ -741,6 +746,7 @@ export const agendaProfessionals: Professional[] = [
   },
   {
     "id": "nayara-kelly",
+    "inactive": true,
     "name": "Nayara Kelly",
     "area": "Psicóloga Bilíngue",
     "photo": "/profissionais/agenda/nayara-kelly.webp",
@@ -875,6 +881,7 @@ export const agendaProfessionals: Professional[] = [
   },
   {
     "id": "suila-lima",
+    "inactive": true,
     "name": "Dra. Suila Lima",
     "area": "Fisioterapeuta",
     "photo": "/profissionais/agenda/suila-lima.webp",
@@ -939,6 +946,7 @@ export const agendaProfessionals: Professional[] = [
   },
   {
     "id": "gracenilda-moura",
+    "inactive": true,
     "name": "Dra. Gracenilda Moura",
     "area": "Psicóloga Clínica / Neuropsicóloga",
     "photo": "/profissionais/agenda/gracenilda-moura.webp",
@@ -958,6 +966,7 @@ export const agendaProfessionals: Professional[] = [
   },
   {
     "id": "yara-marques",
+    "inactive": true,
     "name": "Dra. Yara Marques",
     "area": "Fisioterapeuta Dermatofuncional",
     "photo": "/profissionais/agenda/yara-marques.webp",
