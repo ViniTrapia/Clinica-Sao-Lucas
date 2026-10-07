@@ -101,13 +101,9 @@
 .hero-story:has(.hero-campaigns.is-entered.is-artwork) .hero-scroll-cue i{border-color:rgba(176,24,95,.4);background:rgba(255,255,255,.45);color:#d0237a}
 
 @media(min-width:701px) and (max-width:1024px){
-  /* Tablet segue o computador: arte à direita, texto à esquerda (sem movimento ao rolar). */
-  .hero-campaign-artwork .hero-campaign-visual>picture{inset:28px 4% 28px 44%}
-  .hero-campaign-artwork .hero-campaign-visual::before{right:3%;top:6%;width:62%}
-  .hero-campaign-artwork .hero-campaign-visual::after{right:10%;top:17%;width:46%}
-  .hero-campaign-artwork .hero-campaign-copy{display:block;z-index:2;top:50%;right:58%;bottom:auto;left:6%;width:auto;transform:translate3d(0,-50%,0)}
-  .hero-campaign-artwork .hero-campaign-date strong{border-bottom-color:rgba(208,35,122,.55);color:#d0237a}
-  .hero-campaign-artwork .hero-campaign-copy h2{max-width:11ch;color:#8c1450;font-size:clamp(34px,5vw,46px)}
+  .hero-campaign-artwork .hero-campaign-visual>picture{inset:22px 0}
+  .hero-campaign-artwork .hero-campaign-visual::before{right:6%;top:6%;width:62%}
+  .hero-campaign-artwork .hero-campaign-visual::after{right:14%;top:17%;width:46%}
 }
 
 /* Celular: a arte original, inteira e sem alterações, na proporção 1122x1402 (o hero acompanha a altura). */
