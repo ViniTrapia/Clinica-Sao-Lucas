@@ -83,3 +83,45 @@
   .hero-campaign-copy,.hero-campaign-visual{will-change:auto}
   .hero-campaigns,.hero-campaign,.hero-campaign-visual>picture>img,.hero-campaign-copy>span,.hero-campaign-copy h2,.hero-campaign-copy p,.hero-campaign-copy a,.hero-campaign-nav button{transition:none}
 }
+
+/* Arte pronta (ex.: Outubro Rosa): a imagem aparece inteira, nítida e sem texto por cima, sobre um fundo rosa.
+   No computador ela já ocupa o lugar do painel da direita; ao rolar, o painel se fecha em volta dela e a arte assenta (leve zoom de 1,03 para 1). */
+.hero-campaign-artwork .hero-campaign-visual{background:radial-gradient(ellipse 60% 70% at 14% 16%,rgba(255,255,255,.8),transparent 70%),radial-gradient(ellipse 55% 60% at 88% 84%,rgba(239,120,168,.24),transparent 72%),linear-gradient(180deg,#fde7f0 0%,#fbd9e7 58%,#fce3ed 100%)}
+.hero-campaign-artwork .hero-campaign-visual::before,.hero-campaign-artwork .hero-campaign-visual::after{content:"";position:absolute;right:1%;top:9%;width:46%;aspect-ratio:1;border:1px solid rgba(208,35,122,.2);border-radius:50%;pointer-events:none}
+.hero-campaign-artwork .hero-campaign-visual::after{right:7%;top:19%;width:34%;border-color:rgba(255,255,255,.7)}
+.hero-campaign-artwork .hero-campaign-visual>picture{z-index:1;inset:44px var(--hero-photo-right) 120px 50%}
+.hero-campaign-artwork .hero-campaign-visual>picture>img{position:absolute;top:50%;left:50%;width:auto;height:auto;max-width:100%;max-height:100%;border-radius:14px;box-shadow:0 26px 60px rgba(150,20,80,.2),0 4px 14px rgba(150,20,80,.08);filter:none;transform:translate3d(-50%,-50%,0) scale(1.02);transform-origin:50% 100%}
+.hero-campaign-artwork.is-active .hero-campaign-visual>picture>img{transform:translate3d(-50%,-50%,0) scale(calc(1 + (var(--campaign-portrait-scale) - 1)/6));transition-duration:.18s,.6s;transition-timing-function:linear,ease}
+.hero-campaign-artwork .hero-campaign-shade{display:none}
+/* Texto ao lado da arte (só no computador): ocupa o lugar do texto principal do hero e é recortado pelo painel ao rolar, cedendo a vez a ele. */
+.hero-campaign-artwork .hero-campaign-copy{display:none}
+.hero-campaigns.is-artwork .hero-campaign-nav button{border-color:rgba(176,24,95,.26);color:#b0587f}
+.hero-campaigns.is-artwork .hero-campaign-nav button.is-active{border-color:#d0237a;color:#8c1450}
+.hero-story:has(.hero-campaigns.is-entered.is-artwork) .hero-scroll-cue{color:#8c1450}
+.hero-story:has(.hero-campaigns.is-entered.is-artwork) .hero-scroll-cue i{border-color:rgba(176,24,95,.4);background:rgba(255,255,255,.45);color:#d0237a}
+
+@media(min-width:701px) and (max-width:1024px){
+  .hero-campaign-artwork .hero-campaign-visual>picture{inset:22px 0}
+  .hero-campaign-artwork .hero-campaign-visual::before{right:6%;top:6%;width:62%}
+  .hero-campaign-artwork .hero-campaign-visual::after{right:14%;top:17%;width:46%}
+}
+
+@media(max-width:700px){
+  .hero-campaign-artwork .hero-campaign-visual>picture{inset:12px 84px 12px 0}
+  .hero-campaign-artwork .hero-campaign-visual>picture>img{border-radius:8px;box-shadow:0 14px 34px rgba(150,20,80,.18)}
+  .hero-campaign-artwork .hero-campaign-visual::before{right:-14%;top:4%;width:96%}
+  .hero-campaign-artwork .hero-campaign-visual::after{right:2%;top:18%;width:64%}
+}
+
+@media(min-width:1025px){
+  .hero-campaign-artwork .hero-campaign-copy{display:block;z-index:2;top:50%;right:auto;bottom:auto;left:5.5%;width:38%;max-width:540px;opacity:calc(1 - var(--hero-copy-opacity));transform:translate3d(calc(-46px - var(--hero-copy-x)),-50%,0)}
+  .hero-campaign-artwork .hero-campaign-date strong{border-bottom-color:rgba(208,35,122,.55);color:#d0237a}
+  .hero-campaign-artwork .hero-campaign-copy h2{max-width:11ch;color:#8c1450;font-size:clamp(42px,4.2vw,62px)}
+}
+@media(min-width:1600px){
+  .hero-campaign-artwork .hero-campaign-copy{left:max(6%,calc((100vw - 1440px)/2))}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-campaign-artwork .hero-campaign-visual>picture>img,.hero-campaign-artwork.is-active .hero-campaign-visual>picture>img{transform:translate3d(-50%,-50%,0);transition:none}
+}
