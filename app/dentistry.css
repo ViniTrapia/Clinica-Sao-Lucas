@@ -34,7 +34,7 @@
 .dentistry-identity>h3{animation-delay:.08s}
 .dentistry-identity>.dentistry-role{animation-delay:.16s}
 @keyframes dentistry-identity-in{from{opacity:0;transform:translate3d(0,12px,0)}to{opacity:1;transform:none}}
-.dentistry-bio{max-width:48ch;margin-top:26px;padding-left:4px;color:#aebbd9;font-size:13px;line-height:1.7}
+.dentistry-bio{max-width:48ch;margin-top:20px;color:#aebbd9;font-size:13px;line-height:1.7}
 .dentistry-detail-services{position:relative;padding:25px 28px 28px;border:1px solid rgba(159,179,239,.24);border-left:3px solid #f3a253;border-radius:0 18px 18px 0;background:linear-gradient(135deg,rgba(28,56,128,.88),rgba(12,32,86,.74));box-shadow:0 24px 55px rgba(1,10,42,.2)}
 .dentistry-detail-services ul{display:grid;grid-template-columns:1fr 1fr;gap:0 20px;margin:18px 0 0;padding:0;border-top:1px solid rgba(255,255,255,.18);list-style:none}
 .dentistry-detail-services li{position:relative;padding:11px 8px 11px 17px;border-bottom:1px solid rgba(255,255,255,.12);color:#edf1fb;font-size:12px;line-height:1.35}
