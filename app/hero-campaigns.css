@@ -111,11 +111,18 @@
   .hero-campaign-pink .hero-campaign-copy{right:44%}
 }
 @media(max-width:700px){
-  .hero-campaign-pink.hero-campaign-portrait-cutout .hero-campaign-visual>picture{right:0;width:47%;height:88%}
-  .hero-campaign-pink .hero-campaign-copy{right:42%}
-  .hero-campaign-pink .hero-campaign-copy h2{font-size:clamp(30px,8.6vw,38px)}
-  .hero-campaign-ribbon{width:15px;height:23px}
+  /* A página rosa precisa de mais altura no celular para mostrar também os 4 sinais; o hero acompanha. */
+  .hero-campaigns.is-pink{height:clamp(470px,130vw,560px)}
+  .hero-story:has(.hero-campaigns.is-pink) .clinic-feature{height:clamp(470px,130vw,560px)}
+  .hero-campaign-pink.hero-campaign-portrait-cutout .hero-campaign-visual>picture{right:0;width:48%;height:58%}
+  .hero-campaign-pink .hero-campaign-copy{right:44%;bottom:24px}
+  .hero-campaign-pink .hero-campaign-copy h2{max-width:none;font-size:clamp(28px,7.8vw,34px)}
   .hero-campaign-pink .hero-campaign-date small{display:none}
+  .hero-campaign-pink .hero-campaign-points{display:grid;gap:7px;max-width:none;margin-top:14px}
+  .hero-campaign-pink .hero-campaign-points li{padding-left:27px;font-size:12px;line-height:1.35}
+  .hero-campaign-pink .hero-campaign-points li::before{width:19px;height:19px;font-size:10px}
+  .hero-campaign-pink .hero-campaign-copy a{width:86%;margin-top:12px}
+  .hero-campaign-ribbon{width:15px;height:23px}
 }
 
 @media(prefers-reduced-motion:reduce){
