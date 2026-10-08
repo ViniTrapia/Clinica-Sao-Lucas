@@ -20,6 +20,8 @@ import { weeklySchedule, type Professional, type Schedule } from './schedule';
  *    Para o hero, prefira um recorte em alta resolução com fundo transparente
  *    em `public/profissionais/hero/<id>.webp`, informado no campo `heroPhoto`
  *    do cadastro; sem ele, a página usa a foto pequena da agenda (`photo`).
+ *    O build confere esses recortes (`pnpm check:hero-photos`); veja as regras
+ *    em AGENTS.md antes de publicar um recorte novo.
  * 3. A página só aparece nos dias em que esse `id` estiver em
  *    `weeklySchedule.appointments` para a data de hoje.
  *
