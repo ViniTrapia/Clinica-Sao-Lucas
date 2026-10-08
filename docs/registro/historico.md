@@ -2,13 +2,23 @@
 
 Entradas mais novas no topo. Formato e regras em [`README.md`](README.md#como-registrar-uma-mudança-vale-para-codex-e-claude).
 
+## 2026-10-08 — Revisão para o lançamento: fotos nítidas, textos e segurança
+- Quem: Claude
+- Onde: branch `claude/resumo-codex-wjqp2p` (PR de revisão) — não publicado até a aprovação do Vinícius.
+- O que mudou: 17 fotos da agenda, do painel e da seção Profissionais que estavam pequenas e apareciam borradas no painel foram refeitas a partir das artes da TV, com 1,8× a 2,9× mais resolução (Arielly, Bryan, Carolline, Edilma, Eloisa, Ermita, Ítala, Karina, Layane, Ludmila, Maria Paula, Nayara, Reynaldo, Silvania, Suila, Thais, Vivianne). O enquadramento é o mesmo de antes (mesma área e proporção, inclusive o espelhamento da Layane), então `photo-framing.ts` não mudou. A mancha clara ao lado do ombro da Layane saiu. A foto do Dr. Alexandre na agenda e na equipe passou a usar o recorte do hero já corrigido no PR #21, que fecha a gola atrás do pescoço.
+- Textos: acentos nas áreas (Fonoaudióloga, Psicóloga, Psicóloga Clínica e Neuropsicóloga, Psicóloga Infantil, Terapeuta Ocupacional, Procedimentos Estéticos, Ultrassonografia) e o nome da cidade unificado como "Belém do São Francisco" (havia "de" e "do" misturados).
+- Hero: a numeração 01/02 ganhou um fundo azul translúcido, porque sobre o jaleco branco ela sumia. No celular (até 520 px), a pedido do Vinícius, o retrato dos médicos do dia ficou bem maior (de 55–79% para 66–91% da altura do hero), sem encostar no texto: a especialidade quebra a linha (`max-width:min(25ch,44vw)`) e o link "Agendar consulta" ficou com 150 px. Conferido nos 6 médicos do hero de 320 a 520 px por medição automática de sobreposição.
+- Segurança: `public/_headers` adiciona cabeçalhos de proteção (sem enquadramento em outros sites, HSTS, nosniff, permissões de câmera/microfone desligadas), cache longo para `/assets/` e `noindex` no endereço `workers.dev`. A página de comparação `/teste-bracos.html` saiu do site público.
+- Arquivos: `public/profissionais/agenda/*.webp` (18), `app/agenda/agenda-professionals.ts`, `app/hero-campaigns.css`, `app/page.tsx`, `app/ClinicGallery.tsx`, `app/layout.tsx`, `index.html`, `public/_headers`.
+- Atenção: os recortes usam a parte visível das artes; onde a faixa azul da arte cobre o corpo (fim da foto de Carolline, Ermita, Karina e Ludmila), a parte de baixo continua vindo da foto anterior, com transição suave. Giselle, Flora e Samuel não puderam ser melhorados (sem arte ou arte diferente da foto); Robson, Louise, Ademy e Ilka já tinham boa resolução e ficaram como estavam.
+
 ## 2026-10-08 — Retratos reconstruídos, hero e perfis da equipe
 - Quem: Codex.
 - Onde: PR #23, branch `codex/portrait-framing`, partindo da `main` após o PR #22 — publicado.
 - O que mudou: após o Vinícius aprovar visualmente a prévia, 16 recortes com braços ou laterais cortadas passaram a usar versões reconstruídas em `public/profissionais/reconstruidos/` (3 do hero e 13 da agenda/equipe). Os originais continuam em `public/profissionais/{agenda,hero}/` para comparação e reversão. `app/asset-url.ts` escolhe as versões novas para toda a página; `app/agenda/photo-framing.ts` enquadra os novos arquivos na equipe.
 - Hero: em telas grandes o retrato começa maior, diminui durante a rolagem e termina mais à direita, com espaço entre corpo e texto. Após a revisão local do Vinícius, o retrato final no computador ficou um pouco maior (23% da largura e 74% da altura no estado fechado). Tablet e celular conservam recuos próprios. Alterações em `app/HeroCampaigns.tsx` e `app/hero-campaigns.css`.
 - Perfis: os 21 cadastros que não tinham `bio` receberam textos curtos e individuais, baseados apenas nas áreas, resumos e especialidades já registrados em `app/agenda/agenda-professionals.ts`. São 15 profissionais ativos e 6 inativos; todos os 39 ativos agora mostram perfil no hover, foco e painel móvel, sem mudar o estilo.
-- Comparação: `/teste-bracos.html` mostra originais e novos recortes lado a lado. A página principal usa as versões reconstruídas.
+- Comparação: `/teste-bracos.html` mostrava originais e novos recortes lado a lado (retirada do site público na revisão para o lançamento; continua no histórico do git). A página principal usa as versões reconstruídas.
 - Verificação: script do hero agora analisa toda a lateral da foto efetivamente servida. Codex conferiu o hero aberto e fechado no computador, além de tablet e celular; `tsc --noEmit`, ESLint, checagem dos 7 recortes do hero e build Vite passaram. Após o merge, conferiu `clinicasaolucas.app.br`: 39 cards ativos, 39 perfis, imagem reconstruída no hero, perfil móvel e nenhuma imagem quebrada na página carregada.
 
 ## 2026-10-08 — Registro compartilhado criado

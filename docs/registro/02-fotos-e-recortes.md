@@ -15,7 +15,7 @@ Os arquivos soltos em `public/profissionais/*.{jpg,png,webp}` são fotos antigas
 
 ## Retratos reconstruídos em 08/10
 
-O Vinícius aprovou a prévia local e o PR #23 foi publicado. Os recortes novos são WebP com transparência; as fotos originais seguem disponíveis para comparação e reversão. A página `/teste-bracos.html` compara os dois conjuntos.
+O Vinícius aprovou a prévia local e o PR #23 foi publicado. Os recortes novos são WebP com transparência; as fotos originais seguem disponíveis para comparação e reversão. A página de comparação `/teste-bracos.html` foi retirada do site público antes do lançamento (está no histórico do git).
 
 - **Hero (3):** Ademy Landim, Dhiego Ramalho e Ilka Gominho.
 - **Agenda, painel e equipe (13):** Ariane Matos, Bruna Bastos, Caio Alves, Cleobenysson Cruz, Débora Cordeiro, Dhiego Ramalho, Eduardo Bastos, Emiliane Cruz, Joceane Ramos, Marcelo Amaral, Raquel Andrade, Renata Filgueira e Vinícius Aquino.
@@ -24,6 +24,13 @@ O Vinícius aprovou a prévia local e o PR #23 foi publicado. Os recortes novos 
 - As novas áreas dos corpos foram geradas com base nas fotos originais e foram revisadas na prévia local antes da autorização de publicação.
 
 Todas as fotos de profissionais são recortes com fundo transparente. Os originais (artes da TV da clínica, 1920×1080) vieram no zip `wetransfer_png_2026-10-06_2254.zip` da pasta do projeto do Claude; os recortes dos 21 profissionais novos foram feitos localmente, porque a rede do ambiente do Claude bloqueia o download do Canva.
+
+## Fotos da agenda refeitas em alta resolução (08/10)
+
+Antes do lançamento, 17 fotos de `public/profissionais/agenda/` que tinham de 270 a 480 px de altura foram refeitas a partir das artes da TV (1920×1080), com remoção de fundo BiRefNet. Cada foto nova cobre exatamente a mesma área da anterior (mesma proporção e espelhamento), por isso os valores de `app/agenda/photo-framing.ts` continuam valendo. Onde a faixa azul inferior da arte cobre o corpo, a parte de baixo vem da foto anterior.
+
+- A do Dr. Alexandre agora é o recorte do hero (já com a gola corrigida), cortado na mesma área.
+- Continuam pequenas: Giselle (349×455), Flora (354×480) e Samuel (270×306). Só fotos novas resolvem.
 
 ## Padrão de enquadramento (decidido pelo Vinícius)
 
@@ -72,7 +79,7 @@ Diagnóstico feito pelo Claude:
    - no celular (`max-width:700px`), `app/hero-campaigns.css` usa `right:0` no `picture` do `.hero-campaign-portrait-cutout`;
    - no computador, durante a rolagem, o cartão encolhe e o retrato chega na borda.
 
-3. **Dr. Alexandre:** o PR #21 recompôs a gola do jaleco atrás do pescoço **só no recorte do hero**. A foto da agenda e da seção Profissionais (`public/profissionais/agenda/alexandre-torres.webp`) usa o mesmo recorte original e **ainda tem o mesmo defeito**.
+3. **Dr. Alexandre:** o PR #21 recompôs a gola do jaleco atrás do pescoço **só no recorte do hero**. A foto da agenda e da seção Profissionais (`public/profissionais/agenda/alexandre-torres.webp`) tinha o mesmo defeito; em 08/10 passou a usar o recorte corrigido do hero.
 
 ### Rascunho que pode ser aproveitado
 

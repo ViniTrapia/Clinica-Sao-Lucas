@@ -55,12 +55,14 @@
   .hero-campaign-portrait-cutout .hero-campaign-shade{background:linear-gradient(180deg,transparent 15%,rgba(5,15,52,.035) 100%)}
 }
 
-/* Recortes sem margem lateral (páginas diárias): afastam o retrato do texto no celular, como as margens dos recortes das campanhas. */
+/* Páginas diárias no celular: retrato grande, ocupando quase toda a altura do hero; a especialidade quebra a linha e o link fica mais curto para o texto nunca encostar no retrato. */
 @media(max-width:520px){
-  .hero-campaign-flush.hero-campaign-portrait-cutout .hero-campaign-visual>picture{right:6%;width:42%;height:80%}
+  .hero-campaign-flush.hero-campaign-portrait-cutout .hero-campaign-visual>picture{right:1.5%;width:48%;height:92%}
+  .hero-campaign-flush .hero-campaign-copy p{max-width:min(25ch,44vw)}
+  .hero-campaign-flush .hero-campaign-copy a{width:150px}
 }
-@media(max-width:360px){
-  .hero-campaign-flush.hero-campaign-portrait-cutout .hero-campaign-visual>picture{right:6%;width:38%;height:74%}
+@media(max-width:350px){
+  .hero-campaign-flush.hero-campaign-portrait-cutout .hero-campaign-visual>picture{width:43%;height:86%}
 }
 @media(min-width:701px) and (max-width:1024px){
   .hero-campaigns{--campaign-copy-x:0px;--campaign-copy-y:0px;top:0;bottom:auto;height:clamp(500px,68vw,650px);visibility:visible}
@@ -79,3 +81,7 @@
   .hero-campaign-copy,.hero-campaign-visual{will-change:auto}
   .hero-campaigns,.hero-campaign,.hero-campaign-visual>picture>img,.hero-campaign-copy>span,.hero-campaign-copy h2,.hero-campaign-copy p,.hero-campaign-copy a,.hero-campaign-nav button{transition:none}
 }
+
+/* Paginação legível mesmo sobre o jaleco branco do retrato. */
+.hero-campaign-nav{padding:3px 12px 5px;border-radius:999px;background:rgba(9,22,64,.5);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+@media(max-width:700px){.hero-campaign-nav{padding:2px 9px 4px}}
