@@ -32,4 +32,5 @@ Decisões que ele tomou ou correções que fez nos últimos dias e que valem par
 - Para artes de campanha, peça ao cliente retrato 4:5: 2160 × 2700 px (computador e tablet) e 1290 × 1612 px (celular).
 - No hero dos profissionais, o retrato começa maior, diminui durante a rolagem e termina um pouco mais à direita, sem cobrir o texto em nenhum estado.
 - No computador, o retrato não deve ficar pequeno demais quando o hero fecha; o ajuste final aprovado usa 23% da largura e 74% da altura no estado fechado, com o tamanho de abertura preservado.
+- No celular, o retrato do médico do dia deve ser grande e imponente, quase da altura do hero, mas sem cobrir nenhum texto (aprovado em 08/10: 48% da largura e 92% da altura até 520 px; 43%/86% até 350 px).
 - Outubro Rosa: ele aprovou só a versão de celular com a arte original inteira; computador e tablet aguardam a arte nova.
