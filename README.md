@@ -4,9 +4,9 @@ Site institucional em React + Vite, com layout responsivo e animações discreta
 
 ## Abrir para editar
 
-- Página e conteúdo: app/page.tsx
-- Aparência, espaçamentos e animações: app/globals.css
-- Fotos finais: public/profissionais/*.webp
+- Página e conteúdo: app/page.tsx; cadastro de profissionais: app/agenda/agenda-professionals.ts
+- Aparência, espaçamentos e animações: app/globals.css, app/hero-campaigns.css e estilos das seções
+- Retratos: public/profissionais/agenda/, public/profissionais/hero/ e public/profissionais/reconstruidos/
 
 Instale com pnpm install e inicie com pnpm dev. Para gerar os arquivos de hospedagem, use pnpm build. A saída fica em dist.
 
@@ -20,9 +20,7 @@ Além das campanhas fixas (app/hero-campaigns.ts), o hero mostra automaticamente
 
 ## Fotografias
 
-Os dez retratos foram separados do fundo pelo Canva. Os rostos não foram gerados novamente. A foto de destaque da Dra. Louise usa os pixels da fotografia original e a máscara de recorte fornecida pelo Canva; o fundo, os textos e as marcas da arte original não integram a abertura. Os recortes pequenos têm resolução limitada pela agenda enviada. Substituir pelos arquivos originais será a melhor maneira de melhorar sua nitidez.
-
-Uma variante feita com edição generativa foi avaliada anteriormente, mas NÃO foi usada no site entregue.
+Os retratos da equipe vêm das fotos e artes fornecidas pela clínica. Para 16 recortes com braços ou laterais cortadas, foram criadas versões reconstruídas aprovadas na prévia local e aplicadas pelo PR #23. As fotos originais continuam no repositório; `app/asset-url.ts` direciona o site às versões de `public/profissionais/reconstruidos/`. Veja o histórico e as limitações em `docs/registro/02-fotos-e-recortes.md`.
 
 ## Antes de divulgar ao público
 

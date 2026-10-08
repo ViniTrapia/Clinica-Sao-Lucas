@@ -1,4 +1,4 @@
-.hero-campaigns{--campaign-copy-x:-47vw;--campaign-copy-y:0px;--campaign-portrait-scale:1.18;position:absolute;z-index:3;inset:0;visibility:hidden;opacity:0;pointer-events:none;transition:opacity .52s cubic-bezier(.22,.74,.18,1)}
+.hero-campaigns{--campaign-copy-x:-47vw;--campaign-copy-y:0px;--campaign-portrait-open:1;--campaign-portrait-scale:1.08;position:absolute;z-index:3;inset:0;visibility:hidden;opacity:0;pointer-events:none;transition:opacity .52s cubic-bezier(.22,.74,.18,1)}
 .hero-campaigns.is-entered{visibility:visible;opacity:1}
 .hero-campaign-track,.hero-campaign{position:absolute;inset:0}
 .hero-campaign{z-index:0;visibility:hidden;opacity:0;pointer-events:none;transition:opacity .54s cubic-bezier(.22,.74,.18,1)}
@@ -10,7 +10,7 @@
 .hero-campaign-portrait-cutout .hero-campaign-visual{background:radial-gradient(circle at 82% 42%,rgba(75,105,197,.52),transparent 31%),linear-gradient(135deg,#0b1748 0%,#112765 56%,#183985 100%)}
 .hero-campaign-portrait-cutout .hero-campaign-visual::before,.hero-campaign-portrait-cutout .hero-campaign-visual::after{content:"";position:absolute;right:2%;top:13%;width:46%;aspect-ratio:1;border:1px solid rgba(240,155,72,.3);border-radius:50%;pointer-events:none}
 .hero-campaign-portrait-cutout .hero-campaign-visual::after{right:8%;top:21%;width:32%;border-color:rgba(255,255,255,.13)}
-.hero-campaign-portrait-cutout .hero-campaign-visual>picture{z-index:1;inset:auto;right:4%;bottom:calc(30px + var(--hero-photo-inset));width:32%;height:74%}
+.hero-campaign-portrait-cutout .hero-campaign-visual>picture{z-index:1;inset:auto;right:calc(var(--hero-photo-right) + 2%);bottom:calc(30px + var(--hero-photo-inset));width:calc(23% + 10% * var(--campaign-portrait-open));height:calc(74% + 11% * var(--campaign-portrait-open))}
 .hero-campaign-portrait-cutout .hero-campaign-visual>picture>img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center bottom;filter:saturate(.94) contrast(1.03);transform:translate3d(2%,0,0) scale(.985);transform-origin:center bottom}
 .hero-campaign-portrait-cutout.is-active .hero-campaign-visual>picture>img{transform:translate3d(0,0,0) scale(var(--campaign-portrait-scale));transition-duration:.18s,.6s;transition-timing-function:linear,ease}
 .hero-campaign-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,15,52,.94) 0%,rgba(7,19,61,.82) 31%,rgba(7,19,61,.18) 68%,rgba(7,19,61,.05)),linear-gradient(180deg,rgba(4,13,45,.08),rgba(4,13,45,.42));pointer-events:none}
@@ -29,7 +29,7 @@
 .hero-campaign-nav button.is-active{width:62px;border-color:#f3a253;color:#fff}
 
 @media(min-width:701px) and (max-width:900px){
-  .hero-campaign-portrait-cutout .hero-campaign-visual>picture{right:2%;bottom:calc(30px + var(--hero-photo-inset));width:33%;height:71%}
+  .hero-campaign-portrait-cutout .hero-campaign-visual>picture{right:4%;bottom:calc(30px + var(--hero-photo-inset));width:37%;height:78%}
   .hero-campaign-copy{right:35%;left:43%}
   .hero-campaign-copy h2{font-size:clamp(38px,5.7vw,46px)}
   .hero-campaign-nav{right:6%}
@@ -49,7 +49,7 @@
   .hero-campaign-nav{right:18px;bottom:19px}
   .hero-campaign-nav button{width:27px}
   .hero-campaign-nav button.is-active{width:42px}
-  .hero-campaign-portrait-cutout .hero-campaign-visual>picture{right:0;bottom:-2px;width:70%;height:94%}
+  .hero-campaign-portrait-cutout .hero-campaign-visual>picture{right:8%;bottom:-2px;width:62%;height:94%}
   .hero-campaign-portrait-cutout .hero-campaign-visual::before{right:-18%;top:8%;width:90%}
   .hero-campaign-portrait-cutout .hero-campaign-visual::after{right:-2%;top:21%;width:57%}
   .hero-campaign-portrait-cutout .hero-campaign-shade{background:linear-gradient(180deg,transparent 15%,rgba(5,15,52,.035) 100%)}
@@ -57,22 +57,18 @@
 
 /* Recortes sem margem lateral (páginas diárias): afastam o retrato do texto no celular, como as margens dos recortes das campanhas. */
 @media(max-width:520px){
-  .hero-campaign-flush.hero-campaign-portrait-cutout .hero-campaign-visual>picture{width:45%;height:80%}
+  .hero-campaign-flush.hero-campaign-portrait-cutout .hero-campaign-visual>picture{right:6%;width:42%;height:80%}
 }
 @media(max-width:360px){
-  .hero-campaign-flush.hero-campaign-portrait-cutout .hero-campaign-visual>picture{width:40%;height:74%}
+  .hero-campaign-flush.hero-campaign-portrait-cutout .hero-campaign-visual>picture{right:6%;width:38%;height:74%}
 }
-@media(min-width:1025px){
-  .hero-campaign-flush.hero-campaign-portrait-cutout .hero-campaign-visual>picture{width:26%;height:66%}
-}
-
 @media(min-width:701px) and (max-width:1024px){
   .hero-campaigns{--campaign-copy-x:0px;--campaign-copy-y:0px;top:0;bottom:auto;height:clamp(500px,68vw,650px);visibility:visible}
   .hero-campaign-visual{clip-path:none;border-radius:0}
   .hero-campaign-copy{right:49%;bottom:12%;left:6%;transform:none}
   .hero-campaign-copy h2{font-size:clamp(42px,6vw,58px)}
   .hero-campaign-copy p{font-size:14px}
-  .hero-campaign-portrait-cutout .hero-campaign-visual>picture{right:2%;bottom:-2px;width:49%;height:83%}
+  .hero-campaign-portrait-cutout .hero-campaign-visual>picture{right:6%;bottom:-2px;width:45%;height:83%}
   .hero-campaign-portrait-cutout .hero-campaign-visual::before{right:-2%;top:10%;width:58%}
   .hero-campaign-portrait-cutout .hero-campaign-visual::after{right:7%;top:22%;width:40%}
   .hero-campaign-nav{right:5%;bottom:24px}

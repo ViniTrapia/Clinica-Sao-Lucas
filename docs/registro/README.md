@@ -42,5 +42,5 @@ Correções pequenas (um erro de digitação, um ajuste de 1 px) não precisam d
 
 ## Situação em 08/10/2026
 
-- Tudo descrito como publicado está na `main` (último merge: PR #20).
-- O Vinícius vai **terminar a edição das fotos do hero no Codex**. O diagnóstico completo está em [`02-fotos-e-recortes.md`](02-fotos-e-recortes.md#hero-defeito-em-aberto).
+- O PR #22, com este registro compartilhado, já está na `main`.
+- O Vinícius aprovou a prévia dos retratos e autorizou a publicação do PR #23. Esse PR também amplia o retrato fechado do hero no computador e completa os perfis de todos os profissionais cadastrados. Detalhes em [`historico.md`](historico.md) e [`02-fotos-e-recortes.md`](02-fotos-e-recortes.md#retratos-reconstruídos-em-0810).

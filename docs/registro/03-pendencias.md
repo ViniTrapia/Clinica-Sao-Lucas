@@ -4,9 +4,7 @@ Marque quem está cuidando de cada item (Codex ou Claude) e em qual branch. Ao r
 
 ## Em andamento
 
-- **Recortes do hero com ombro/braço cortado** — Codex (a pedido do Vinícius, 08/10).
-  Ademy, Dhiego e Ilka têm o braço cortado em linha reta; o CSS do hero encosta o retrato na borda direita no celular e durante a rolagem no computador. Diagnóstico e rascunho aproveitável em [`02-fotos-e-recortes.md`](02-fotos-e-recortes.md#hero-defeito-em-aberto).
-  Junto com isso: reforçar `scripts/check-hero-photos.mjs` para olhar a foto inteira.
+- **Publicação do PR #23** — Codex, branch `codex/portrait-framing` (08/10). O Vinícius aprovou a prévia e autorizou publicação após aumentar o retrato final do hero no computador e completar os perfis da equipe. Verificação local concluída; merge e confirmação no domínio de produção em andamento. Detalhes em [`02-fotos-e-recortes.md`](02-fotos-e-recortes.md#retratos-reconstruídos-em-0810).
 
 ## Aguardando o Vinícius
 

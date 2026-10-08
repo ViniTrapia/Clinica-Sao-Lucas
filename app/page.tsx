@@ -13,9 +13,9 @@ import { HeroCampaigns } from './HeroCampaigns';
 import { DentistrySection } from './DentistrySection';
 import { clinicFacadeFallbackEnabled } from './hero-campaigns';
 import { clinicToday, hasHeroCampaigns } from './agenda/hero-doctors';
-import { photoFraming } from './agenda/photo-framing';
+import { photoFraming, reconstructedPhotoFraming } from './agenda/photo-framing';
 import './portrait-framing.css';
-function photoFramingProps(photo?:string){const frame=photo?photoFraming[photo]:undefined;if(!frame)return {};return {className:`is-framed${frame.cut?` is-cut-${frame.cut}`:''}`,style:{'--photo-scale':frame.scale,'--photo-face-top':frame.faceTop,'--photo-x':frame.x,'--photo-face-y':frame.faceY,'--photo-aspect':frame.aspect} as CSSProperties}}
+function photoFramingProps(photo?:string){const frame=photo?reconstructedPhotoFraming[photo]??photoFraming[photo]:undefined;if(!frame)return {};return {className:`is-framed${frame.cut?` is-cut-${frame.cut}`:''}`,style:{'--photo-scale':frame.scale,'--photo-face-top':frame.faceTop,'--photo-x':frame.x,'--photo-face-y':frame.faceY,'--photo-aspect':frame.aspect} as CSSProperties}}
 function Brand(){return <a className="brand" href="#inicio" aria-label="Clínica São Lucas — início"><img src={assetUrl('/logo-original.jpg')} alt="" width="52" height="52"/><span><small>CLÍNICA</small><strong>SÃO LUCAS</strong></span></a>}
 function HeaderBrand(){return <a className="brand brand-clean brand-official" href="#inicio" aria-label="Clínica São Lucas — início"><img src={assetUrl('/logo-clinica-oficial.webp')} alt="" width="270" height="204" fetchPriority="high"/></a>}
 function Label({n,title,aside}:{n:string,title:string,aside:string}){return <div className="section-label"><span>{n} / {title}</span><span>{aside}</span></div>}

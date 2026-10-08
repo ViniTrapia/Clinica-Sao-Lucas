@@ -71,3 +71,20 @@ export const photoFraming: Record<string, PhotoFraming> = {
   '/profissionais/agenda/thais-thesly.webp': { scale: 1.086, faceTop: 0.096, x: 0.520, faceY: 0.229, aspect: 0.721 },
   '/profissionais/agenda/eduardo-bastos.webp': { scale: 0.900, faceTop: 0.067, x: 0.516, faceY: 0.233, aspect: 0.792, cut: 'right' },
 };
+
+// Enquadramento dos retratos reconstruídos, mantendo os originais como referência.
+export const reconstructedPhotoFraming: Record<string, PhotoFraming> = {
+  '/profissionais/agenda/ariane-matos.webp': { scale: .94, faceTop: .08, x: .50, faceY: .22, aspect: 1.078 },
+  '/profissionais/agenda/bruna-bastos.webp': { scale: 1.08, faceTop: .08, x: .50, faceY: .22, aspect: .689 },
+  '/profissionais/agenda/caio-alves.webp': { scale: 1.05, faceTop: .08, x: .54, faceY: .22, aspect: .783 },
+  '/profissionais/agenda/cleobenysson-cruz.webp': { scale: .96, faceTop: .08, x: .50, faceY: .22, aspect: .960 },
+  '/profissionais/agenda/debora-cordeiro.webp': { scale: .98, faceTop: .08, x: .50, faceY: .22, aspect: .949 },
+  '/profissionais/agenda/dhiego-ramalho.webp': { scale: 1.00, faceTop: .08, x: .50, faceY: .22, aspect: .800 },
+  '/profissionais/agenda/eduardo-bastos.webp': { scale: 1.04, faceTop: .08, x: .50, faceY: .22, aspect: .792 },
+  '/profissionais/agenda/emiliane-cruz.webp': { scale: .94, faceTop: .08, x: .50, faceY: .22, aspect: .914 },
+  '/profissionais/agenda/joceane-ramos.webp': { scale: .97, faceTop: .08, x: .50, faceY: .22, aspect: .945 },
+  '/profissionais/agenda/marcelo-amaral.webp': { scale: 1.00, faceTop: .08, x: .50, faceY: .22, aspect: .825 },
+  '/profissionais/agenda/raquel-andrade.webp': { scale: .97, faceTop: .08, x: .50, faceY: .22, aspect: .962 },
+  '/profissionais/agenda/renata-filgueira.webp': { scale: 1.00, faceTop: .08, x: .50, faceY: .22, aspect: .875 },
+  '/profissionais/agenda/vinicius-aquino.webp': { scale: 1.07, faceTop: .08, x: .50, faceY: .22, aspect: .722 },
+};
