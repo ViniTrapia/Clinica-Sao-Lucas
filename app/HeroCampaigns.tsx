@@ -58,6 +58,7 @@ export function HeroCampaigns(){
         campaigns.style.setProperty('--campaign-copy-x','0px');
         campaigns.style.setProperty('--campaign-copy-y','0px');
         campaigns.style.setProperty('--campaign-portrait-scale','1');
+        campaigns.style.setProperty('--campaign-portrait-open','0');
         return;
       }
       const box=hero.getBoundingClientRect();
@@ -69,7 +70,8 @@ export function HeroCampaigns(){
       const startX=-Math.min(window.innerWidth*.47,650);
       campaigns.style.setProperty('--campaign-copy-x',`${startX*(1-returnProgress)}px`);
       campaigns.style.setProperty('--campaign-copy-y',`${20*descentProgress}px`);
-      campaigns.style.setProperty('--campaign-portrait-scale',String(1+.18*(1-returnProgress)));
+      campaigns.style.setProperty('--campaign-portrait-open',String(1-returnProgress));
+      campaigns.style.setProperty('--campaign-portrait-scale',String(1+.08*(1-returnProgress)));
     };
     const requestUpdate=()=>{if(!frame)frame=requestAnimationFrame(update)};
     update();

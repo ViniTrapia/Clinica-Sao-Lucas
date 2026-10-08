@@ -15,6 +15,7 @@ Decisões que ele tomou ou correções que fez nos últimos dias e que valem par
 - Nada de corte visível: nem cabeça, nem ombro, nem braço, nem linha reta na lateral, nem fundo atrás do pescoço.
 - Dentistas sem moldura ou card: direto no fundo do site, com a placa laranja do nome.
 - Não use captura de tela como imagem final; refaça de forma limpa.
+- Para braço ou outra parte do corpo cortada, reconstruir de modo realista a partir da foto da própria pessoa; borda esmaecida sozinha não resolve. Mostrar o resultado em página local antes de publicar.
 
 ## Nomes e cadastro
 
@@ -28,4 +29,5 @@ Decisões que ele tomou ou correções que fez nos últimos dias e que valem par
 - Páginas de médicos do dia sem nenhum texto que indique que aparecem por causa do cargo.
 - Campanhas com data saem sozinhas depois do último dia; nunca deixar uma data vencida no hero.
 - Para artes de campanha, peça ao cliente retrato 4:5: 2160 × 2700 px (computador e tablet) e 1290 × 1612 px (celular).
+- No hero dos profissionais, o retrato começa maior, diminui durante a rolagem e termina um pouco mais à direita, sem cobrir o texto em nenhum estado.
 - Outubro Rosa: ele aprovou só a versão de celular com a arte original inteira; computador e tablet aguardam a arte nova.

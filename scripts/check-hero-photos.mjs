@@ -8,18 +8,25 @@
 // (por exemplo, fundo aparecendo entre o pescoço e a gola, como já aconteceu).
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 
-const root = new URL('..', import.meta.url).pathname;
+const root = fileURLToPath(new URL('..', import.meta.url));
 const catalog = readFileSync(join(root, 'app/agenda/agenda-professionals.ts'), 'utf8');
 const photos = [...new Set([...catalog.matchAll(/"heroPhoto":\s*"([^"]+)"/g)].map(match => match[1]))];
+const assetResolver = readFileSync(join(root, 'app/asset-url.ts'), 'utf8');
+const reconstructed = new Set([...assetResolver.matchAll(/'hero\/([^']+)'/g)].map(match => match[1]));
 
 const problems = [];
 const checked = [];
 for (const photo of photos) {
-  const file = join(root, 'public', photo);
+  const id = photo.match(/\/hero\/([^/]+)\.webp$/)?.[1];
+  const effectivePhoto = id && reconstructed.has(id)
+    ? `/profissionais/reconstruidos/hero/${id}.webp`
+    : photo;
+  const file = join(root, 'public', effectivePhoto);
   if (!existsSync(file)) {
-    problems.push(`${photo}: arquivo não encontrado.`);
+    problems.push(`${effectivePhoto}: arquivo não encontrado.`);
     continue;
   }
   const { data, info } = await sharp(file).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
@@ -27,12 +34,12 @@ for (const photo of photos) {
   const meta = await sharp(file).metadata();
   const opaque = (x, y) => data[(y * width + x) * 4 + 3] > 128;
   const rowHas = y => { for (let x = 0; x < width; x++) if (opaque(x, y)) return true; return false; };
-  const fail = message => problems.push(`${photo}: ${message}`);
+  const fail = message => problems.push(`${effectivePhoto}: ${message}`);
 
   if (!meta.hasAlpha) fail('o recorte não tem fundo transparente.');
   if (height < 700) fail(`resolução baixa (${width}x${height}); use pelo menos 700 px de altura.`);
   if (rowHas(0)) fail('a cabeça encosta no topo da imagem (fica cortada no hero).');
-  for (let y = 0; y < Math.round(height * 0.55); y++) {
+  for (let y = 0; y < height; y++) {
     if (opaque(0, y) || opaque(width - 1, y)) {
       fail(`o corpo encosta na lateral da imagem na altura ${Math.round((y / height) * 100)}% (fica cortado no hero).`);
       break;
@@ -41,7 +48,7 @@ for (const photo of photos) {
   let base = 0;
   for (let x = 0; x < width; x++) if (opaque(x, height - 1)) base++;
   if (base < width * 0.3) fail('o recorte não chega à base da imagem (o retrato fica flutuando no hero).');
-  checked.push({ photo, file, width, height });
+  checked.push({ photo: effectivePhoto, file, width, height });
 }
 
 const sheetIndex = process.argv.indexOf('--sheet');

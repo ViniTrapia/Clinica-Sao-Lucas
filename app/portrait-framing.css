@@ -7,3 +7,7 @@
 .professional-photo img.is-cut-both{-webkit-mask-image:linear-gradient(to right,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(to right,transparent,#000 14%,#000 86%,transparent)}
 @media(max-width:700px){.professional-photo{--card-h:160px}}
 @media(max-width:360px){.professional-photo{--card-h:145px}}
+
+/* Mantém os braços dentro do cartão também quando o retrato recebe foco ou hover. */
+.professional:hover .professional-photo,.professional:focus .professional-photo,.professional:focus-within .professional-photo{transform:translate3d(0,-7px,0) scale(1.06)}
+.professional:hover .professional-photo img,.professional:focus .professional-photo img,.professional:focus-within .professional-photo img{transform:none}

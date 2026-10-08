@@ -2,6 +2,14 @@
 
 Entradas mais novas no topo. Formato e regras em [`README.md`](README.md#como-registrar-uma-mudança-vale-para-codex-e-claude).
 
+## 2026-10-08 — Retratos reconstruídos e novo enquadramento do hero (somente local)
+- Quem: Codex.
+- Onde: branch `codex/portrait-framing`, partindo da `main` após o PR #22. **Ainda não publicado no site de produção.**
+- O que mudou: após o Vinícius aprovar visualmente a prévia, 16 recortes com braços ou laterais cortadas passaram a usar versões reconstruídas em `public/profissionais/reconstruidos/` (3 do hero e 13 da agenda/equipe). Os originais continuam em `public/profissionais/{agenda,hero}/` para comparação e reversão. `app/asset-url.ts` escolhe as versões novas para toda a página local; `app/agenda/photo-framing.ts` enquadra os novos arquivos na equipe.
+- Hero: em telas grandes o retrato começa maior, diminui durante a rolagem e termina mais à direita, com espaço entre corpo e texto. Tablet e celular conservam recuos próprios. Alterações em `app/HeroCampaigns.tsx` e `app/hero-campaigns.css`.
+- Comparação: `/teste-bracos.html` mostra originais e novos recortes lado a lado. Página local normal: `/` (sem parâmetro de teste).
+- Verificação: script do hero agora analisa toda a lateral da foto efetivamente servida. Codex conferiu o hero aberto e fechado no computador, além de tablet e celular; `tsc --noEmit`, ESLint dos arquivos alterados, checagem dos 7 recortes do hero e build Vite passaram. A revisão visual do Vinícius na página local continua sendo o próximo passo.
+
 ## 2026-10-08 — Registro compartilhado criado
 - Quem: Claude
 - Onde: esta pasta (`docs/registro/`) — só documentação, nada do site mudou.

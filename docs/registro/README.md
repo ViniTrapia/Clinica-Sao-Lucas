@@ -42,5 +42,5 @@ Correções pequenas (um erro de digitação, um ajuste de 1 px) não precisam d
 
 ## Situação em 08/10/2026
 
-- Tudo descrito como publicado está na `main` (último merge: PR #20).
-- O Vinícius vai **terminar a edição das fotos do hero no Codex**. O diagnóstico completo está em [`02-fotos-e-recortes.md`](02-fotos-e-recortes.md#hero-defeito-em-aberto).
+- O PR #22, com este registro compartilhado, já está na `main`.
+- O Codex aplicou os retratos reconstruídos e o novo enquadramento do hero somente no branch `codex/portrait-framing` e no site local. A produção aguarda a revisão do Vinícius; detalhes em [`02-fotos-e-recortes.md`](02-fotos-e-recortes.md#reconstruções-aprovadas-para-a-prévia-local-em-0810).
