@@ -1,7 +1,7 @@
 // Confere os recortes dos médicos do hero (campo `heroPhoto` em app/agenda/agenda-professionals.ts)
 // antes do build. Falha quando um recorte tem erro de enquadramento que o site deixaria visível:
-// sem transparência, cabeça encostada no topo, corpo cortado pela lateral ou recorte que não chega
-// à base da foto (retrato "flutuando").
+// sem transparência, cabeça encostada no topo, corpo cortado em linha reta pela lateral (em qualquer
+// altura) ou recorte que não chega à base da foto (retrato "flutuando").
 //
 // `node scripts/check-hero-photos.mjs --sheet saida.png` também gera uma folha com todos os
 // recortes sobre o azul do hero, para conferir a olho o que a checagem automática não mede
@@ -32,9 +32,11 @@ for (const photo of photos) {
   if (!meta.hasAlpha) fail('o recorte não tem fundo transparente.');
   if (height < 700) fail(`resolução baixa (${width}x${height}); use pelo menos 700 px de altura.`);
   if (rowHas(0)) fail('a cabeça encosta no topo da imagem (fica cortada no hero).');
-  for (let y = 0; y < Math.round(height * 0.55); y++) {
+  // A foto inteira, do topo à base: um braço ou jaleco que encosta na lateral aparece no hero como
+  // um corte em linha reta. Quando a foto original corta o corpo, dissolva essa borda no recorte.
+  for (let y = 0; y < height; y++) {
     if (opaque(0, y) || opaque(width - 1, y)) {
-      fail(`o corpo encosta na lateral da imagem na altura ${Math.round((y / height) * 100)}% (fica cortado no hero).`);
+      fail(`o corpo encosta na lateral ${opaque(0, y) ? 'esquerda' : 'direita'} da imagem a partir de ${Math.round((y / height) * 100)}% da altura (aparece cortado em linha reta no hero).`);
       break;
     }
   }
