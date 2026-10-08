@@ -526,6 +526,7 @@ export const agendaProfessionals: Professional[] = [
     "name": "Dr. Bryan Édipo",
     "area": "Biomedicina estética e terapia",
     "photo": "/profissionais/agenda/bryan-edipo.webp",
+    "bio": "Cuidados de estética facial e corporal com atenção às escolhas individuais e a cada etapa do procedimento.",
     "specialties": [
       {
         "items": [
@@ -551,6 +552,7 @@ export const agendaProfessionals: Professional[] = [
     "name": "Débora Cordeiro",
     "area": "Enfermeira e Estética Avançada",
     "photo": "/profissionais/agenda/debora-cordeiro.webp",
+    "bio": "Enfermagem e estética avançada reunidas em cuidados de pele planejados para cada pessoa.",
     "specialties": [
       {
         "items": [
@@ -577,6 +579,7 @@ export const agendaProfessionals: Professional[] = [
     "name": "Dr. Robson Oliveira",
     "area": "Otorrinolaringologista",
     "photo": "/profissionais/agenda/robson-oliveira.webp",
+    "bio": "Atenção a ouvidos, nariz e garganta em atendimentos para adultos e crianças, com avaliação cuidadosa.",
     "heroPhoto": "/profissionais/hero/robson-oliveira.webp",
     "summary": "Médico especializado no diagnóstico e tratamento, clínico e cirúrgico, das doenças dos ouvidos, nariz, garganta, laringe e pescoço.",
     "specialties": [
@@ -597,6 +600,7 @@ export const agendaProfessionals: Professional[] = [
     "name": "Dr. Vinícius Alves",
     "area": "Atendimento médico geral para adultos",
     "photo": "/profissionais/agenda/vinicius-alves.webp",
+    "bio": "Atendimento clínico para adultos, com investigação de sintomas e acompanhamento das condições de saúde mais comuns.",
     "summary": "Consultas humanizadas, com abordagem clínica integral voltada ao diagnóstico, tratamento e acompanhamento de doenças comuns em diferentes áreas da medicina.",
     "specialties": [
       {
@@ -616,6 +620,7 @@ export const agendaProfessionals: Professional[] = [
     "name": "Dr. Vinícius Aquino",
     "area": "Nutricionista",
     "photo": "/profissionais/agenda/vinicius-aquino.webp",
+    "bio": "Orientação nutricional clínica e esportiva que considera a rotina, o desempenho e a relação com a alimentação.",
     "specialties": [
       {
         "title": "Nutrição Clínica e Esportiva",
@@ -637,6 +642,7 @@ export const agendaProfessionals: Professional[] = [
     "name": "Dr. Cleobenysson Cruz",
     "area": "Cardiologista",
     "photo": "/profissionais/agenda/cleobenysson-cruz.webp",
+    "bio": "Exames cardiológicos e avaliação do coração conduzidos com clareza e atenção às necessidades de cada paciente.",
     "specialties": [
       {
         "items": [
@@ -652,6 +658,7 @@ export const agendaProfessionals: Professional[] = [
     "name": "Dra. Vivianne Araújo",
     "area": "Atendimento em pediatria",
     "photo": "/profissionais/agenda/vivianne-araujo.webp",
+    "bio": "Acompanhamento pediátrico do crescimento e das questões comuns da infância, com atenção às famílias.",
     "specialties": [
       {
         "title": "Atendimento em pediatria",
@@ -669,6 +676,7 @@ export const agendaProfessionals: Professional[] = [
     "name": "Dra. Arielly Ferraz",
     "area": "Neurologia Adulta e Neuropediatria",
     "photo": "/profissionais/agenda/arielly-ferraz.webp",
+    "bio": "Cuidado neurológico para adultos e crianças, atento ao desenvolvimento, à memória e aos sinais de cada fase.",
     "specialties": [
       {
         "title": "Neurologia Adulta",
@@ -699,6 +707,7 @@ export const agendaProfessionals: Professional[] = [
     "name": "Dra. Raquel Andrade",
     "area": "Nutricionista",
     "photo": "/profissionais/agenda/raquel-andrade.webp",
+    "bio": "Planejamento alimentar ligado a objetivos pessoais e ao cuidado de condições como diabetes e hipertensão.",
     "specialties": [
       {
         "items": [
@@ -726,6 +735,7 @@ export const agendaProfessionals: Professional[] = [
     "name": "Emiliane Cruz",
     "area": "Especialista em Harmonização Orofacial",
     "photo": "/profissionais/agenda/emiliane-cruz.webp",
+    "bio": "Harmonização orofacial com atenção aos traços individuais e à escolha cuidadosa dos procedimentos.",
     "specialties": [
       {
         "items": [
@@ -749,6 +759,7 @@ export const agendaProfessionals: Professional[] = [
     "name": "Nayara Kelly",
     "area": "Psicóloga Bilíngue",
     "photo": "/profissionais/agenda/nayara-kelly.webp",
+    "bio": "Escuta psicológica bilíngue para crianças, adolescentes, adultos e pessoas surdas, respeitando cada forma de comunicação.",
     "summary": "Pós-graduada em Terapia Cognitivo-Comportamental.",
     "specialties": [
       {
@@ -783,13 +794,15 @@ export const agendaProfessionals: Professional[] = [
     "id": "caio-alves",
     "name": "Dr. Caio Alves",
     "area": "Atendimento em Cardiologia",
-    "photo": "/profissionais/agenda/caio-alves.webp"
+    "photo": "/profissionais/agenda/caio-alves.webp",
+    "bio": "Avaliação em cardiologia com escuta cuidadosa e orientação clara para acompanhar a saúde do coração."
   },
   {
     "id": "dhiego-ramalho",
     "name": "Dr. Dhiego Ramalho",
     "area": "Dermatologista e Medicina Estética",
     "photo": "/profissionais/agenda/dhiego-ramalho.webp",
+    "bio": "Cuidado dermatológico que considera a saúde da pele e os objetivos individuais em medicina estética.",
     "heroPhoto": "/profissionais/hero/dhiego-ramalho.webp",
     "specialties": [
       {
@@ -834,6 +847,7 @@ export const agendaProfessionals: Professional[] = [
     "name": "Dr. Marcelo Amaral",
     "area": "Ortopedista / Traumatologista",
     "photo": "/profissionais/agenda/marcelo-amaral.webp",
+    "bio": "Avaliação de dores, lesões e movimento com atenção ortopédica voltada às necessidades de cada pessoa.",
     "specialties": [
       {
         "items": [
@@ -864,6 +878,7 @@ export const agendaProfessionals: Professional[] = [
     "name": "Dra. Renata Filgueira",
     "area": "Psiquiatra",
     "photo": "/profissionais/agenda/renata-filgueira.webp",
+    "bio": "Acompanhamento psiquiátrico de adolescentes e adultos com escuta atenta às questões emocionais e à rotina.",
     "specialties": [
       {
         "items": [
@@ -883,6 +898,7 @@ export const agendaProfessionals: Professional[] = [
     "name": "Dra. Suila Lima",
     "area": "Fisioterapeuta",
     "photo": "/profissionais/agenda/suila-lima.webp",
+    "bio": "Fisioterapia voltada ao movimento e à reabilitação, com cuidados ajustados às diferentes fases da vida.",
     "summary": "Especializanda em reabilitação da coluna.",
     "specialties": [
       {
@@ -910,6 +926,7 @@ export const agendaProfessionals: Professional[] = [
     "name": "Dra. Bruna Bastos",
     "area": "Ginecologista/Obstetrícia e Ultrassonografia",
     "photo": "/profissionais/agenda/bruna-bastos.webp",
+    "bio": "Acompanhamento ginecológico e obstétrico, com ultrassonografia e atenção às diferentes fases da saúde da mulher.",
     "specialties": [
       {
         "items": [
@@ -948,6 +965,7 @@ export const agendaProfessionals: Professional[] = [
     "name": "Dra. Gracenilda Moura",
     "area": "Psicóloga Clínica / Neuropsicóloga",
     "photo": "/profissionais/agenda/gracenilda-moura.webp",
+    "bio": "Escuta clínica e avaliação neuropsicológica com atenção ao desenvolvimento infantil e às necessidades de cada pessoa.",
     "specialties": [
       {
         "items": [
@@ -968,6 +986,7 @@ export const agendaProfessionals: Professional[] = [
     "name": "Dra. Yara Marques",
     "area": "Fisioterapeuta Dermatofuncional",
     "photo": "/profissionais/agenda/yara-marques.webp",
+    "bio": "Fisioterapia dermatofuncional voltada aos cuidados da pele, do corpo e à recuperação após procedimentos.",
     "specialties": [
       {
         "items": [
@@ -997,6 +1016,7 @@ export const agendaProfessionals: Professional[] = [
     "name": "Thais Thesly",
     "area": "Podóloga Clínica",
     "photo": "/profissionais/agenda/thais-thesly.webp",
+    "bio": "Cuidado clínico dos pés e unhas, com atenção a desconfortos e necessidades de crianças, adultos e idosos.",
     "specialties": [
       {
         "items": [
@@ -1021,6 +1041,7 @@ export const agendaProfessionals: Professional[] = [
     "name": "Dr. Eduardo Bastos",
     "area": "Psiquiatra",
     "photo": "/profissionais/agenda/eduardo-bastos.webp",
+    "bio": "Acompanhamento psiquiátrico na infância e adolescência, com atenção à ansiedade, ao humor e aos hábitos.",
     "specialties": [
       {
         "items": [
