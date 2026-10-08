@@ -1,0 +1,82 @@
+# Histórico de mudanças
+
+Entradas mais novas no topo. Formato e regras em [`README.md`](README.md#como-registrar-uma-mudança-vale-para-codex-e-claude).
+
+## 2026-10-08 — Registro compartilhado criado
+- Quem: Claude
+- Onde: esta pasta (`docs/registro/`) — só documentação, nada do site mudou.
+- O que mudou: resumo de tudo o que foi feito de 05/10 a 08/10 para Codex e Claude trabalharem juntos.
+
+## 2026-10-08 — Pescoço do Dr. Alexandre no hero e checagem dos recortes
+- Quem: Claude
+- Onde: PR #21 — publicado
+- O que mudou: a remoção de fundo tinha apagado a gola do jaleco atrás do pescoço no recorte do hero; a gola foi recomposta. O build passou a conferir todos os recortes do hero (`scripts/check-hero-photos.mjs`) e o `AGENTS.md` ganhou a regra da folha de conferência.
+- Arquivos: `public/profissionais/hero/alexandre-torres.webp`, `scripts/check-hero-photos.mjs`, `package.json`, `AGENTS.md`.
+- Atenção: a checagem só olha os 55% de cima da foto e deixou passar Ademy, Dhiego e Ilka. A foto da agenda do Alexandre continua com o defeito. Ver `02-fotos-e-recortes.md`.
+
+## 2026-10-08 — Lista de profissionais ativos de 08/10
+- Quem: Claude
+- Onde: PR #20 — publicado
+- O que mudou: Débora Cordeiro, Nayara Kelly e Suila Lima voltaram à seção Profissionais; Dr. Vinícius Alves saiu (inativo). Continuam inativos: Emiliane Cruz, Gracenilda Moura, Raquel Andrade, Vinícius Aquino e Yara Marques. MT. Samuel Caetano mantido. Seção com 39 pessoas, sem separar por categoria.
+- Arquivos: `app/agenda/agenda-professionals.ts`.
+
+## 2026-10-07 — Profissionais inativos e Dr./Dra. com ponto
+- Quem: Claude
+- Onde: PR #17 — publicado
+- O que mudou: criada a marcação `inactive: true` (tira da seção Profissionais sem apagar). Todos os "Dr"/"Dra" passaram a ter ponto (Luiz Cláudio, Reynaldo, Ariane, Ermita).
+- Arquivos: `app/agenda/agenda-professionals.ts`, `app/agenda/schedule.ts`, `app/page.tsx`.
+
+## 2026-10-07 — Odontologia: destaque dos dentistas
+- Quem: Claude
+- Onde: PRs #15, #16, #18 e #19 — publicados
+- O que mudou: CRO, nome e área num bloco próprio em destaque (#15). Os cards com moldura (#16) foram **retirados a pedido** (#18): os dentistas voltaram a ficar direto no fundo, com a placa laranja do nome embaixo e brilho na placa selecionada. Fotos limitadas à largura da placa; a da Dra. Isadora teve as laterais suavizadas (#19).
+- Arquivos: `app/DentistrySection.tsx`, `app/dentistry.css`, `public/dentistry/`.
+- Atenção: o Vinícius pediu para mexer só no bloco de identidade do dentista, nada mais na seção.
+
+## 2026-10-07 — Centralizar a seção Profissionais
+- Quem: Claude
+- Onde: PR #13 — publicado
+- O que mudou: todos centralizados pelo rosto, na mesma altura do cartão; bordas cortadas das fotos originais se dissolvem.
+- Arquivos: `app/agenda/photo-framing.ts`, `app/portrait-framing.css`, `app/page.tsx`.
+
+## 2026-10-07 — Enquadramento padronizado da cintura para cima
+- Quem: Claude
+- Onde: PR #12 — publicado
+- O que mudou: seção Profissionais, Odontologia, hero, cards da agenda e painel seguem o mesmo padrão. Recortes da agenda refeitos nos próprios arquivos; margens transparentes aparadas; fotos do hero apoiadas na base.
+- Arquivos: `public/profissionais/agenda/`, `public/profissionais/hero/`, `public/dentistry/`, `app/agenda/photo-framing.ts`, `app/portrait-framing.css`.
+
+## 2026-10-07 — Novo visual da agenda e quadro "+N"
+- Quem: Claude
+- Onde: PRs #11 e #14 — publicados
+- O que mudou: cada profissional num card azul arredondado com o nome em caixa alta numa faixa laranja (altura igual em todos) e a especialidade fora do card, no fundo branco. O painel ao clicar mostra o retrato inteiro em fundo claro com os arcos da marca. O quadro "+N Profissionais disponíveis" segue o mesmo visual.
+- Arquivos: `app/agenda/WeeklySchedule.tsx`, `app/agenda/weekly.css`, `app/agenda/ProfessionalPanel.tsx`, `app/agenda/professional-panel.css`, `construcoes.md`.
+
+## 2026-10-06 — Painel de especialidades ao clicar na agenda
+- Quem: Claude
+- Onde: PR #10 — publicado
+- O que mudou: clique na foto da agenda abre painel com retrato, área, apresentação, especialidades e "Agendar consulta" (WhatsApp). 21 profissionais novos cadastrados a partir das artes da TV da clínica, com fotos recortadas localmente; especialidades transcritas no campo `specialties`.
+- Atenção: Dr. Caio Alves não tem especialidades na arte; Luiz Cláudio, Flora Carolina e Samuel Caetano não estavam no arquivo (painel só com área e apresentação).
+
+## 2026-10-06 — Hero: datas, animação e fachada
+- Quem: Claude
+- Onde: PRs #7, #8 e #9 — publicados
+- O que mudou: campanhas manuais com `date` saem sozinhas no dia seguinte (as do Dr. Marcelo Amaral e da Dra. Bruna Bastos, de 28/09, foram retiradas e a lista ficou vazia); ajuste da animação e do enquadramento das páginas diárias; nos dias sem nenhuma página o hero mostra a fachada da clínica.
+- Arquivos: `app/hero-campaigns.ts`, `app/HeroCampaigns.tsx`, `app/hero-campaigns.css`, `AGENTS.md`.
+
+## 2026-10-05/06 — Publicação na Cloudflare e domínio
+- Quem: Claude e Vinícius
+- Onde: PRs #5 e #6 — publicados
+- O que mudou: `wrangler.jsonc` publica a pasta `dist` no Worker `clinica-sao-lucas`; domínio clinicasaolucas.app.br e www ligados ao Worker.
+- Atenção: a prévia da Cloudflare nos PRs falha sempre; produção funciona.
+
+## 2026-10-05 — Médicos do dia no hero e agenda de 05 a 10/10
+- Quem: Claude
+- Onde: PRs #2 e #3 — publicados
+- O que mudou: o hero gera uma página por médico do dia a partir da agenda semanal, no mesmo visual das campanhas e sem indicar o cargo. Recortes do hero em alta resolução. Agenda de 04 a 10/10 (domingo sem atendimento). Dr. Luiz Cláudio incluído (#3).
+- Arquivos: `app/agenda/hero-doctors.ts`, `app/agenda/schedule.ts`, `public/profissionais/hero/`, `README.md`, `AGENTS.md`.
+
+## 2026-10-05 — Galeria do interior da clínica
+- Quem: Claude
+- Onde: PR #1 — publicado
+- O que mudou: ambientes em cartões (2 colunas no computador, 1 no celular) com fotos nítidas e cores reais; visualizador ampliado com setas, teclado e deslizar; legenda do vídeo no topo.
+- Arquivos: `app/ClinicGallery.tsx`, `app/clinic-gallery.css`.
