@@ -43,4 +43,4 @@ Correções pequenas (um erro de digitação, um ajuste de 1 px) não precisam d
 ## Situação em 08/10/2026
 
 - O PR #22, com este registro compartilhado, já está na `main`.
-- O Vinícius aprovou a prévia dos retratos e autorizou a publicação do PR #23. Esse PR também amplia o retrato fechado do hero no computador e completa os perfis de todos os profissionais cadastrados. Detalhes em [`historico.md`](historico.md) e [`02-fotos-e-recortes.md`](02-fotos-e-recortes.md#retratos-reconstruídos-em-0810).
+- O PR #23 foi publicado e conferido no domínio oficial. Além dos retratos reconstruídos, ele amplia o retrato fechado do hero no computador e completa os perfis dos 45 profissionais cadastrados (39 ativos e 6 inativos). Detalhes em [`historico.md`](historico.md) e [`02-fotos-e-recortes.md`](02-fotos-e-recortes.md#retratos-reconstruídos-em-0810).
