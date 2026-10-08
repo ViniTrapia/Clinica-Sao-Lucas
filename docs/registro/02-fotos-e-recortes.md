@@ -6,22 +6,22 @@
 |---|---|---|
 | `public/profissionais/agenda/<id>.webp` | cards da agenda, painel ao clicar e seção Profissionais | `photo` |
 | `public/profissionais/hero/<id>.webp` | páginas dos médicos do dia no hero | `heroPhoto` |
-| `public/profissionais/reconstruidos/{agenda,hero}/<id>.webp` | versões aplicadas localmente dos recortes com braços/laterais refeitos | redirecionamento em `app/asset-url.ts` |
+| `public/profissionais/reconstruidos/{agenda,hero}/<id>.webp` | versões aplicadas dos recortes com braços/laterais refeitos | redirecionamento em `app/asset-url.ts` |
 | `public/dentistry/*.webp` | seção Odontologia (Luiz Enéas, Isadora Carvalho, Vinícius Belfort) | — |
 | `public/campaigns/` | campanhas manuais do hero | — |
 | `public/clinic-gallery/` | galeria do interior da clínica | — |
 
 Os arquivos soltos em `public/profissionais/*.{jpg,png,webp}` são fotos antigas; só servem de reserva quando um profissional não tem `photo`.
 
-## Reconstruções aprovadas para a prévia local em 08/10
+## Retratos reconstruídos em 08/10
 
-O Vinícius gostou da prévia de reconstrução e pediu que ela aparecesse no site local normal, antes de publicar em produção. O trabalho está no branch `codex/portrait-framing`. Os recortes novos são WebP com transparência; as fotos originais seguem disponíveis para comparação e reversão. Não substituir os originais antes da revisão final. A página `/teste-bracos.html` compara os dois conjuntos.
+O Vinícius aprovou a prévia local e autorizou a publicação pelo PR #23. Os recortes novos são WebP com transparência; as fotos originais seguem disponíveis para comparação e reversão. A página `/teste-bracos.html` compara os dois conjuntos.
 
 - **Hero (3):** Ademy Landim, Dhiego Ramalho e Ilka Gominho.
 - **Agenda, painel e equipe (13):** Ariane Matos, Bruna Bastos, Caio Alves, Cleobenysson Cruz, Débora Cordeiro, Dhiego Ramalho, Eduardo Bastos, Emiliane Cruz, Joceane Ramos, Marcelo Amaral, Raquel Andrade, Renata Filgueira e Vinícius Aquino.
 - `app/asset-url.ts` resolve as URLs antigas para `public/profissionais/reconstruidos/` em toda a página; `app/agenda/photo-framing.ts` contém o enquadramento correspondente. O zoom da equipe foi contido em `app/portrait-framing.css` para não cortar os braços.
-- O hero usa retrato maior na abertura, reduzido durante a rolagem e deslocado à direita ao fechar. Ver `app/HeroCampaigns.tsx` e `app/hero-campaigns.css`. Manter distância visual entre retrato e texto em todos os tamanhos.
-- As novas áreas dos corpos foram geradas com base nas fotos originais e precisam de revisão visual de anatomia, identidade e caimento antes de publicação externa.
+- O hero usa retrato maior na abertura, reduzido durante a rolagem e deslocado à direita ao fechar. No computador, o retrato fechado ficou um pouco maior após a revisão local (23% de largura e 74% de altura). Ver `app/HeroCampaigns.tsx` e `app/hero-campaigns.css`. Manter distância visual entre retrato e texto em todos os tamanhos.
+- As novas áreas dos corpos foram geradas com base nas fotos originais e foram revisadas na prévia local antes da autorização de publicação.
 
 Todas as fotos de profissionais são recortes com fundo transparente. Os originais (artes da TV da clínica, 1920×1080) vieram no zip `wetransfer_png_2026-10-06_2254.zip` da pasta do projeto do Claude; os recortes dos 21 profissionais novos foram feitos localmente, porque a rede do ambiente do Claude bloqueia o download do Canva.
 
@@ -53,9 +53,9 @@ Limitação conhecida: as fotos originais de Débora, Ariane, Cleobenysson e Dhi
 
 `--sheet folha.png` gera uma folha com todos os recortes sobre o azul do hero. O `AGENTS.md` exige olhar essa folha antes de publicar um recorte novo, porque defeitos como fundo atrás do pescoço não são medidos automaticamente.
 
-## Hero: defeito em aberto
+## Hero: diagnóstico histórico dos arquivos originais
 
-Na madrugada de 08/10 o Vinícius apontou recortes do hero com ombro e braço cortados. O diagnóstico abaixo descreve os arquivos originais; a reconstrução atual está no branch `codex/portrait-framing`, aplicado ao site local e ainda não publicado em produção.
+Na madrugada de 08/10 o Vinícius apontou recortes do hero com ombro e braço cortados. O diagnóstico abaixo descreve os arquivos originais e a implementação anterior ao PR #23; o site passa a usar as reconstruções aprovadas via `app/asset-url.ts`.
 
 Diagnóstico feito pelo Claude:
 

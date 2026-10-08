@@ -2,13 +2,14 @@
 
 Entradas mais novas no topo. Formato e regras em [`README.md`](README.md#como-registrar-uma-mudança-vale-para-codex-e-claude).
 
-## 2026-10-08 — Retratos reconstruídos e novo enquadramento do hero (somente local)
+## 2026-10-08 — Retratos reconstruídos, hero e perfis da equipe
 - Quem: Codex.
-- Onde: branch `codex/portrait-framing`, partindo da `main` após o PR #22. **Ainda não publicado no site de produção.**
-- O que mudou: após o Vinícius aprovar visualmente a prévia, 16 recortes com braços ou laterais cortadas passaram a usar versões reconstruídas em `public/profissionais/reconstruidos/` (3 do hero e 13 da agenda/equipe). Os originais continuam em `public/profissionais/{agenda,hero}/` para comparação e reversão. `app/asset-url.ts` escolhe as versões novas para toda a página local; `app/agenda/photo-framing.ts` enquadra os novos arquivos na equipe.
-- Hero: em telas grandes o retrato começa maior, diminui durante a rolagem e termina mais à direita, com espaço entre corpo e texto. Tablet e celular conservam recuos próprios. Alterações em `app/HeroCampaigns.tsx` e `app/hero-campaigns.css`.
-- Comparação: `/teste-bracos.html` mostra originais e novos recortes lado a lado. Página local normal: `/` (sem parâmetro de teste).
-- Verificação: script do hero agora analisa toda a lateral da foto efetivamente servida. Codex conferiu o hero aberto e fechado no computador, além de tablet e celular; `tsc --noEmit`, ESLint dos arquivos alterados, checagem dos 7 recortes do hero e build Vite passaram. A revisão visual do Vinícius na página local continua sendo o próximo passo.
+- Onde: PR #23, branch `codex/portrait-framing`, partindo da `main` após o PR #22 — aprovado pelo Vinícius para publicação.
+- O que mudou: após o Vinícius aprovar visualmente a prévia, 16 recortes com braços ou laterais cortadas passaram a usar versões reconstruídas em `public/profissionais/reconstruidos/` (3 do hero e 13 da agenda/equipe). Os originais continuam em `public/profissionais/{agenda,hero}/` para comparação e reversão. `app/asset-url.ts` escolhe as versões novas para toda a página; `app/agenda/photo-framing.ts` enquadra os novos arquivos na equipe.
+- Hero: em telas grandes o retrato começa maior, diminui durante a rolagem e termina mais à direita, com espaço entre corpo e texto. Após a revisão local do Vinícius, o retrato final no computador ficou um pouco maior (23% da largura e 74% da altura no estado fechado). Tablet e celular conservam recuos próprios. Alterações em `app/HeroCampaigns.tsx` e `app/hero-campaigns.css`.
+- Perfis: os 21 cadastros que não tinham `bio` receberam textos curtos e individuais, baseados apenas nas áreas, resumos e especialidades já registrados em `app/agenda/agenda-professionals.ts`. São 15 profissionais ativos e 6 inativos; todos os 39 ativos agora mostram perfil no hover, foco e painel móvel, sem mudar o estilo.
+- Comparação: `/teste-bracos.html` mostra originais e novos recortes lado a lado. A página principal usa as versões reconstruídas.
+- Verificação: script do hero agora analisa toda a lateral da foto efetivamente servida. Codex conferiu o hero aberto e fechado no computador, além de tablet e celular; `tsc --noEmit`, ESLint, checagem dos 7 recortes do hero e build Vite passaram. Conferiu 39 cards ativos e 39 perfis renderizados.
 
 ## 2026-10-08 — Registro compartilhado criado
 - Quem: Claude

@@ -27,8 +27,8 @@
 <body>
   <header>
     <h1>Retratos: antes e depois</h1>
-    <p>Comparação dos recortes originais com os retratos reconstruídos aplicados ao site local. A publicação externa ainda depende de revisão.</p>
-    <div class="links"><a href="/">Ver no site local</a></div>
+    <p>Comparação dos recortes originais com os retratos reconstruídos aplicados ao site. Os arquivos originais continuam disponíveis para comparação.</p>
+    <div class="links"><a href="/">Ver no site</a></div>
   </header>
   <main id="gallery"></main>
   <script>
@@ -53,7 +53,7 @@
     const gallery=document.getElementById('gallery');
     for(const [group,name,id] of items){
       const article=document.createElement('article');
-      article.innerHTML=`<h2>${name}</h2><div class="pair"><figure><figcaption>Original · ${group}</figcaption><div class="frame"><img loading="lazy" src="/profissionais/${group}/${id}.webp" alt="Foto original de ${name}"></div></figure><figure><figcaption>Aplicado no site local</figcaption><div class="frame"><img loading="lazy" src="/profissionais/reconstruidos/${group}/${id}.webp" alt="Retrato reconstruído de ${name}"></div></figure></div><small class="note">${group==='hero'?'Retrato do hero':'Retrato da agenda, painel e equipe'}</small>`;
+      article.innerHTML=`<h2>${name}</h2><div class="pair"><figure><figcaption>Original · ${group}</figcaption><div class="frame"><img loading="lazy" src="/profissionais/${group}/${id}.webp" alt="Foto original de ${name}"></div></figure><figure><figcaption>Aplicado no site</figcaption><div class="frame"><img loading="lazy" src="/profissionais/reconstruidos/${group}/${id}.webp" alt="Retrato reconstruído de ${name}"></div></figure></div><small class="note">${group==='hero'?'Retrato do hero':'Retrato da agenda, painel e equipe'}</small>`;
       gallery.append(article);
     }
   </script>
