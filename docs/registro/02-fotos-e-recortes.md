@@ -15,7 +15,7 @@ Os arquivos soltos em `public/profissionais/*.{jpg,png,webp}` são fotos antigas
 
 ## Retratos reconstruídos em 08/10
 
-O Vinícius aprovou a prévia local e autorizou a publicação pelo PR #23. Os recortes novos são WebP com transparência; as fotos originais seguem disponíveis para comparação e reversão. A página `/teste-bracos.html` compara os dois conjuntos.
+O Vinícius aprovou a prévia local e o PR #23 foi publicado. Os recortes novos são WebP com transparência; as fotos originais seguem disponíveis para comparação e reversão. A página `/teste-bracos.html` compara os dois conjuntos.
 
 - **Hero (3):** Ademy Landim, Dhiego Ramalho e Ilka Gominho.
 - **Agenda, painel e equipe (13):** Ariane Matos, Bruna Bastos, Caio Alves, Cleobenysson Cruz, Débora Cordeiro, Dhiego Ramalho, Eduardo Bastos, Emiliane Cruz, Joceane Ramos, Marcelo Amaral, Raquel Andrade, Renata Filgueira e Vinícius Aquino.
