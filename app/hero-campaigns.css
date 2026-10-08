@@ -79,3 +79,7 @@
   .hero-campaign-copy,.hero-campaign-visual{will-change:auto}
   .hero-campaigns,.hero-campaign,.hero-campaign-visual>picture>img,.hero-campaign-copy>span,.hero-campaign-copy h2,.hero-campaign-copy p,.hero-campaign-copy a,.hero-campaign-nav button{transition:none}
 }
+
+/* Paginação legível mesmo sobre o jaleco branco do retrato. */
+.hero-campaign-nav{padding:3px 12px 5px;border-radius:999px;background:rgba(9,22,64,.5);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+@media(max-width:700px){.hero-campaign-nav{padding:2px 9px 4px}}

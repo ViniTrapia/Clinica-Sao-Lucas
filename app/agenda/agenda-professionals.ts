@@ -61,7 +61,7 @@ export const agendaProfessionals: Professional[] = [
   {
     "id": "alexandre-torres",
     "name": "Dr. Alexandre Torres",
-    "area": "Endocrinologista e Ultrasonografia",
+    "area": "Endocrinologista e Ultrassonografia",
     "photo": "/profissionais/agenda/alexandre-torres.webp",
     "heroPhoto": "/profissionais/hero/alexandre-torres.webp",
     "bio": "Avaliação endocrinológica integrada a uma escuta próxima e cuidadosa.",
@@ -106,7 +106,7 @@ export const agendaProfessionals: Professional[] = [
   {
     "id": "ariane-matos",
     "name": "Dra. Ariane Matos",
-    "area": "Fonoaudiologa",
+    "area": "Fonoaudióloga",
     "photo": "/profissionais/agenda/ariane-matos.webp",
     "bio": "Comunicação e desenvolvimento acompanhados com sensibilidade em cada etapa.",
     "specialties": [
@@ -146,7 +146,7 @@ export const agendaProfessionals: Professional[] = [
   {
     "id": "eloisa-mello",
     "name": "Dra. Eloisa Mello",
-    "area": "Psicologa Clinica e Neuro Psicologa",
+    "area": "Psicóloga Clínica e Neuropsicóloga",
     "photo": "/profissionais/agenda/eloisa-mello.webp",
     "bio": "Escuta clínica dedicada ao bem-estar emocional e às singularidades de cada pessoa.",
     "specialties": [
@@ -166,7 +166,7 @@ export const agendaProfessionals: Professional[] = [
   {
     "id": "carolline-carvalho",
     "name": "Dra. Carolline Carvalho",
-    "area": "Psicologa Infantil",
+    "area": "Psicóloga Infantil",
     "photo": "/profissionais/agenda/carolline-carvalho.webp",
     "bio": "Acolhimento infantil com escuta sensível para crianças e suas famílias.",
     "specialties": [
@@ -185,7 +185,7 @@ export const agendaProfessionals: Professional[] = [
   {
     "id": "edilma-carvalho",
     "name": "Dra. Edilma Carvalho",
-    "area": "Psicologa",
+    "area": "Psicóloga",
     "photo": "/profissionais/agenda/edilma-carvalho.webp",
     "bio": "Um espaço de escuta, acolhimento e cuidado com a saúde emocional.",
     "specialties": [
@@ -202,7 +202,7 @@ export const agendaProfessionals: Professional[] = [
   {
     "id": "flora-carolina",
     "name": "Dra. Flora Carolina",
-    "area": "Terapeuta Oculpacional",
+    "area": "Terapeuta Ocupacional",
     "photo": "/profissionais/agenda/flora-carolina.webp",
     "bio": "Autonomia e qualidade de vida trabalhadas por meio de atividades significativas."
   },
@@ -336,7 +336,7 @@ export const agendaProfessionals: Professional[] = [
   {
     "id": "ludmila-magalhaes",
     "name": "Dra. Ludmila Magalhães",
-    "area": "Psicologa",
+    "area": "Psicóloga",
     "photo": "/profissionais/agenda/ludmila-magalhaes.webp",
     "bio": "Acolhimento psicológico com respeito ao tempo e à história de cada pessoa.",
     "specialties": [
@@ -354,7 +354,7 @@ export const agendaProfessionals: Professional[] = [
   {
     "id": "maria-paula",
     "name": "Dra. Maria Paula",
-    "area": "Psicologa",
+    "area": "Psicóloga",
     "photo": "/profissionais/agenda/maria-paula.webp",
     "bio": "Escuta psicológica próxima para apoiar equilíbrio emocional e qualidade de vida.",
     "specialties": [
@@ -422,7 +422,7 @@ export const agendaProfessionals: Professional[] = [
   {
     "id": "joceane-ramos",
     "name": "Joceane Ramos",
-    "area": "Procedimentos Esteticos",
+    "area": "Procedimentos Estéticos",
     "photo": "/profissionais/agenda/joceane-ramos.webp",
     "bio": "Procedimentos estéticos conduzidos com atenção, cuidado e naturalidade.",
     "specialties": [

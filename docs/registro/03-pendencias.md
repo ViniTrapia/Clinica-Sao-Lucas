@@ -14,10 +14,13 @@ Nenhuma pendência desta entrega.
 
 ## Sugestões ainda não pedidas
 
-- Foto do Dr. Alexandre na agenda e na seção Profissionais: o mesmo defeito da gola que o PR #21 corrigiu no hero (ver `02-fotos-e-recortes.md`). O Claude ofereceu corrigir; o Vinícius ainda não respondeu.
+- Fotos ainda pequenas: Giselle Skarlet, Flora Carolina e MT. Samuel Caetano (aparecem um pouco ampliadas no painel). Pedir fotos maiores.
+- Endereço no contato: "Av. Cel. Jerônimo Píres". Em português o nome Pires não leva acento; confirmar com o Vinícius antes de mudar.
 - Fotos novas para Débora, Ariane, Cleobenysson, Dhiego (busto sem cintura) e Caio (corte junto ao rosto).
 
 ## Resolvidas recentemente
+
+- 08/10 — **Revisão para o lançamento** (branch `claude/resumo-codex-wjqp2p`, aguardando aprovação): 18 fotos da agenda em alta resolução, gola do Dr. Alexandre na agenda e na equipe, acentos das áreas, nome da cidade, numeração do hero legível, cabeçalhos de segurança e retirada de `/teste-bracos.html`. Ver [`historico.md`](historico.md).
 
 - 08/10 — **Retratos reconstruídos, hero e perfis da equipe** publicados pelo PR #23. Domínio `clinicasaolucas.app.br` conferido após o merge: retrato reconstruído no hero, 39 perfis para 39 profissionais ativos, painel de perfil no celular e nenhuma imagem quebrada na página carregada. Detalhes em [`historico.md`](historico.md) e [`02-fotos-e-recortes.md`](02-fotos-e-recortes.md#retratos-reconstruídos-em-0810).
 - 08/10 — **MT. Samuel Caetano** não estava na lista da clínica, mas o Vinícius confirmou que foi um erro: ele continua atendendo e fica no site, ativo.

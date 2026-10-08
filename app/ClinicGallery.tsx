@@ -184,7 +184,7 @@ export function ClinicGallery({ imageRef }: { imageRef: RefObject<HTMLImageEleme
           </figure>)}
         </div>
         <footer className="clinic-panel-footer">
-          <p>Clínica São Lucas · Belém de São Francisco</p>
+          <p>Clínica São Lucas · Belém do São Francisco</p>
           <a href="#contato" onClick={() => setOpen(false)}>Vamos conversar <Icon name="arrow-up-right"/></a>
         </footer>
       </section>
