@@ -1,7 +1,7 @@
 import type { Professional } from './schedule';
 
 // Cadastro recebido em 24/09/2026 e ampliado em 06/10/2026 (especialidades e novos profissionais); separado das ocorrências semanais.
-// `inactive: true` guarda o profissional no cadastro, mas o tira da área de profissionais (lista de 07/10/2026).
+// `inactive: true` guarda o profissional no cadastro, mas o tira da área de profissionais (lista atualizada em 08/10/2026).
 export const agendaProfessionals: Professional[] = [
   {
     "id": "luiz-claudio",
@@ -548,7 +548,6 @@ export const agendaProfessionals: Professional[] = [
   },
   {
     "id": "debora-cordeiro",
-    "inactive": true,
     "name": "Débora Cordeiro",
     "area": "Enfermeira e Estética Avançada",
     "photo": "/profissionais/agenda/debora-cordeiro.webp",
@@ -594,6 +593,7 @@ export const agendaProfessionals: Professional[] = [
   },
   {
     "id": "vinicius-alves",
+    "inactive": true,
     "name": "Dr. Vinícius Alves",
     "area": "Atendimento médico geral para adultos",
     "photo": "/profissionais/agenda/vinicius-alves.webp",
@@ -746,7 +746,6 @@ export const agendaProfessionals: Professional[] = [
   },
   {
     "id": "nayara-kelly",
-    "inactive": true,
     "name": "Nayara Kelly",
     "area": "Psicóloga Bilíngue",
     "photo": "/profissionais/agenda/nayara-kelly.webp",
@@ -881,7 +880,6 @@ export const agendaProfessionals: Professional[] = [
   },
   {
     "id": "suila-lima",
-    "inactive": true,
     "name": "Dra. Suila Lima",
     "area": "Fisioterapeuta",
     "photo": "/profissionais/agenda/suila-lima.webp",
