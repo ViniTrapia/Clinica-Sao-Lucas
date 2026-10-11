@@ -2,12 +2,6 @@
 
 Entradas mais novas no topo. Formato e regras em [`README.md`](README.md#como-registrar-uma-mudança-vale-para-codex-e-claude).
 
-## 2026-10-11 — Hero mostra os próximos médicos nos dias sem médico
-- Quem: Claude
-- Onde: PR (branch `claude/project-thread-c9jtby`) — aguardando aprovação do Vinícius.
-- O que mudou: a pedido do Vinícius, quando nenhum médico de `heroDoctorIds` atende no dia, o hero mostra os que vão atender nos 7 dias seguintes, na ordem das datas e com a data do atendimento ("Dia 13/10 · Terça-feira"). A fachada só aparece se também não houver nenhum nesses 7 dias. Visual do hero sem mudança.
-- Arquivos: `app/agenda/hero-doctors.ts`, `AGENTS.md`.
-
 ## 2026-10-11 — Agenda de 12 a 17/10
 - Quem: Claude
 - Onde: PR #26 — publicado.
