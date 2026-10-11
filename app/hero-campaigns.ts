@@ -10,7 +10,14 @@ export type HeroCampaign = {
   /** Último dia (AAAA-MM-DD, fuso de Pernambuco) em que a campanha aparece; no dia seguinte ela sai do site sozinha. */
   date?: string;
   imagePosition?: string;
-  visual?: 'photo' | 'portrait-cutout';
+  /** `artwork`: arte pronta em paisagem 16:9 (1920x1080) com os textos na própria imagem; aparece sempre inteira, sem texto por cima. */
+  visual?: 'photo' | 'portrait-cutout' | 'artwork';
+  /**
+   * Só para `artwork`, no computador: a mesma arte separada em fundo (sem os textos) e textos (PNG/WebP transparente).
+   * Assim os textos entram inteiros no painel ao rolar, como nas páginas dos médicos. `textBox` diz onde os textos ficam
+   * na arte original, em frações da largura (`left`, `width`) e da altura (`top`) dela, e o tamanho em pixels do arquivo de textos.
+   */
+  artworkLayers?: { background: string; text: string; textBox: { left: number; top: number; width: number; pixelWidth: number; pixelHeight: number } };
   href?: string;
   linkLabel?: string;
 };
@@ -25,7 +32,24 @@ export type HeroCampaign = {
  * Depois de passada a data, o item pode ser apagado desta lista quando
  * convier. Campanhas sem `date` ficam até serem removidas à mão.
  */
-export const heroCampaigns: HeroCampaign[] = [];
+export const heroCampaigns: HeroCampaign[] = [
+  {
+    id: 'outubro-rosa-2026',
+    professionalName: 'Outubro Rosa',
+    eyebrow: 'Outubro Rosa',
+    headline: 'Mês de prevenção ao câncer de mama.',
+    schedule: '',
+    image: '/campaigns/outubro-rosa.webp',
+    imageAlt: 'Outubro Rosa, Mês de Prevenção ao Câncer de Mama. Fique atenta aos sinais: 1. alteração na assimetria da mama; 2. desvio ou inversão do mamilo; 3. alteração na cor do mamilo; 4. secreção transparente, rosada ou avermelhada.',
+    date: '2026-10-31',
+    visual: 'artwork',
+    artworkLayers: {
+      background: '/campaigns/outubro-rosa-fundo.webp',
+      text: '/campaigns/outubro-rosa-texto.webp',
+      textBox: { left: 124 / 1920, top: 87 / 1080, width: 797 / 1920, pixelWidth: 797, pixelHeight: 746 },
+    },
+  },
+];
 
 /** Indica se a campanha ainda deve aparecer em `isoDate` (hoje, no fuso da clínica). */
 export const isCampaignActive = (campaign: HeroCampaign, isoDate: string) => !campaign.date || campaign.date >= isoDate;

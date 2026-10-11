@@ -85,3 +85,35 @@
 /* Paginação legível mesmo sobre o jaleco branco do retrato. */
 .hero-campaign-nav{padding:3px 12px 5px;border-radius:999px;background:rgba(9,22,64,.5);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
 @media(max-width:700px){.hero-campaign-nav{padding:2px 9px 4px}}
+
+/* Arte pronta em paisagem 16:9 (ex.: Outubro Rosa), sem texto do site por cima.
+   No computador ela é montada em duas camadas, o fundo da arte (sem os textos) e os textos da arte: abre ocupando o hero exatamente como a arte
+   original e, ao rolar, o fundo acompanha o painel que se fecha à direita (preso à foto) enquanto os textos, inteiros, deslizam e se encaixam
+   no painel, como o texto das páginas dos médicos. */
+.hero-campaign-artwork .hero-campaign-visual{background:linear-gradient(180deg,#fee6ef 0%,#fde1ec 100%)}
+.hero-artwork-stage{--o:var(--campaign-portrait-open);--wc:max(100cqw,177.78cqh);--end-width:min(41cqw,80cqh/var(--text-ratio));position:absolute;z-index:1;inset:var(--hero-photo-inset) var(--hero-photo-right) calc(76px + var(--hero-photo-inset)) var(--hero-photo-left);container-type:size}
+.hero-artwork-stage>picture{position:absolute;inset:0}
+.hero-artwork-stage>picture>img{position:absolute;top:0;right:0;display:block;width:var(--wc);height:auto;max-width:none}
+.hero-artwork-text{position:absolute;left:max(4cqw,calc((100cqw - var(--wc)*(1 - var(--text-left)))*var(--o) + 5cqw*(1 - var(--o))));top:calc(var(--wc)*.5625*var(--text-top)*var(--o) + (50cqh - var(--end-width)*var(--text-ratio)/2)*(1 - var(--o)));display:block;width:calc(var(--wc)*var(--text-width)*var(--o) + var(--end-width)*(1 - var(--o)));height:auto;max-width:none}
+.hero-campaign-artwork .hero-campaign-visual::before,.hero-campaign-artwork .hero-campaign-visual::after,.hero-campaign-artwork .hero-campaign-shade,.hero-campaign-artwork .hero-campaign-copy{display:none}
+/* Paginação no canto inferior esquerdo, sobre o rosa liso da arte, para não cobrir a foto; acompanha o painel ao rolar. */
+.hero-campaigns.is-artwork .hero-campaign-nav{right:auto;left:calc(var(--hero-photo-left) + 5%);background:rgba(255,255,255,.62)}
+.hero-campaigns.is-artwork .hero-campaign-nav button{border-color:rgba(176,24,95,.26);color:#b0587f}
+.hero-campaigns.is-artwork .hero-campaign-nav button.is-active{border-color:#d0237a;color:#8c1450}
+.hero-story:has(.hero-campaigns.is-entered.is-artwork) .hero-scroll-cue{color:#8c1450}
+.hero-story:has(.hero-campaigns.is-entered.is-artwork) .hero-scroll-cue i{border-color:rgba(176,24,95,.4);background:rgba(255,255,255,.45);color:#d0237a}
+
+/* Tablet e celular: a arte original, inteira, na largura toda; o hero acompanha a proporção dela (1920x1080) só enquanto ela está na tela. */
+@media(max-width:1024px){
+  .hero-campaigns.is-artwork,.hero-story:has(.hero-campaigns.is-artwork) .clinic-feature{height:calc(100vw*.5625)}
+  .hero-campaigns.is-artwork .hero-campaign-nav{left:50%;transform:translateX(-50%)}
+  .hero-artwork-stage{inset:0}
+  .hero-artwork-stage>picture>img{inset:0;width:100%;height:100%;object-fit:contain}
+  .hero-artwork-text{display:none}
+}
+
+@media(max-width:700px){
+  .hero-campaigns.is-artwork .hero-campaign-nav{bottom:8px;gap:5px;padding:1px 8px 2px}
+  .hero-campaigns.is-artwork .hero-campaign-nav button{width:18px;padding:3px 0;font-size:7px}
+  .hero-campaigns.is-artwork .hero-campaign-nav button.is-active{width:28px}
+}
