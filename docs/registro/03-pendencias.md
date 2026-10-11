@@ -8,9 +8,9 @@ Nenhuma pendência desta entrega.
 
 ## Aguardando o Vinícius
 
-- **Dr. Fábio Lisandro**: está na lista atual da clínica, mas não tem cadastro no site. O Vinícius vai mandar foto, especialidade e demais dados. Só cadastrar quando chegarem; não inventar nada.
+- **Dr. Fábio Lisandro**: está na lista atual da clínica, mas não tem cadastro no site. O Vinícius vai mandar foto, especialidade e demais dados. Só cadastrar quando chegarem; não inventar nada. Ele atende na terça 13/10 e ficou fora da agenda dessa semana por falta de cadastro.
 - **Outubro Rosa no hero**: pronto no branch `claude/outubro-rosa-hero-2vuvs9`, **sem PR e não publicado**. O Vinícius gostou só da versão de celular (a arte original inteira) e vai pedir ao cliente artes novas. Formato pedido para todas as artes do hero daqui em diante: retrato 4:5, 2160 × 2700 px (computador e tablet) e 1290 × 1612 px (celular), PNG ou JPG em qualidade máxima, sRGB, 5% de margem; opcional, a foto da pessoa em PNG transparente. A campanha deve sair sozinha depois de 31/10 (`date: '2026-10-31'`). O branch saiu de uma `main` antiga (antes dos PRs #16 a #21): atualize antes de continuar.
-- **Agenda da próxima semana**: a agenda atual vai até sábado 10/10. A partir de 11/10, sem agenda nova, o hero não terá médicos do dia e mostrará a fachada. Aguardar a lista do Vinícius.
+- **Agenda da próxima semana**: a agenda atual vai até sábado 17/10. A partir de 18/10, sem agenda nova, o hero não terá médicos do dia e mostrará a fachada. Aguardar a lista do Vinícius.
 
 ## Sugestões ainda não pedidas
 

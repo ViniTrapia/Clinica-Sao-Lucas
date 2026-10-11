@@ -2,6 +2,12 @@
 
 Entradas mais novas no topo. Formato e regras em [`README.md`](README.md#como-registrar-uma-mudança-vale-para-codex-e-claude).
 
+## 2026-10-11 — Agenda de 12 a 17/10
+- Quem: Claude
+- Onde: PR #26 — publicado.
+- O que mudou: agenda da semana de 12 a 17/10, na ordem enviada pelo Vinícius. Domingo 11/10 e segunda 12/10 (feriado) aparecem como "Sem atendimento neste dia", e o hero mostra a fachada. Nomes casados com o cadastro: Gisele → Giselle Skarlet, Silvana → Silvania de Melo, Viviane → Vivianne Araújo, Caroline → Carolline Carvalho, Itala → Ítala Freire. Fábio (13/10) ficou fora por não ter cadastro. No hero, Louise aparece em 13/10 e Luiz Cláudio em 15/10; `heroDoctorIds` não mudou.
+- Arquivos: `app/agenda/schedule.ts`.
+
 ## 2026-10-08 — Revisão para o lançamento: fotos nítidas, textos e segurança
 - Quem: Claude
 - Onde: branch `claude/resumo-codex-wjqp2p` (PR de revisão) — não publicado até a aprovação do Vinícius.
