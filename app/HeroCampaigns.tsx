@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { assetUrl } from './asset-url';
 import { heroCampaigns as allFixedCampaigns, isCampaignActive } from './hero-campaigns';
 import { clinicToday, getHeroDoctorCampaigns } from './agenda/hero-doctors';
@@ -93,12 +93,16 @@ export function HeroCampaigns(){
 
   return <div ref={campaignsRef} className={`hero-campaigns${entered?' is-entered':''}${artworkCurrent?' is-artwork':''}`} aria-label="Destaques da Clínica São Lucas" onMouseEnter={()=>setPaused(true)} onMouseLeave={()=>setPaused(false)} onFocusCapture={()=>setPaused(true)} onBlurCapture={()=>setPaused(false)}>
     <div className="hero-campaign-track" aria-live="polite">
-      {heroCampaigns.map((campaign,index)=>{const [dateLabel,...contextParts]=campaign.eyebrow.split('·');const contextLabel=contextParts.join('·').trim();return <article className={`hero-campaign hero-campaign-${campaign.visual??'photo'}${campaign.mobileImage?'':' hero-campaign-flush'}${index===current?' is-active':''}`} aria-hidden={index!==current} key={campaign.id}>
+      {heroCampaigns.map((campaign,index)=>{const [dateLabel,...contextParts]=campaign.eyebrow.split('·');const contextLabel=contextParts.join('·').trim();const layers=campaign.artworkLayers;const media=<picture>
+          {campaign.mobileImage&&<source media="(max-width: 700px)" srcSet={assetUrl(campaign.mobileImage)}/>}
+          {layers&&<source media="(min-width: 1025px)" srcSet={assetUrl(layers.background)}/>}
+          <img src={assetUrl(campaign.image)} alt={campaign.imageAlt} style={(campaign.visual==='portrait-cutout'||campaign.visual==='artwork')&&!campaign.imagePosition?undefined:{objectPosition:campaign.imagePosition??'62% center'}} width={campaign.visual==='artwork'?1920:900} height={campaign.visual==='artwork'?1080:1350} loading={index===0?'eager':'lazy'} fetchPriority={index===0?'high':'low'} decoding="async"/>
+        </picture>;return <article className={`hero-campaign hero-campaign-${campaign.visual??'photo'}${campaign.mobileImage?'':' hero-campaign-flush'}${index===current?' is-active':''}`} aria-hidden={index!==current} key={campaign.id}>
         <div className="hero-campaign-visual">
-          <picture>
-            {campaign.mobileImage&&<source media="(max-width: 700px)" srcSet={assetUrl(campaign.mobileImage)}/>}
-            <img src={assetUrl(campaign.image)} alt={campaign.imageAlt} style={(campaign.visual==='portrait-cutout'||campaign.visual==='artwork')&&!campaign.imagePosition?undefined:{objectPosition:campaign.imagePosition??'62% center'}} width={campaign.visual==='artwork'?1920:900} height={campaign.visual==='artwork'?1080:1350} loading={index===0?'eager':'lazy'} fetchPriority={index===0?'high':'low'} decoding="async"/>
-          </picture>
+          {layers?<div className="hero-artwork-stage" style={{'--text-left':layers.textBox.left,'--text-top':layers.textBox.top,'--text-width':layers.textBox.width,'--text-ratio':layers.textBox.pixelHeight/layers.textBox.pixelWidth} as CSSProperties}>
+            {media}
+            <img className="hero-artwork-text" src={assetUrl(layers.text)} alt="" width={layers.textBox.pixelWidth} height={layers.textBox.pixelHeight} loading="lazy" decoding="async"/>
+          </div>:media}
           <div className="hero-campaign-shade" aria-hidden="true"/>
         </div>
         <div className="hero-campaign-copy">
