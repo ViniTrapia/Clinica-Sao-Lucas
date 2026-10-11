@@ -10,6 +10,7 @@ Nenhuma pendência desta entrega.
 
 - **Dr. Fábio Lisandro**: está na lista atual da clínica, mas não tem cadastro no site. O Vinícius vai mandar foto, especialidade e demais dados. Só cadastrar quando chegarem; não inventar nada. Ele atende na terça 13/10 e ficou fora da agenda dessa semana por falta de cadastro.
 - **Outubro Rosa no hero**: pronto no branch `claude/outubro-rosa-hero-2vuvs9`, **sem PR e não publicado**. O Vinícius gostou só da versão de celular (a arte original inteira) e vai pedir ao cliente artes novas. Formato pedido para todas as artes do hero daqui em diante: retrato 4:5, 2160 × 2700 px (computador e tablet) e 1290 × 1612 px (celular), PNG ou JPG em qualidade máxima, sRGB, 5% de margem; opcional, a foto da pessoa em PNG transparente. A campanha deve sair sozinha depois de 31/10 (`date: '2026-10-31'`). O branch saiu de uma `main` antiga (antes dos PRs #16 a #21): atualize antes de continuar.
+- **Dados para o SEO local** (relatório de 11/10): número do endereço na Av. Cel. Jerônimo Píres; coordenadas do pino no Perfil da Empresa no Google; link desse perfil (para o schema e para trocar o link de busca no Maps da seção Contato); se o número (87) 99915-6764 também recebe ligações ou se há telefone fixo (para um link `tel:`); outras cidades atendidas (`areaServed`). Nada disso foi inventado; o schema em `index.html` só tem o que o site já mostra.
 - **Agenda da próxima semana**: a agenda atual vai até sábado 17/10. A partir de 18/10, sem agenda nova, o hero não terá médicos do dia e mostrará a fachada. Aguardar a lista do Vinícius.
 
 ## Sugestões ainda não pedidas
@@ -17,6 +18,7 @@ Nenhuma pendência desta entrega.
 - Fotos ainda pequenas: Giselle Skarlet, Flora Carolina e MT. Samuel Caetano (aparecem um pouco ampliadas no painel). Pedir fotos maiores.
 - Endereço no contato: "Av. Cel. Jerônimo Píres". Em português o nome Pires não leva acento; confirmar com o Vinícius antes de mudar.
 - Fotos novas para Débora, Ariane, Cleobenysson, Dhiego (busto sem cintura) e Caio (corte junto ao rosto).
+- Itens do relatório de SEO de 11/10 que mudam o visual e por isso ficaram de fora: endereço e telefone no rodapé, mapa incorporado (a política de segurança atual bloqueia o iframe do Maps), avaliações no site, perguntas frequentes e páginas próprias por serviço e por profissional. Precisam de aprovação e, em parte, de dados reais (convênios, estacionamento, avaliações).
 
 ## Resolvidas recentemente
 

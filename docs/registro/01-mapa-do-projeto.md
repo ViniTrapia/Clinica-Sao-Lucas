@@ -6,6 +6,8 @@
 - **Produção:** Cloudflare Workers com assets estáticos (`wrangler.jsonc`, pasta `./dist`). Cada merge na `main` publica sozinho.
   - Endereços: https://clinicasaolucas.app.br, https://www.clinicasaolucas.app.br e https://clinica-sao-lucas.vinici360.workers.dev.
 - **Cópia antiga:** GitHub Pages em https://vinitrapia.github.io/Clinica-Sao-Lucas/ (workflow `.github/workflows/deploy-pages.yml`, com o prefixo `/Clinica-Sao-Lucas/`). As imagens usam `app/asset-url.ts`, que acompanha esse prefixo.
+- **Pré-renderização:** no `pnpm build` (e no build do GitHub Pages), `scripts/prerender.mjs` gera o HTML da página com `app/prerender.tsx` e o coloca dentro do `#root` de `dist/index.html`, para buscadores, IAs e prévias de link que não executam JavaScript. No navegador, `app/main.tsx` hidrata esse HTML (no `pnpm dev` o `#root` vem vazio e o React monta do zero). Por isso **o primeiro render não pode depender da data, do relógio ou do navegador**: o que muda com o dia (médicos do hero, fachada) entra depois, por estado/efeito (`HeroCampaigns`) ou `useSyncExternalStore` (fachada em `app/page.tsx`). Se isso não for respeitado o site continua funcionando, mas o React refaz a página inteira ao carregar (erro no console, animações de entrada reiniciam).
+- **SEO:** título, descrição, `canonical`, Open Graph e o schema `MedicalClinic` (JSON-LD) ficam no `index.html`; `public/robots.txt` e `public/sitemap.xml`. Ao mudar endereço, telefone ou horário na seção Contato, atualize também o JSON-LD.
 - A **prévia da Cloudflare nos PRs falha sempre**. É um problema antigo da configuração de prévias, não do código; o deploy de produção funciona. Não perca tempo tentando consertar isso dentro de um PR de outra coisa.
 
 ## Verificação antes de publicar

@@ -2,6 +2,14 @@
 
 Entradas mais novas no topo. Formato e regras em [`README.md`](README.md#como-registrar-uma-mudança-vale-para-codex-e-claude).
 
+## 2026-10-11 — SEO local: página legível sem JavaScript, schema e metadados
+- Quem: Claude
+- Onde: branch `claude/happy-mccarthy-k93uhp` — não publicado, aguardando aprovação do Vinícius.
+- O que mudou: correções do relatório de SEO local de 11/10 que não mexem no visual. O build passou a pré-renderizar a página (`scripts/prerender.mjs` + `app/prerender.tsx`): o `dist/index.html` sai com todo o texto visível da página e o navegador só hidrata esse HTML (`app/main.tsx`). O `index.html` ganhou título e descrição com serviço e cidade, `canonical`, Open Graph (imagem `public/og-clinica-sao-lucas.jpg`, recorte 1200 × 630 da foto da fachada que já estava no site) e o schema `MedicalClinic` em JSON-LD. Novos `public/robots.txt` e `public/sitemap.xml`. O H1 ganhou "Clínica São Lucas em Belém do São Francisco – PE" escondido na tela (só buscadores e leitores de tela). O logo do rodapé passou a carregar sob demanda, para não atrasar o JavaScript.
+- Verificação: capturas antes × depois em 1440, 820 e 390 px (rolando a página inteira, inclusive com a fachada e com movimento reduzido) iguais, salvo o instante das animações; nenhum erro de hidratação; botões, painéis, galeria e menu funcionam igual. Com 3G lento simulado no celular, a página aparece ~0,4 s antes, o hero entra ~0,1 s antes e a maior imagem termina ~0,2 s antes.
+- Arquivos: `scripts/prerender.mjs`, `app/prerender.tsx`, `app/main.tsx`, `app/page.tsx`, `app/opening.css`, `vite.static.config.ts`, `index.html`, `app/layout.tsx`, `public/robots.txt`, `public/sitemap.xml`, `public/og-clinica-sao-lucas.jpg`.
+- Atenção: o primeiro render da página não pode depender da data nem do navegador (ver `01-mapa-do-projeto.md`). O schema não tem número do endereço, coordenadas nem link do Perfil da Empresa no Google: faltam esses dados (ver `03-pendencias.md`).
+
 ## 2026-10-11 — Hero mostra os próximos médicos nos dias sem médico
 - Quem: Claude
 - Onde: PR (branch `claude/project-thread-c9jtby`) — aguardando aprovação do Vinícius.
