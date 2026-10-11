@@ -39,7 +39,7 @@ O padrão de trabalho com o Vinícius: prints de computador, tablet e celular **
 - **Agenda da semana:** `weeklySchedule` em `app/agenda/schedule.ts`. Hoje vai de **04/10 a 10/10/2026** (domingo 04/10 em `closedDays`, "Sem atendimento"). Uma ocorrência pode ter observação própria com `{ professionalId, note }` (ex.: "Louise (E.D.A)" vira `{ professionalId: 'louise-torres', note: 'E.D.A' }`), sem criar profissional novo.
 - **Médicos do dia no hero:** `heroDoctorIds` em `app/agenda/hero-doctors.ts`. Cada `id` dessa lista que estiver na agenda de hoje (fuso America/Recife) ganha uma página no hero, gerada no navegador. Lista atual: alexandre-torres, louise-torres, ilka-gominho, ademy-landim, luiz-claudio, robson-oliveira, dhiego-ramalho.
 - **Campanhas manuais:** `heroCampaigns` em `app/hero-campaigns.ts` (hoje vazia na `main`). Toda campanha com data deve ter `date` (último dia); ela sai sozinha no dia seguinte.
-- **Dias sem nenhuma página no hero** mostram a fachada da clínica (`clinicFacadeFallbackEnabled`).
+- **Dias sem médico do dia** mostram no hero os próximos médicos dos 7 dias seguintes; só sem nenhum nesse período (e sem campanha) aparece a fachada da clínica (`clinicFacadeFallbackEnabled`).
 
 ## Outros arquivos de referência
 

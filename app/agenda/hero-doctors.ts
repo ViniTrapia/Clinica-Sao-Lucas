@@ -22,8 +22,13 @@ import { weeklySchedule, type Professional, type Schedule } from './schedule';
  *    do cadastro; sem ele, a página usa a foto pequena da agenda (`photo`).
  *    O build confere esses recortes (`pnpm check:hero-photos`); veja as regras
  *    em AGENTS.md antes de publicar um recorte novo.
- * 3. A página só aparece nos dias em que esse `id` estiver em
+ * 3. A página aparece nos dias em que esse `id` estiver em
  *    `weeklySchedule.appointments` para a data de hoje.
+ *
+ * Dias sem médico: se nenhum médico desta lista atende HOJE, o hero mostra os
+ * próximos que vão atender nos 7 dias seguintes (na ordem das datas, cada um
+ * só na primeira data em que aparece), com a data do atendimento. Só quando
+ * também não houver nenhum nesses 7 dias é que aparece a fachada da clínica.
  *
  * Para retirar, basta remover o `id` desta lista; o cadastro permanente e a
  * agenda semanal não precisam ser alterados. A ordem das páginas segue a ordem
@@ -50,7 +55,7 @@ export function clinicToday(now = new Date()) {
 
 const normalizeName = (name: string) => name.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/^(dra?|mt)\.?\s+/i, '').trim().toLowerCase();
 
-export function getHeroDoctorCampaigns(
+function getDayDoctorCampaigns(
   isoDate: string,
   existing: HeroCampaign[] = [],
   schedule: Schedule = weeklySchedule,
@@ -84,6 +89,28 @@ export function getHeroDoctorCampaigns(
       linkLabel: 'Agendar consulta',
     }];
   });
+}
+
+const upcomingDays = 7;
+
+/** Médicos de hoje; se não houver nenhum, os próximos dos 7 dias seguintes. */
+export function getHeroDoctorCampaigns(
+  isoDate: string,
+  existing: HeroCampaign[] = [],
+  schedule: Schedule = weeklySchedule,
+  professionals: Professional[] = agendaProfessionals,
+): HeroCampaign[] {
+  const today = getDayDoctorCampaigns(isoDate, existing, schedule, professionals);
+  const start = new Date(`${isoDate}T12:00:00Z`);
+  if (today.length || Number.isNaN(start.getTime())) return today;
+  const upcoming: HeroCampaign[] = [];
+  for (let offset = 1; offset <= upcomingDays; offset++) {
+    const date = new Date(start);
+    date.setUTCDate(start.getUTCDate() + offset);
+    const shown = [...existing, ...upcoming];
+    upcoming.push(...getDayDoctorCampaigns(date.toISOString().slice(0, 10), shown, schedule, professionals));
+  }
+  return upcoming;
 }
 
 /** Indica se o hero terá alguma página em `isoDate` (campanha fixa vigente ou médico do dia). */
