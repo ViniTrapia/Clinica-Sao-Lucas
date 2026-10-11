@@ -9,20 +9,19 @@ export type Schedule = {
   closedDays?: string[];
 };
 
-// Semana enviada pelo usuário em 05/10/2026 (segunda 05/10 a sábado 10/10).
+// Semana enviada pelo usuário em 11/10/2026 (segunda 12/10 a sábado 17/10).
 // O futuro /admin poderá fornecer este mesmo formato, sem alterar o componente.
-// Robson (06/10) e Dhiego (08/10) foram cadastrados em 06/10/2026, com os dados recebidos nas artes da clínica.
+// Segunda 12/10 é feriado. Fábio (13/10) ainda não tem cadastro e fica fora até chegarem os dados.
 export const weeklySchedule: Schedule = {
-  weekStart: '2026-10-04',
+  weekStart: '2026-10-11',
   status: 'confirmed',
-  closedDays: ['2026-10-04'],
+  closedDays: ['2026-10-11', '2026-10-12'],
   appointments: {
-    '2026-10-05': ['ariane-matos', 'giselle-skarlet', 'ilka-gominho', 'joceane-ramos'],
-    '2026-10-06': ['louise-torres', 'giselle-skarlet', 'itala-freire', 'ermita-galdina', 'maria-paula', 'layane-barros', 'robson-oliveira'],
-    '2026-10-07': ['alexandre-torres', 'giselle-skarlet', 'silvania-melo', 'ludmila-magalhaes', 'karina-hirose'],
-    '2026-10-08': ['ariane-matos', 'giselle-skarlet', 'maria-paula', 'itala-freire', 'ludmila-magalhaes', 'ademy-landim', 'dhiego-ramalho'],
-    '2026-10-09': ['flora-carolina', 'edilma-carvalho', 'silvania-melo', 'giselle-skarlet', 'maria-paula', 'ludmila-magalhaes'],
-    '2026-10-10': ['carolline-carvalho', 'ludmila-magalhaes', 'silvania-melo', 'giselle-skarlet', 'louise-torres'],
+    '2026-10-13': ['louise-torres', 'giselle-skarlet', 'itala-freire', 'ermita-galdina', 'maria-paula', 'layane-barros'],
+    '2026-10-14': ['giselle-skarlet', 'silvania-melo', 'ludmila-magalhaes', 'arielly-ferraz'],
+    '2026-10-15': ['ariane-matos', 'giselle-skarlet', 'maria-paula', 'itala-freire', 'ludmila-magalhaes', 'luiz-claudio', 'caio-alves', 'reynaldo-martinez', 'vivianne-araujo'],
+    '2026-10-16': ['flora-carolina', 'edilma-carvalho', 'silvania-melo', 'giselle-skarlet', 'maria-paula', 'ludmila-magalhaes'],
+    '2026-10-17': ['carolline-carvalho', 'ludmila-magalhaes', 'silvania-melo', 'giselle-skarlet', 'eloisa-mello'],
   },
 };
 
