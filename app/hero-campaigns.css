@@ -86,12 +86,12 @@
 .hero-campaign-nav{padding:3px 12px 5px;border-radius:999px;background:rgba(9,22,64,.5);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
 @media(max-width:700px){.hero-campaign-nav{padding:2px 9px 4px}}
 
-/* Arte pronta em paisagem 16:9 (ex.: Outubro Rosa): a imagem aparece sempre inteira e nítida, sem texto por cima, sobre o rosa da própria arte.
-   No computador ela abre ocupando o hero, presa ao canto inferior direito (onde a foto encosta na borda da arte), e ao rolar acompanha o painel
-   que se fecha à direita, terminando centralizada como um cartão com cantos arredondados. */
+/* Arte pronta em paisagem 16:9 (ex.: Outubro Rosa): sem texto por cima, sobre o rosa da própria arte.
+   No computador ela abre ocupando o hero, inteira; ao rolar, preenche o painel que se fecha à direita, como as fotos dos médicos,
+   ficando presa à direita (a foto) e dissolvendo no rosa a parte da esquerda que o painel corta. */
 .hero-campaign-artwork .hero-campaign-visual{background:linear-gradient(180deg,#fee6ef 0%,#fde1ec 100%)}
-.hero-campaign-artwork .hero-campaign-visual>picture{z-index:1;inset:calc(var(--hero-photo-inset) + 24px*(1 - var(--campaign-portrait-open))) calc(var(--hero-photo-right) + 24px*(1 - var(--campaign-portrait-open))) calc(76px + var(--hero-photo-inset) + 24px*(1 - var(--campaign-portrait-open))) calc(var(--hero-photo-left) + 24px*(1 - var(--campaign-portrait-open)))}
-.hero-campaign.hero-campaign-artwork .hero-campaign-visual>picture>img{position:absolute;top:calc(50% + 50%*var(--campaign-portrait-open));left:calc(50% + 50%*var(--campaign-portrait-open));width:auto;height:auto;max-width:100%;max-height:100%;border-radius:calc(14px*(1 - var(--campaign-portrait-open)));box-shadow:0 26px 60px rgba(150,20,80,calc(.18*(1 - var(--campaign-portrait-open)))),0 4px 14px rgba(150,20,80,calc(.07*(1 - var(--campaign-portrait-open))));filter:none;transform:translate3d(calc(-50% - 50%*var(--campaign-portrait-open)),calc(-50% - 50%*var(--campaign-portrait-open)),0);transition:none}
+.hero-campaign-artwork .hero-campaign-visual>picture{z-index:1;inset:var(--hero-photo-inset) var(--hero-photo-right) calc(76px + var(--hero-photo-inset)) var(--hero-photo-left)}
+.hero-campaign.hero-campaign-artwork .hero-campaign-visual>picture>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:calc(100% - 50%*var(--campaign-portrait-open)) top;filter:none;transform:none;transition:none;-webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,calc(var(--campaign-portrait-open)*2 - 1)) 0%,#000 46%);mask-image:linear-gradient(90deg,rgba(0,0,0,calc(var(--campaign-portrait-open)*2 - 1)) 0%,#000 46%)}
 .hero-campaign-artwork .hero-campaign-visual::before,.hero-campaign-artwork .hero-campaign-visual::after,.hero-campaign-artwork .hero-campaign-shade,.hero-campaign-artwork .hero-campaign-copy{display:none}
 /* Paginação no canto inferior esquerdo, sobre o rosa liso da arte, para não cobrir a foto; acompanha o painel ao rolar. */
 .hero-campaigns.is-artwork .hero-campaign-nav{right:auto;left:calc(var(--hero-photo-left) + 5%);background:rgba(255,255,255,.62)}
@@ -105,11 +105,13 @@
   .hero-campaigns.is-artwork,.hero-story:has(.hero-campaigns.is-artwork) .clinic-feature{height:calc(100vw*.5625)}
   .hero-campaigns.is-artwork .hero-campaign-nav{left:50%;transform:translateX(-50%)}
   .hero-campaign-artwork .hero-campaign-visual>picture{inset:0}
-  .hero-campaign.hero-campaign-artwork .hero-campaign-visual>picture>img{inset:0;width:100%;height:100%;max-width:none;max-height:none;object-fit:contain;border-radius:0;box-shadow:none;transform:none}
+  .hero-campaign.hero-campaign-artwork .hero-campaign-visual>picture>img{inset:0;width:100%;height:100%;max-width:none;max-height:none;object-fit:contain;-webkit-mask-image:none;mask-image:none}
 }
 
 @media(max-width:700px){
-  .hero-campaigns.is-artwork .hero-campaign-nav{bottom:8px}
+  .hero-campaigns.is-artwork .hero-campaign-nav{bottom:8px;gap:5px;padding:1px 8px 2px}
+  .hero-campaigns.is-artwork .hero-campaign-nav button{width:18px;padding:3px 0;font-size:7px}
+  .hero-campaigns.is-artwork .hero-campaign-nav button.is-active{width:28px}
 }
 
 @media(prefers-reduced-motion:reduce){
