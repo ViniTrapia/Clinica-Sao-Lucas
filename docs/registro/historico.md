@@ -2,6 +2,13 @@
 
 Entradas mais novas no topo. Formato e regras em [`README.md`](README.md#como-registrar-uma-mudança-vale-para-codex-e-claude).
 
+## 2026-10-17 — Dr. Fábio Lisandro e cards de exames e serviços no cadastro
+- Quem: Claude
+- Onde: branch `claude/project-thread-txxzke` — não publicado, aguardando aprovação do Vinícius.
+- O que mudou: Dr. Fábio Lisandro (Gastroenterologista e Endoscopia Digestiva Alta, dados da arte enviada) entrou no cadastro com recorte novo ampliado em 3x. Eletroencefalograma, Espirometria, Exames Laboratoriais, Mamografia e Vacine foram cadastrados como `inactive` (não aparecem em Profissionais); quando uma lista semanal citar um deles, basta usar o `id` em `schedule.ts`. A foto do MT. Samuel Caetano foi trocada por uma mais nítida. Das outras 39 fotos enviadas, nenhuma superava a do site (a nova da Dra. Giselle é um enquadramento mais fechado e foi descartada).
+- Arquivos: `app/agenda/agenda-professionals.ts`, `app/agenda/photo-framing.ts`, `app/agenda/WeeklySchedule.tsx`, `app/agenda/weekly.css`, `public/profissionais/agenda/`.
+- Atenção: a foto do Dr. Fábio é um busto fechado (sem a cintura), então aparece mais próxima, como Débora e Cleobenysson. Nomes longos de exames usam a classe `is-long-name` na faixa laranja da agenda. Dr. Fábio ainda não está em nenhum dia da agenda.
+
 ## 2026-10-11 — SEO local: página legível sem JavaScript, schema e metadados
 - Quem: Claude
 - Onde: branch `claude/happy-mccarthy-k93uhp` — não publicado, aguardando aprovação do Vinícius.
