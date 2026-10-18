@@ -45,7 +45,7 @@ export const photoFraming: Record<string, PhotoFraming> = {
   '/profissionais/agenda/silvania-melo.webp': { scale: 1.072, faceTop: 0.081, x: 0.459, faceY: 0.216, aspect: 0.761 },
   '/profissionais/agenda/itala-freire.webp': { scale: 1.113, faceTop: 0.115, x: 0.399, faceY: 0.245, aspect: 0.827 },
   '/profissionais/agenda/joceane-ramos.webp': { scale: 0.949, faceTop: 0.115, x: 0.597, faceY: 0.277, aspect: 0.946 },
-  '/profissionais/agenda/samuel-caetano.webp': { scale: 1.182, faceTop: 0.167, x: 0.417, faceY: 0.289, aspect: 0.882 },
+  '/profissionais/agenda/samuel-caetano.webp': { scale: 1.0, faceTop: 0.199, x: 0.352, faceY: 0.334, aspect: 0.992 },
   '/dentistry/luiz-eneas.webp': { scale: 1.071, faceTop: 0.080, x: 0.441, faceY: 0.216, aspect: 0.729 },
   '/dentistry/isadora-carvalho.webp': { scale: 1.089, faceTop: 0.096, x: 0.393, faceY: 0.229, aspect: 0.880 },
   '/dentistry/vinicius-belfort.webp': { scale: 1.109, faceTop: 0.111, x: 0.629, faceY: 0.242, aspect: 0.661 },
@@ -87,4 +87,5 @@ export const reconstructedPhotoFraming: Record<string, PhotoFraming> = {
   '/profissionais/agenda/raquel-andrade.webp': { scale: .97, faceTop: .08, x: .50, faceY: .22, aspect: .962 },
   '/profissionais/agenda/renata-filgueira.webp': { scale: 1.00, faceTop: .08, x: .50, faceY: .22, aspect: .875 },
   '/profissionais/agenda/vinicius-aquino.webp': { scale: 1.07, faceTop: .08, x: .50, faceY: .22, aspect: .722 },
+  '/profissionais/agenda/fabio-lisandro.webp': { scale: 0.96, faceTop: 0.08, x: 0.634, faceY: 0.22, aspect: 1.207 },
 };

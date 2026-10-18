@@ -1055,5 +1055,19 @@ export const agendaProfessionals: Professional[] = [
         ]
       }
     ]
-  }
+  },
+  {
+    "id": "fabio-lisandro",
+    "name": "Dr. Fábio Lisandro",
+    "area": "Gastroenterologista e Endoscopia Digestiva Alta",
+    "photo": "/profissionais/agenda/fabio-lisandro.webp",
+    "bio": "Cuidado com a saúde do aparelho digestivo, com atenção e acompanhamento próximo."
+  },
+  // Exames e serviços (artes enviadas em 17/10/2026): ficam no cadastro para entrar na agenda quando constarem
+  // numa lista semanal; `inactive` os mantém fora da área de profissionais.
+  { "id": "eletroencefalograma", "name": "Eletroencefalograma", "photo": "/profissionais/agenda/eletroencefalograma.webp", "inactive": true },
+  { "id": "espirometria", "name": "Espirometria", "photo": "/profissionais/agenda/espirometria.webp", "inactive": true },
+  { "id": "exames-laboratoriais", "name": "Exames Laboratoriais", "photo": "/profissionais/agenda/exames-laboratoriais.webp", "inactive": true },
+  { "id": "mamografia", "name": "Mamografia", "photo": "/profissionais/agenda/mamografia.webp", "inactive": true },
+  { "id": "vacine", "name": "Vacine", "photo": "/profissionais/agenda/vacine.webp", "inactive": true }
 ];
