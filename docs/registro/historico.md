@@ -2,6 +2,12 @@
 
 Entradas mais novas no topo. Formato e regras em [`README.md`](README.md#como-registrar-uma-mudança-vale-para-codex-e-claude).
 
+## 2026-10-18 — Agenda de 18 a 24/10
+- Quem: Claude
+- Onde: branch `claude/project-thread-se3i42` (PR) — aguardando aprovação do Vinícius.
+- O que mudou: agenda da semana de domingo 18/10 a sábado 24/10, na ordem enviada pelo Vinícius. Nomes casados com o cadastro: Joceana → Joceane Ramos, Gisele → Giselle Skarlet, Silvana → Silvania de Melo, Caroline → Carolline Carvalho, Itala → Ítala Freire, Eduardo → Dr. Eduardo Bastos. "Mamografia" (segunda 19/10) é exame, não profissional, e ficou fora. No hero: Louise (20 e 24/10), Alexandre (21, 22 e 23/10) e Ademy (22/10); em 18 e 19/10 aparecem os próximos (Louise, Alexandre, Ademy). `heroDoctorIds` não mudou.
+- Arquivos: `app/agenda/schedule.ts`.
+
 ## 2026-10-11 — SEO local: página legível sem JavaScript, schema e metadados
 - Quem: Claude
 - Onde: branch `claude/happy-mccarthy-k93uhp` — não publicado, aguardando aprovação do Vinícius.
