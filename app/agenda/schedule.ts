@@ -9,19 +9,19 @@ export type Schedule = {
   closedDays?: string[];
 };
 
-// Semana enviada pelo usuário em 11/10/2026 (segunda 12/10 a sábado 17/10).
+// Semana enviada pelo usuário em 18/10/2026 (domingo 18/10 a sábado 24/10).
 // O futuro /admin poderá fornecer este mesmo formato, sem alterar o componente.
-// Segunda 12/10 é feriado. Fábio (13/10) ainda não tem cadastro e fica fora até chegarem os dados.
 export const weeklySchedule: Schedule = {
-  weekStart: '2026-10-11',
+  weekStart: '2026-10-18',
   status: 'confirmed',
-  closedDays: ['2026-10-11', '2026-10-12'],
   appointments: {
-    '2026-10-13': ['louise-torres', 'giselle-skarlet', 'itala-freire', 'ermita-galdina', 'maria-paula', 'layane-barros'],
-    '2026-10-14': ['giselle-skarlet', 'silvania-melo', 'ludmila-magalhaes', 'arielly-ferraz'],
-    '2026-10-15': ['ariane-matos', 'giselle-skarlet', 'maria-paula', 'itala-freire', 'ludmila-magalhaes', 'luiz-claudio', 'caio-alves', 'reynaldo-martinez', 'vivianne-araujo'],
-    '2026-10-16': ['flora-carolina', 'edilma-carvalho', 'silvania-melo', 'giselle-skarlet', 'maria-paula', 'ludmila-magalhaes'],
-    '2026-10-17': ['carolline-carvalho', 'ludmila-magalhaes', 'silvania-melo', 'giselle-skarlet', 'eloisa-mello'],
+    '2026-10-18': ['joceane-ramos'],
+    '2026-10-19': ['ariane-matos', 'giselle-skarlet', 'bruna-bastos', 'marcelo-amaral', 'mamografia', 'joceane-ramos'],
+    '2026-10-20': ['louise-torres', 'giselle-skarlet', 'itala-freire', 'ermita-galdina', 'maria-paula', 'layane-barros'],
+    '2026-10-21': ['alexandre-torres', 'giselle-skarlet', 'silvania-melo', 'ludmila-magalhaes', 'eduardo-bastos'],
+    '2026-10-22': ['alexandre-torres', 'ariane-matos', 'giselle-skarlet', 'maria-paula', 'itala-freire', 'ludmila-magalhaes', 'ademy-landim'],
+    '2026-10-23': ['flora-carolina', 'edilma-carvalho', 'silvania-melo', 'giselle-skarlet', 'maria-paula', 'ludmila-magalhaes', 'alexandre-torres'],
+    '2026-10-24': ['carolline-carvalho', 'ludmila-magalhaes', 'silvania-melo', 'giselle-skarlet', 'louise-torres', 'joceane-ramos'],
   },
 };
 
