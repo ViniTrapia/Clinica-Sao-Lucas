@@ -11,13 +11,12 @@ export type Schedule = {
 
 // Semana enviada pelo usuário em 18/10/2026 (domingo 18/10 a sábado 24/10).
 // O futuro /admin poderá fornecer este mesmo formato, sem alterar o componente.
-// "Mamografia" (19/10) é um exame, não um profissional do cadastro, e ficou fora da agenda.
 export const weeklySchedule: Schedule = {
   weekStart: '2026-10-18',
   status: 'confirmed',
   appointments: {
     '2026-10-18': ['joceane-ramos'],
-    '2026-10-19': ['ariane-matos', 'giselle-skarlet', 'bruna-bastos', 'marcelo-amaral', 'joceane-ramos'],
+    '2026-10-19': ['ariane-matos', 'giselle-skarlet', 'bruna-bastos', 'marcelo-amaral', 'mamografia', 'joceane-ramos'],
     '2026-10-20': ['louise-torres', 'giselle-skarlet', 'itala-freire', 'ermita-galdina', 'maria-paula', 'layane-barros'],
     '2026-10-21': ['alexandre-torres', 'giselle-skarlet', 'silvania-melo', 'ludmila-magalhaes', 'eduardo-bastos'],
     '2026-10-22': ['alexandre-torres', 'ariane-matos', 'giselle-skarlet', 'maria-paula', 'itala-freire', 'ludmila-magalhaes', 'ademy-landim'],

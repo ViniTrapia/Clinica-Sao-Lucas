@@ -4,10 +4,17 @@ Entradas mais novas no topo. Formato e regras em [`README.md`](README.md#como-re
 
 ## 2026-10-18 — Agenda de 18 a 24/10
 - Quem: Claude
-- Onde: branch `claude/project-thread-se3i42` (PR) — aguardando aprovação do Vinícius.
-- O que mudou: agenda da semana de domingo 18/10 a sábado 24/10, na ordem enviada pelo Vinícius. Nomes casados com o cadastro: Joceana → Joceane Ramos, Gisele → Giselle Skarlet, Silvana → Silvania de Melo, Caroline → Carolline Carvalho, Itala → Ítala Freire, Eduardo → Dr. Eduardo Bastos. "Mamografia" (segunda 19/10) é exame, não profissional, e ficou fora. No hero: Louise (20 e 24/10), Alexandre (21, 22 e 23/10) e Ademy (22/10); em 18 e 19/10 aparecem os próximos (Louise, Alexandre, Ademy). `heroDoctorIds` não mudou.
+- Onde: branch `claude/project-thread-se3i42` PR #33 — publicado com aprovação do Vinícius.
+- O que mudou: agenda da semana de domingo 18/10 a sábado 24/10, na ordem enviada pelo Vinícius. Nomes casados com o cadastro: Joceana → Joceane Ramos, Gisele → Giselle Skarlet, Silvana → Silvania de Melo, Caroline → Carolline Carvalho, Itala → Ítala Freire, Eduardo → Dr. Eduardo Bastos. "Mamografia" (segunda 19/10) usa o card de exame `mamografia` cadastrado no PR #32. No hero: Louise (20 e 24/10), Alexandre (21, 22 e 23/10) e Ademy (22/10); em 18 e 19/10 aparecem os próximos (Louise, Alexandre, Ademy). `heroDoctorIds` não mudou.
 - Arquivos: `app/agenda/schedule.ts`.
 - Ombro do Dr. Alexandre (pedido do Vinícius em 18/10): o recorte tinha um degrau no ombro esquerdo, com o fundo aparecendo entre a gola e o tubo do estetoscópio. A linha do ombro foi refeita em curva contínua, preenchida com o branco do jaleco, e o estetoscópio passou a ficar sobre o jaleco. A foto da agenda é a mesma imagem reduzida. Arquivos: `public/profissionais/hero/alexandre-torres.webp`, `public/profissionais/agenda/alexandre-torres.webp`.
+
+## 2026-10-17 — Dr. Fábio Lisandro e cards de exames e serviços no cadastro
+- Quem: Claude
+- Onde: branch `claude/project-thread-txxzke` — não publicado, aguardando aprovação do Vinícius.
+- O que mudou: Dr. Fábio Lisandro (Gastroenterologista e Endoscopia Digestiva Alta, dados da arte enviada) entrou no cadastro com recorte novo ampliado em 3x. Eletroencefalograma, Espirometria, Exames Laboratoriais, Mamografia e Vacine foram cadastrados como `inactive` (não aparecem em Profissionais); quando uma lista semanal citar um deles, basta usar o `id` em `schedule.ts`. A foto do MT. Samuel Caetano foi trocada por uma mais nítida. Das outras 39 fotos enviadas, nenhuma superava a do site (a nova da Dra. Giselle é um enquadramento mais fechado e foi descartada).
+- Arquivos: `app/agenda/agenda-professionals.ts`, `app/agenda/photo-framing.ts`, `app/agenda/WeeklySchedule.tsx`, `app/agenda/weekly.css`, `public/profissionais/agenda/`.
+- Atenção: a foto do Dr. Fábio é um busto fechado (sem a cintura), então aparece mais próxima, como Débora e Cleobenysson. Nomes longos de exames usam a classe `is-long-name` na faixa laranja da agenda. Dr. Fábio ainda não está em nenhum dia da agenda.
 
 ## 2026-10-11 — SEO local: página legível sem JavaScript, schema e metadados
 - Quem: Claude
