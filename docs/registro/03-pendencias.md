@@ -12,7 +12,7 @@ Nenhuma pendência desta entrega.
 - **Outubro Rosa no hero**: pronto no branch `claude/outubro-rosa-hero-2vuvs9`, **sem PR e não publicado**. O Vinícius gostou só da versão de celular (a arte original inteira) e vai pedir ao cliente artes novas. Formato pedido para todas as artes do hero daqui em diante: retrato 4:5, 2160 × 2700 px (computador e tablet) e 1290 × 1612 px (celular), PNG ou JPG em qualidade máxima, sRGB, 5% de margem; opcional, a foto da pessoa em PNG transparente. A campanha deve sair sozinha depois de 31/10 (`date: '2026-10-31'`). O branch saiu de uma `main` antiga (antes dos PRs #16 a #21): atualize antes de continuar.
 - **Dados para o SEO local** (relatório de 11/10): se o número (87) 99915-6764 também recebe ligações ou se há telefone fixo (para um link `tel:`) e outras cidades atendidas (`areaServed`). Nada disso foi inventado; o schema em `index.html` só tem o que o site já mostra.
 - **Perfil da Empresa no Google** (decisão do Vinícius em 11/10): por enquanto o site **não** leva ao Google. O endereço da seção Contato deixou de ser link (antes abria uma busca no Maps) e o schema fica sem coordenadas e sem o link do perfil, porque o perfil ainda não está bom. O endereço continua exatamente como está, sem número (a clínica não tem número no momento). Só voltar a pôr link ou coordenadas quando o Vinícius pedir.
-- **Agenda da próxima semana**: a agenda atual vai até sábado 24/10. Aguardar a lista seguinte do Vinícius.
+- **Agenda da próxima semana**: a agenda atual vai até sábado 31/10. Aguardar a lista seguinte do Vinícius.
 
 ## Sugestões ainda não pedidas
 

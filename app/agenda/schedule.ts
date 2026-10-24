@@ -9,20 +9,20 @@ export type Schedule = {
   closedDays?: string[];
 };
 
-// Semana enviada pelo usuário em 18/10/2026 (domingo 18/10 a sábado 24/10).
+// Semana enviada pelo usuário em 24/10/2026 (segunda 26/10 a sábado 31/10; domingo 25/10 sem atendimento).
 // O futuro /admin poderá fornecer este mesmo formato, sem alterar o componente.
 export const weeklySchedule: Schedule = {
-  weekStart: '2026-10-18',
+  weekStart: '2026-10-25',
   status: 'confirmed',
   appointments: {
-    '2026-10-18': ['joceane-ramos'],
-    '2026-10-19': ['ariane-matos', 'giselle-skarlet', 'bruna-bastos', 'marcelo-amaral', 'mamografia', 'joceane-ramos'],
-    '2026-10-20': ['louise-torres', 'giselle-skarlet', 'itala-freire', 'ermita-galdina', 'maria-paula', 'layane-barros'],
-    '2026-10-21': ['alexandre-torres', 'giselle-skarlet', 'silvania-melo', 'ludmila-magalhaes', 'eduardo-bastos'],
-    '2026-10-22': ['alexandre-torres', 'ariane-matos', 'giselle-skarlet', 'maria-paula', 'itala-freire', 'ludmila-magalhaes', 'ademy-landim'],
-    '2026-10-23': ['flora-carolina', 'edilma-carvalho', 'silvania-melo', 'giselle-skarlet', 'maria-paula', 'ludmila-magalhaes', 'alexandre-torres'],
-    '2026-10-24': ['carolline-carvalho', 'ludmila-magalhaes', 'silvania-melo', 'giselle-skarlet', 'louise-torres', 'joceane-ramos'],
+    '2026-10-26': ['ariane-matos', 'giselle-skarlet', 'ilka-gominho'],
+    '2026-10-27': ['louise-torres', 'giselle-skarlet', 'itala-freire', 'ermita-galdina', 'maria-paula', 'layane-barros', 'fabio-lisandro'],
+    '2026-10-28': ['alexandre-torres', 'giselle-skarlet', 'silvania-melo', 'ludmila-magalhaes', 'arielly-ferraz'],
+    '2026-10-29': ['ariane-matos', 'giselle-skarlet', 'maria-paula', 'itala-freire', 'ludmila-magalhaes', 'luiz-claudio', 'vivianne-araujo'],
+    '2026-10-30': ['flora-carolina', 'edilma-carvalho', 'silvania-melo', 'giselle-skarlet', 'maria-paula', 'ludmila-magalhaes'],
+    '2026-10-31': ['carolline-carvalho', 'ludmila-magalhaes', 'silvania-melo', 'giselle-skarlet', 'louise-torres', 'renata-filgueira'],
   },
+  closedDays: ['2026-10-25'],
 };
 
 export function getWeekDays(schedule: Schedule, professionals: Professional[]) {
