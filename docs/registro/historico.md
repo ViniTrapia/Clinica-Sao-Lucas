@@ -2,6 +2,12 @@
 
 Entradas mais novas no topo. Formato e regras em [`README.md`](README.md#como-registrar-uma-mudança-vale-para-codex-e-claude).
 
+## 2026-10-24 — Agenda de 26 a 31/10
+- Quem: Claude
+- Onde: branch `claude/project-thread-d4eu8w` (PR) — aguardando aprovação do Vinícius.
+- O que mudou: agenda da semana de segunda 26/10 a sábado 31/10, na ordem enviada pelo Vinícius; domingo 25/10 aparece como "Sem atendimento". Na lista dele a quarta veio como "28/09", tratada como 28/10. Nomes casados com o cadastro: Gisele → Giselle Skarlet, Silvana → Silvania de Melo, Caroline → Carolline Carvalho, Itala → Ítala Freire, Viviane → Dra. Vivianne Araújo, Arielly → Dra. Arielly Ferraz, Renata → Dra. Renata Filgueira, Fábio → Dr. Fábio Lisandro. No hero: Ilka (26/10), Louise (27 e 31/10), Alexandre (28/10) e Luiz Cláudio (29/10); em 25/10 aparecem os próximos. `heroDoctorIds` não mudou.
+- Arquivos: `app/agenda/schedule.ts`.
+
 ## 2026-10-18 — Agenda de 18 a 24/10
 - Quem: Claude
 - Onde: branch `claude/project-thread-se3i42` PR #33 — publicado com aprovação do Vinícius.
