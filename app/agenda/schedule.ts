@@ -9,20 +9,19 @@ export type Schedule = {
   closedDays?: string[];
 };
 
-// Semana enviada pelo usuário em 24/10/2026 (segunda 26/10 a sábado 31/10; domingo 25/10 sem atendimento).
+// Semana enviada pelo usuário em 31/10/2026 (terça 03/11 a sábado 07/11; domingo 01/11 e segunda 02/11, feriado, sem atendimento).
 // O futuro /admin poderá fornecer este mesmo formato, sem alterar o componente.
 export const weeklySchedule: Schedule = {
-  weekStart: '2026-10-25',
+  weekStart: '2026-11-01',
   status: 'confirmed',
   appointments: {
-    '2026-10-26': ['ariane-matos', 'giselle-skarlet', 'ilka-gominho'],
-    '2026-10-27': ['louise-torres', 'giselle-skarlet', 'itala-freire', 'ermita-galdina', 'maria-paula', 'layane-barros', 'fabio-lisandro'],
-    '2026-10-28': ['alexandre-torres', 'giselle-skarlet', 'silvania-melo', 'ludmila-magalhaes', 'arielly-ferraz'],
-    '2026-10-29': ['ariane-matos', 'giselle-skarlet', 'maria-paula', 'itala-freire', 'ludmila-magalhaes', 'luiz-claudio', 'vivianne-araujo'],
-    '2026-10-30': ['flora-carolina', 'edilma-carvalho', 'silvania-melo', 'giselle-skarlet', 'maria-paula', 'ludmila-magalhaes'],
-    '2026-10-31': ['carolline-carvalho', 'ludmila-magalhaes', 'silvania-melo', 'giselle-skarlet', 'louise-torres', 'renata-filgueira'],
+    '2026-11-03': ['louise-torres', 'giselle-skarlet', 'itala-freire', 'ermita-galdina', 'maria-paula', 'layane-barros'],
+    '2026-11-04': ['alexandre-torres', 'giselle-skarlet', 'silvania-melo', 'ludmila-magalhaes'],
+    '2026-11-05': ['ariane-matos', 'giselle-skarlet', 'maria-paula', 'itala-freire', 'ludmila-magalhaes'],
+    '2026-11-06': ['flora-carolina', 'edilma-carvalho', 'silvania-melo', 'giselle-skarlet', 'maria-paula', 'ludmila-magalhaes', 'eloisa-mello'],
+    '2026-11-07': ['carolline-carvalho', 'ludmila-magalhaes', 'silvania-melo', 'giselle-skarlet', 'louise-torres', 'cleobenysson-cruz', 'samuel-caetano'],
   },
-  closedDays: ['2026-10-25'],
+  closedDays: ['2026-11-01', '2026-11-02'],
 };
 
 export function getWeekDays(schedule: Schedule, professionals: Professional[]) {
