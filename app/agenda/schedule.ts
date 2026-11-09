@@ -9,19 +9,21 @@ export type Schedule = {
   closedDays?: string[];
 };
 
-// Semana enviada pelo usuário em 31/10/2026 (terça 03/11 a sábado 07/11; domingo 01/11 e segunda 02/11, feriado, sem atendimento).
+// Semana enviada pelo usuário em 09/11/2026 (domingo 08/11 a sábado 14/11).
+// Na lista vieram também Thaline, Rodrigo e Milena (segunda 09/11), que ainda não têm cadastro; ficam de fora até chegarem foto e área.
 // O futuro /admin poderá fornecer este mesmo formato, sem alterar o componente.
 export const weeklySchedule: Schedule = {
-  weekStart: '2026-11-01',
+  weekStart: '2026-11-08',
   status: 'confirmed',
   appointments: {
-    '2026-11-03': ['louise-torres', 'giselle-skarlet', 'itala-freire', 'ermita-galdina', 'maria-paula', 'layane-barros'],
-    '2026-11-04': ['alexandre-torres', 'giselle-skarlet', 'silvania-melo', 'ludmila-magalhaes'],
-    '2026-11-05': ['ariane-matos', 'giselle-skarlet', 'maria-paula', 'itala-freire', 'ludmila-magalhaes'],
-    '2026-11-06': ['flora-carolina', 'edilma-carvalho', 'silvania-melo', 'giselle-skarlet', 'maria-paula', 'ludmila-magalhaes', 'eloisa-mello'],
-    '2026-11-07': ['carolline-carvalho', 'ludmila-magalhaes', 'silvania-melo', 'giselle-skarlet', 'louise-torres', 'cleobenysson-cruz', 'samuel-caetano'],
+    '2026-11-08': ['joceane-ramos'],
+    '2026-11-09': ['ariane-matos', 'giselle-skarlet', 'marcelo-amaral', 'bruna-bastos', 'joceane-ramos'],
+    '2026-11-10': ['louise-torres', 'giselle-skarlet', 'itala-freire', 'ermita-galdina', 'maria-paula', 'layane-barros', 'fabio-lisandro'],
+    '2026-11-11': ['alexandre-torres', 'giselle-skarlet', 'silvania-melo', 'ludmila-magalhaes', 'ademy-landim', 'arielly-ferraz'],
+    '2026-11-12': ['alexandre-torres', 'ariane-matos', 'giselle-skarlet', 'maria-paula', 'itala-freire', 'ludmila-magalhaes', 'dhiego-ramalho'],
+    '2026-11-13': ['edilma-carvalho', 'silvania-melo', 'giselle-skarlet', 'maria-paula', 'ludmila-magalhaes'],
+    '2026-11-14': ['carolline-carvalho', 'ludmila-magalhaes', 'silvania-melo', 'giselle-skarlet', 'eloisa-mello'],
   },
-  closedDays: ['2026-11-01', '2026-11-02'],
 };
 
 export function getWeekDays(schedule: Schedule, professionals: Professional[]) {
