@@ -2,6 +2,12 @@
 
 Entradas mais novas no topo. Formato e regras em [`README.md`](README.md#como-registrar-uma-mudança-vale-para-codex-e-claude).
 
+## 2026-11-14 — Agenda de 16 a 22/11
+- Quem: Claude
+- Onde: branch `claude/project-thread-344bbo` (PR) — aguardando aprovação do Vinícius.
+- O que mudou: agenda da semana de segunda 16/11 a domingo 22/11, na ordem enviada pelo Vinícius. A semana começa na segunda (`weekStart: '2026-11-16'`) para incluir o domingo 22/11. A terça veio escrita "17/08" e foi lida como 17/11. Sexta 20/11 é feriado (`closedDays`). Thaline, Rodrigo e Milena (segunda 16/11; Milena também na quinta 19/11) ficaram de fora por não terem cadastro. Nomes casados com o cadastro: Gisele → Giselle Skarlet, Silvana → Silvania de Melo, Caroline → Carolline Carvalho, Itala/Ítala → Ítala Freire, Joceana → Joceane Ramos, Ilka → Dra. Ilka Gominho, Caio → Dr. Caio Alves, Eduardo → Dr. Eduardo Bastos, Samuel → MT. Samuel Caetano. No hero: Ilka (16/11), Louise (17 e 21/11), Alexandre (18 e 19/11) e Ademy (19/11); no dia 20 e no domingo 22 aparecem os próximos. `heroDoctorIds` não mudou.
+- Arquivos: `app/agenda/schedule.ts`.
+
 ## 2026-11-09 — Agenda de 08 a 14/11
 - Quem: Claude
 - Onde: branch `claude/project-thread-sl6osb` (PR) — aguardando aprovação do Vinícius.
