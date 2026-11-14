@@ -9,21 +9,24 @@ export type Schedule = {
   closedDays?: string[];
 };
 
-// Semana enviada pelo usuário em 09/11/2026 (domingo 08/11 a sábado 14/11).
-// Na lista vieram também Thaline, Rodrigo e Milena (segunda 09/11), que ainda não têm cadastro; ficam de fora até chegarem foto e área.
+// Semana enviada pelo usuário em 14/11/2026 (segunda 16/11 a domingo 22/11).
+// Começa na segunda porque a lista vai até o domingo 22/11 (Joceane); o domingo 15/11 não teve atendimento.
+// Terça veio escrita como "17/08" na lista; foi lida como 17/11.
+// Sexta 20/11 é feriado. Thaline, Rodrigo e Milena (segunda 16/11; Milena também na quinta 19/11)
+// ainda não têm cadastro; ficam de fora até chegarem foto e área.
 // O futuro /admin poderá fornecer este mesmo formato, sem alterar o componente.
 export const weeklySchedule: Schedule = {
-  weekStart: '2026-11-08',
+  weekStart: '2026-11-16',
   status: 'confirmed',
   appointments: {
-    '2026-11-08': ['joceane-ramos'],
-    '2026-11-09': ['ariane-matos', 'giselle-skarlet', 'marcelo-amaral', 'bruna-bastos', 'joceane-ramos'],
-    '2026-11-10': ['louise-torres', 'giselle-skarlet', 'itala-freire', 'ermita-galdina', 'maria-paula', 'layane-barros', 'fabio-lisandro'],
-    '2026-11-11': ['alexandre-torres', 'giselle-skarlet', 'silvania-melo', 'ludmila-magalhaes', 'ademy-landim', 'arielly-ferraz'],
-    '2026-11-12': ['alexandre-torres', 'ariane-matos', 'giselle-skarlet', 'maria-paula', 'itala-freire', 'ludmila-magalhaes', 'dhiego-ramalho'],
-    '2026-11-13': ['edilma-carvalho', 'silvania-melo', 'giselle-skarlet', 'maria-paula', 'ludmila-magalhaes'],
-    '2026-11-14': ['carolline-carvalho', 'ludmila-magalhaes', 'silvania-melo', 'giselle-skarlet', 'eloisa-mello'],
+    '2026-11-16': ['ariane-matos', 'giselle-skarlet', 'ilka-gominho'],
+    '2026-11-17': ['louise-torres', 'giselle-skarlet', 'itala-freire', 'ermita-galdina', 'maria-paula', 'caio-alves', 'mamografia'],
+    '2026-11-18': ['alexandre-torres', 'giselle-skarlet', 'silvania-melo', 'ludmila-magalhaes', 'eduardo-bastos'],
+    '2026-11-19': ['alexandre-torres', 'ariane-matos', 'giselle-skarlet', 'maria-paula', 'itala-freire', 'ademy-landim'],
+    '2026-11-21': ['carolline-carvalho', 'ludmila-magalhaes', 'silvania-melo', 'giselle-skarlet', 'samuel-caetano', 'louise-torres', 'joceane-ramos'],
+    '2026-11-22': ['joceane-ramos'],
   },
+  closedDays: ['2026-11-20'],
 };
 
 export function getWeekDays(schedule: Schedule, professionals: Professional[]) {
